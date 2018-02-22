@@ -8,4 +8,6 @@
     <color name="darkGrey">#2d3238</color>
     <color name="yellow">#ffff26</color>
     <color name="lightGrey">#5b6066</color>
+    <color name="menu_bg">#D0CECE</color>
+    <color name="Transparent">#00000000</color>
 </resources>

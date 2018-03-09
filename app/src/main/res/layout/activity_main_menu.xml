@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -9,248 +9,88 @@
 
 
     <ImageButton
-        android:id="@+id/imageButton"
-        android:layout_width="120dp"
-        android:layout_height="120dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="48dp"
+        android:id="@+id/announcementButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/rosterButton"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="48dp"
         android:background="@color/menu_bg"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/annoucements" />
+        app:srcCompat="@drawable/announcements" />
 
     <ImageButton
-        android:id="@+id/imageButton2"
-        android:layout_width="120dp"
-        android:layout_height="120dp"
-        android:layout_marginEnd="8dp"
+        android:id="@+id/gameButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/practiceButton"
+        android:layout_alignStart="@+id/practiceButton"
+        android:layout_alignTop="@+id/announcementButton"
+        android:layout_marginLeft="8dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="48dp"
         android:background="@color/menu_bg"
-        app:layout_constraintEnd_toStartOf="@+id/imageButton3"
-        app:layout_constraintHorizontal_bias="0.333"
-        app:layout_constraintStart_toEndOf="@+id/imageButton"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/calender" />
+        app:srcCompat="@drawable/game" />
 
     <ImageButton
-        android:id="@+id/imageButton3"
-        android:layout_width="120dp"
-        android:layout_height="120dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
-        android:layout_marginTop="48dp"
+        android:id="@+id/calendarButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/rosterButton"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="44dp"
         android:background="@color/menu_bg"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/gamelogo" />
+        app:srcCompat="@drawable/calendar" />
 
     <ImageButton
-        android:id="@+id/imageButton4"
-        android:layout_width="120dp"
-        android:layout_height="120dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="56dp"
+        android:id="@+id/rosterButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_centerVertical="true"
         android:background="@color/menu_bg"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageButton"
-        app:srcCompat="@drawable/rosterlogo" />
+        app:srcCompat="@drawable/roster" />
 
     <ImageButton
-        android:id="@+id/imageButton6"
-        android:layout_width="120dp"
-        android:layout_height="120dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="56dp"
+        android:id="@+id/statButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/calendarButton"
+        android:layout_alignStart="@+id/calendarButton"
+        android:layout_alignTop="@+id/rosterButton"
         android:background="@color/menu_bg"
-        app:layout_constraintEnd_toStartOf="@+id/imageButton7"
-        app:layout_constraintHorizontal_bias="0.333"
-        app:layout_constraintStart_toEndOf="@+id/imageButton4"
-        app:layout_constraintTop_toBottomOf="@+id/imageButton2"
-        app:srcCompat="@drawable/statlogo" />
+        app:srcCompat="@drawable/stats" />
 
     <ImageButton
-        android:id="@+id/imageButton7"
-        android:layout_width="120dp"
-        android:layout_height="120dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginTop="56dp"
+        android:id="@+id/practiceButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
         android:background="@color/menu_bg"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageButton3"
-        app:srcCompat="@drawable/practicelogo"
-        android:layout_marginRight="16dp" />
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@+id/statButton"
+        app:srcCompat="@drawable/practice" />
 
     <ImageButton
-        android:id="@+id/imageButton8"
-        android:layout_width="120dp"
-        android:layout_height="120dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="56dp"
+        android:id="@+id/settingsButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@+id/hwButton"
         android:background="@color/menu_bg"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageButton4"
-        app:srcCompat="@drawable/hwlogo" />
+        app:srcCompat="@drawable/settings" />
 
     <ImageButton
-        android:id="@+id/imageButton9"
-        android:layout_width="120dp"
-        android:layout_height="120dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginStart="136dp"
-        android:layout_marginTop="56dp"
+        android:id="@+id/hwButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/rosterButton"
+        android:layout_marginTop="46dp"
         android:background="@color/menu_bg"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.272"
-        app:layout_constraintStart_toEndOf="@+id/imageButton8"
-        app:layout_constraintTop_toBottomOf="@+id/imageButton7"
-        app:srcCompat="@drawable/settinglogo"
-        android:layout_marginLeft="136dp" />
+        app:srcCompat="@drawable/HW" />
 
-    <EditText
-        android:id="@+id/editText"
-        android:layout_width="120dp"
-        android:layout_height="40dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginTop="80dp"
-        android:backgroundTint="@color/Transparent"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Announcements"
-        android:textSize="15dp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toStartOf="@+id/imageButton2"
-        app:layout_constraintTop_toTopOf="@+id/imageButton"
-        android:layout_marginRight="8dp" />
-
-    <EditText
-        android:id="@+id/editText2"
-        android:layout_width="83dp"
-        android:layout_height="40dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="80dp"
-        android:backgroundTint="@color/Transparent"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Calendar"
-        android:textSize="15dp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="@+id/imageButton2"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="@+id/imageButton2"
-        app:layout_constraintTop_toTopOf="@+id/imageButton2" />
-
-    <EditText
-        android:id="@+id/editText3"
-        android:layout_width="63dp"
-        android:layout_height="40dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="80dp"
-        android:backgroundTint="@color/Transparent"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Game"
-        android:textSize="15dp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="@+id/imageButton3"
-        app:layout_constraintHorizontal_bias="0.56"
-        app:layout_constraintStart_toStartOf="@+id/imageButton3"
-        app:layout_constraintTop_toTopOf="@+id/imageButton3" />
-
-    <EditText
-        android:id="@+id/editText4"
-        android:layout_width="64dp"
-        android:layout_height="40dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="80dp"
-        android:backgroundTint="@color/Transparent"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Roster"
-        android:textSize="15dp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="@+id/imageButton4"
-        app:layout_constraintHorizontal_bias="0.55"
-        app:layout_constraintStart_toStartOf="@+id/imageButton4"
-        app:layout_constraintTop_toTopOf="@+id/imageButton4" />
-
-    <EditText
-        android:id="@+id/editText5"
-        android:layout_width="70dp"
-        android:layout_height="40dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:backgroundTint="@color/Transparent"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Statistics"
-        android:textSize="15dp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/imageButton6"
-        app:layout_constraintEnd_toEndOf="@+id/imageButton6"
-        app:layout_constraintStart_toStartOf="@+id/imageButton6" />
-
-    <EditText
-        android:id="@+id/editText6"
-        android:layout_width="70dp"
-        android:layout_height="40dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:backgroundTint="@color/Transparent"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Practice"
-        android:textSize="15dp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/imageButton7"
-        app:layout_constraintEnd_toEndOf="@+id/imageButton7"
-        app:layout_constraintHorizontal_bias="0.647"
-        app:layout_constraintStart_toStartOf="@+id/imageButton7" />
-
-    <EditText
-        android:id="@+id/editText7"
-        android:layout_width="90dp"
-        android:layout_height="38dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="88dp"
-        android:backgroundTint="@color/Transparent"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="HW Drills"
-        android:textSize="15dp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="@+id/imageButton8"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="@+id/imageButton8"
-        app:layout_constraintTop_toTopOf="@+id/imageButton8"
-        android:layout_marginRight="8dp"
-        android:layout_marginLeft="20dp" />
-
-    <EditText
-        android:id="@+id/editText8"
-        android:layout_width="65dp"
-        android:layout_height="40dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="88dp"
-        android:backgroundTint="@color/Transparent"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Settings"
-        android:textSize="15dp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="@+id/imageButton9"
-        app:layout_constraintHorizontal_bias="0.538"
-        app:layout_constraintStart_toStartOf="@+id/imageButton9"
-        app:layout_constraintTop_toTopOf="@+id/imageButton9" />
-
-
-</android.support.constraint.ConstraintLayout>
+</RelativeLayout>

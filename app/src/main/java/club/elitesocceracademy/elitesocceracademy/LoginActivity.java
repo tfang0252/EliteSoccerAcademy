@@ -3,6 +3,7 @@ package club.elitesocceracademy.elitesocceracademy;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.annotation.TargetApi;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.support.annotation.NonNull;
 import android.support.design.widget.Snackbar;
@@ -45,6 +46,18 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
+        configureNextButton();
+
+    }
+    private void configureNextButton() {
+        Button btn = (Button) findViewById(R.id.email_sign_in_button);
+
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(LoginActivity.this, MainMenu.class));
+            }
+        });
     }
 }
 

@@ -6,6 +6,8 @@
     android:layout_height="match_parent"
     android:background="@color/darkGrey"
     android:gravity="center_horizontal"
+    android:name="LoginScreen"
+    android:label="@string/app_name"
     tools:context="club.elitesocceracademy.elitesocceracademy.LoginActivity"
     tools:layout_editor_absoluteY="81dp">
 
@@ -66,8 +68,7 @@
         android:background="@color/textField"
         android:ems="10"
         android:inputType="textPersonName"
-        android:textColorHint="@color/lightGrey"
-        android:texthint="Username" />
+        android:textColorHint="@color/lightGrey" />
 
     <EditText
         android:id="@+id/passwordField"

@@ -5,92 +5,199 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/menu_bg"
+    android:name="MainMenu"
+    android:label="@string/app_name"
     tools:context="club.elitesocceracademy.elitesocceracademy.MainMenu">
 
 
     <ImageButton
-        android:id="@+id/announcementButton"
+        android:id="@+id/calendarBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/rosterButton"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginBottom="48dp"
-        android:background="@color/menu_bg"
-        app:srcCompat="@drawable/announcements" />
-
-    <ImageButton
-        android:id="@+id/gameButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/practiceButton"
-        android:layout_alignStart="@+id/practiceButton"
-        android:layout_alignTop="@+id/announcementButton"
-        android:layout_marginLeft="8dp"
-        android:layout_marginStart="8dp"
-        android:background="@color/menu_bg"
-        app:srcCompat="@drawable/game" />
-
-    <ImageButton
-        android:id="@+id/calendarButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/rosterButton"
+        android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="44dp"
+        android:layout_marginTop="65dp"
         android:background="@color/menu_bg"
         app:srcCompat="@drawable/calendar" />
 
     <ImageButton
-        android:id="@+id/rosterButton"
+        android:id="@+id/announcementBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_centerVertical="true"
+        android:layout_alignTop="@+id/calendarBtn"
+        android:layout_marginEnd="52dp"
+        android:layout_marginRight="52dp"
+        android:layout_toLeftOf="@+id/calendarBtn"
+        android:layout_toStartOf="@+id/calendarBtn"
+        android:background="@color/menu_bg"
+        app:srcCompat="@drawable/annoucement" />
+
+    <ImageButton
+        android:id="@+id/gameBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/calendarBtn"
+        android:layout_marginLeft="54dp"
+        android:layout_marginStart="54dp"
+        android:layout_toEndOf="@+id/calendarBtn"
+        android:layout_toRightOf="@+id/calendarBtn"
+        android:background="@color/menu_bg"
+        app:srcCompat="@drawable/game" />
+
+    <ImageButton
+        android:id="@+id/statBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/calendarBtn"
+        android:layout_marginTop="101dp"
+        android:layout_toEndOf="@+id/announcementBtn"
+        android:layout_toRightOf="@+id/announcementBtn"
+        android:background="@color/menu_bg"
+        app:srcCompat="@drawable/statistics" />
+
+    <ImageButton
+        android:id="@+id/rosterBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/announcementBtn"
+        android:layout_alignStart="@+id/announcementBtn"
+        android:layout_alignTop="@+id/statBtn"
         android:background="@color/menu_bg"
         app:srcCompat="@drawable/roster" />
 
     <ImageButton
-        android:id="@+id/statButton"
+        android:id="@+id/practiceBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/calendarButton"
-        android:layout_alignStart="@+id/calendarButton"
-        android:layout_alignTop="@+id/rosterButton"
+        android:layout_alignEnd="@+id/gameBtn"
+        android:layout_alignRight="@+id/gameBtn"
+        android:layout_alignTop="@+id/rosterBtn"
         android:background="@color/menu_bg"
-        app:srcCompat="@drawable/stats" />
-
-    <ImageButton
-        android:id="@+id/practiceButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:background="@color/menu_bg"
-        android:layout_alignParentRight="true"
-        android:layout_alignTop="@+id/statButton"
         app:srcCompat="@drawable/practice" />
 
     <ImageButton
-        android:id="@+id/settingsButton"
+        android:id="@+id/homeworkBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/rosterBtn"
+        android:layout_alignStart="@+id/rosterBtn"
+        android:layout_below="@+id/rosterBtn"
+        android:layout_marginTop="97dp"
+        android:background="@color/menu_bg"
+        app:srcCompat="@drawable/homework" />
 
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignTop="@+id/hwButton"
+    <ImageButton
+        android:id="@+id/settingsBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/gameBtn"
+        android:layout_alignStart="@+id/gameBtn"
+        android:layout_alignTop="@+id/homeworkBtn"
         android:background="@color/menu_bg"
         app:srcCompat="@drawable/settings" />
 
-    <ImageButton
-        android:id="@+id/hwButton"
+    <TextView
+        android:id="@+id/announcementTxt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_below="@+id/rosterButton"
-        android:layout_marginTop="46dp"
-        android:background="@color/menu_bg"
-        app:srcCompat="@drawable/HW" />
+        android:layout_below="@+id/announcementBtn"
+        android:layout_marginLeft="37dp"
+        android:layout_marginStart="37dp"
+        android:textColor="@color/colorPrimary"
+        android:text="Announcement" />
+
+    <TextView
+        android:id="@+id/calendarTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/announcementTxt"
+        android:layout_toEndOf="@+id/announcementBtn"
+        android:layout_toLeftOf="@+id/gameBtn"
+        android:layout_toRightOf="@+id/announcementBtn"
+        android:layout_toStartOf="@+id/gameBtn"
+        android:gravity="center"
+        android:textColor="@color/colorPrimary"
+        android:text="Calendar" />
+
+    <TextView
+        android:id="@+id/gameTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/gameBtn"
+        android:layout_alignLeft="@+id/gameBtn"
+        android:layout_alignRight="@+id/gameBtn"
+        android:layout_alignStart="@+id/gameBtn"
+        android:layout_below="@+id/gameBtn"
+        android:gravity="center"
+        android:textColor="@color/colorPrimary"
+        android:text="Game" />
+
+    <TextView
+        android:id="@+id/textView16"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/rosterBtn"
+        android:layout_alignLeft="@+id/rosterBtn"
+        android:layout_alignRight="@+id/rosterBtn"
+        android:layout_alignStart="@+id/rosterBtn"
+        android:layout_below="@+id/rosterBtn"
+        android:gravity="center"
+        android:textColor="@color/colorPrimary"
+        android:text="Roster" />
+
+    <TextView
+        android:id="@+id/statTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/textView16"
+        android:layout_alignEnd="@+id/calendarTxt"
+        android:layout_alignLeft="@+id/statBtn"
+        android:layout_alignRight="@+id/calendarTxt"
+        android:layout_alignStart="@+id/statBtn"
+        android:gravity="center"
+        android:textColor="@color/colorPrimary"
+        android:text="Statistics" />
+
+    <TextView
+        android:id="@+id/practiceTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/statTxt"
+        android:layout_alignEnd="@+id/practiceBtn"
+        android:layout_alignLeft="@+id/settingsBtn"
+        android:layout_alignRight="@+id/practiceBtn"
+        android:layout_alignStart="@+id/settingsBtn"
+        android:gravity="center"
+        android:textColor="@color/colorPrimary"
+        android:text="Practice" />
+
+    <TextView
+        android:id="@+id/homeworkTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/homeworkBtn"
+        android:layout_alignLeft="@+id/homeworkBtn"
+        android:layout_alignRight="@+id/homeworkBtn"
+        android:layout_alignStart="@+id/homeworkBtn"
+        android:layout_below="@+id/homeworkBtn"
+        android:gravity="center"
+        android:textColor="@color/colorPrimary"
+        android:text="HW Drills" />
+
+    <TextView
+        android:id="@+id/settingTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/practiceBtn"
+        android:layout_alignLeft="@+id/settingsBtn"
+        android:layout_alignRight="@+id/practiceBtn"
+        android:layout_alignStart="@+id/settingsBtn"
+        android:layout_below="@+id/settingsBtn"
+        android:gravity="center"
+        android:textColor="@color/colorPrimary"
+        android:text="Settings" />
+
 
 </RelativeLayout>

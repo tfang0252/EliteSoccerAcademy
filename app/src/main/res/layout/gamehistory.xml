@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#D3D3D3">
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#D3D3D3">
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="3dp">
+
+                <TextView
+                    android:id="@+id/DateText"
+                    android:layout_width="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:textSize="20sp"
+                    android:textColor="#000000"
+                    android:text="Date" />
+
+                <TextView
+                    android:id="@+id/OpenentText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:textSize="20sp"
+                    android:textColor="#000000"
+                    android:text="Opponent" />
+
+                <TextView
+                    android:id="@+id/FinalScoreText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:textSize="20sp"
+                    android:textColor="#000000"
+                    android:text="Final Score" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="3dp">
+
+                <TextView
+                    android:id="@+id/Game1DateText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textColor="#000000"
+                    android:gravity="center"
+                    android:text="1/14/2018" />
+
+                <TextView
+                    android:id="@+id/Game1OppoenentText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textColor="#000000"
+                    android:gravity="center"
+                    android:text="Dutch Lions" />
+
+                <TextView
+                    android:id="@+id/Game1FinalScoreText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textColor="#000000"
+                    android:gravity="center"
+                    android:text="4-0" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="3dp">
+
+                <TextView
+                    android:id="@+id/Game2DateText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textColor="#000000"
+                    android:gravity="center"
+                    android:text="1/15/2018" />
+
+                <TextView
+                    android:id="@+id/Game2OppoenentText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textColor="#000000"
+                    android:gravity="center"
+                    android:text="Florida Fire" />
+
+                <TextView
+                    android:id="@+id/Game2FinalScoreText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textColor="#000000"
+                    android:gravity="center"
+                    android:text="2-3" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="3dp">
+
+                <TextView
+                    android:id="@+id/Game3DateText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textColor="#000000"
+                    android:gravity="center"
+                    android:text="2/14/2018" />
+
+                <TextView
+                    android:id="@+id/Game3OppoenentText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textColor="#000000"
+                    android:gravity="center"
+                    android:text="Cape Coral Cyclones" />
+
+                <TextView
+                    android:id="@+id/Game3FinalScoreText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textColor="#000000"
+                    android:gravity="center"
+                    android:text="2-1" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" >
+
+                <Button
+                    android:id="@+id/BackButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="Back"
+                    android:textColor="#000000"
+                    android:background="#FFFF00"
+                    android:layout_weight="1"/>
+            </TableRow>
+        </TableLayout>
+    </ScrollView>
+</RelativeLayout>

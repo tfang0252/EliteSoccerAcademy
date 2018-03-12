@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/soccerfield">
+
+
+    <ImageButton
+        android:id="@+id/Goalie"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="33dp"
+        app:srcCompat="@drawable/soccerball" />
+
+
+
+    <TextView
+        android:id="@+id/GoalieText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="20dp"
+        android:textColor="#000000"
+        android:text="Goalie" />
+
+
+
+    <Button
+        android:id="@+id/StartGameButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true"
+
+        android:background="#FFFF00"
+        android:padding="10dp"
+        android:text="Start Game"
+        android:textSize="24sp"
+        android:layout_alignParentRight="true" />
+
+    <Button
+        android:id="@+id/BackButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:background="#FFFF00"
+        android:padding="10dp"
+        android:text="Back"
+        android:textSize="24sp"
+        android:layout_alignParentLeft="true" />
+
+    <ImageButton
+        android:id="@+id/LeftDefense"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/Goalie"
+        android:layout_marginBottom="12dp"
+        android:layout_marginEnd="12dp"
+        android:layout_toStartOf="@+id/Goalie"
+        app:srcCompat="@drawable/soccerball"
+        android:layout_marginRight="12dp"
+        android:layout_toLeftOf="@+id/Goalie" />
+
+    <ImageButton
+        android:id="@+id/RightDefense"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/LeftDefense"
+        android:layout_alignStart="@+id/StartGameButton"
+        app:srcCompat="@drawable/soccerball"
+        android:layout_alignLeft="@+id/LeftGameButton"
+        tools:ignore="UnknownId" />
+
+    <ImageButton
+        android:id="@+id/CenterMid"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/RightDefense"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="23dp"
+        app:srcCompat="@drawable/soccerball" />
+
+    <ImageButton
+        android:id="@+id/RightMid"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/CenterMid"
+        android:layout_toEndOf="@+id/RightDefense"
+        app:srcCompat="@drawable/soccerball"
+        android:layout_toRightOf="@+id/RightDefense" />
+
+    <ImageButton
+        android:id="@+id/imageButton5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/CenterMid"
+        android:layout_toStartOf="@+id/LeftDefense"
+        app:srcCompat="@drawable/soccerball"
+        android:layout_toLeftOf="@+id/LeftDefense" />
+
+    <ImageButton
+        android:id="@+id/Striker"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        app:srcCompat="@drawable/soccerball" />
+
+    <TextView
+        android:id="@+id/StrikerText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/Striker"
+        android:layout_centerHorizontal="true"
+        android:textColor="#000000"
+        android:text="Striker" />
+
+    <TextView
+        android:id="@+id/CenterMidText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/RightMid"
+        android:layout_centerHorizontal="true"
+        android:textColor="#000000"
+        android:text="C Mid" />
+
+    <TextView
+        android:id="@+id/LeftMidText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/CenterMidText"
+        android:layout_alignStart="@+id/imageButton5"
+        android:textColor="#000000"
+        android:text="L Mid"
+        android:layout_alignLeft="@+id/imageButton5" />
+
+    <TextView
+        android:id="@+id/RightMidText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/CenterMidText"
+        android:layout_alignStart="@+id/RightMid"
+        android:textColor="#000000"
+        android:text="R MId"
+        android:layout_alignLeft="@+id/RightMid" />
+
+    <TextView
+        android:id="@+id/LeftDefenseText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/RightDefense"
+        android:layout_toStartOf="@+id/Goalie"
+        android:textColor="#000000"
+        android:text="L Defense"
+        android:layout_toLeftOf="@+id/Goalie" />
+
+    <TextView
+        android:id="@+id/RightDefenseText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/LeftDefenseText"
+        android:layout_toEndOf="@+id/Goalie"
+        android:textColor="#000000"
+        android:text="R Defense"
+        android:layout_toRightOf="@+id/Goalie" />
+</RelativeLayout>

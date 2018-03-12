@@ -9,7 +9,7 @@ import android.widget.TextView;
 
 import java.util.Random;
 
-public class Main2Activity extends AppCompatActivity {
+public class StatActivity2 extends AppCompatActivity {
     Random rand = new Random();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,7 +33,7 @@ public class Main2Activity extends AppCompatActivity {
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(Main2Activity.this, MainActivity.class));
+                startActivity(new Intent(StatActivity2.this, StatActivity.class));
             }
         });
     }

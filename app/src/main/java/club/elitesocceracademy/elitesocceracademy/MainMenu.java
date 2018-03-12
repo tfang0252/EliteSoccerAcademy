@@ -1,11 +1,9 @@
 package club.elitesocceracademy.elitesocceracademy;
 
 import android.content.Intent;
-import android.media.Image;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageButton;
 
 public class MainMenu extends AppCompatActivity {
@@ -18,6 +16,7 @@ public class MainMenu extends AppCompatActivity {
         rosterButton();
         gameButton();
         statButton();
+        announcementButton();
     }
 
     private void rosterButton() {
@@ -48,7 +47,18 @@ public class MainMenu extends AppCompatActivity {
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MainMenu.this, MainActivity.class));
+                startActivity(new Intent(MainMenu.this, StatActivity.class));
+            }
+        });
+    }
+
+    private void announcementButton() {
+        ImageButton btn = (ImageButton) findViewById(R.id.announcementBtn);
+
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainMenu.this, AnnouncementActivity.class));
             }
         });
     }

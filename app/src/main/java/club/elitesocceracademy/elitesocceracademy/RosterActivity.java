@@ -1,9 +1,12 @@
 package club.elitesocceracademy.elitesocceracademy;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
+import android.os.SystemClock;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.MotionEvent;
+import android.view.animation.BounceInterpolator;
 import android.widget.ArrayAdapter;
 
 import com.baoyz.swipemenulistview.SwipeMenu;
@@ -44,6 +47,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.ListAdapter;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import android.app.AlertDialog;
 import android.text.InputType;
@@ -52,26 +56,19 @@ import java.util.ArrayList;
 
 public class RosterActivity extends AppCompatActivity {
 
-    private static final String TAG = "MainActivity";
-    private ArrayList<String> list = new ArrayList<>();
+    private static final String TAG = "StatActivity";
+    protected static ArrayList<String> list = new ArrayList<>(Arrays.asList("Vanessa Flores","Kassandra Gonzalez","Ava Hick","Skylar Hubbard",
+            "Maryah Maldonado","Ellana Mena","Mackenzie Molina","Ashlyn Morales",
+            "Rebekah Strickland",
+            "Paige Troyer", "Sophia Uliani", "Alyssa Vargas", "Rachel Wiltgen"));
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_roster);
-        SwipeMenuListView listView = (SwipeMenuListView) findViewById(R.id.listView);
+        final SwipeMenuListView listView = (SwipeMenuListView) findViewById(R.id.listView);
 
 
-        list.add("");
-        list.add("Vanessa Flores");
-        list.add("Kassandra Gonzales");
-        list.add("Ava Haick");
-        list.add("Skylar Hubbard");
-        list.add("Maryah Maldonado");
-        list.add("Ellana Mena");
-        list.add("Mackenzie Molina");
-        list.add("Ashlyn Morales");
-        list.add("Rebekah Strickland");
-        list.add("Paige Troyer");
+
 
 
         ArrayAdapter adapter = new ArrayAdapter(RosterActivity.this, android.R.layout.simple_list_item_1, list);
@@ -124,8 +121,12 @@ public class RosterActivity extends AppCompatActivity {
                         Log.d(TAG, "onMenuItemClick: clicked item " + index);
                         break;
                     case 1:
-                        Log.d(TAG, "onMenuItemClick: clicked item " + index);
+                        removePlayer(listView,position);
+                        View b = findViewById(R.id.listView);
+                        b.setVisibility(View.GONE);
+                        b.setVisibility(View.VISIBLE);
                         break;
+
                 }
                 // false : close the menu; true : not close the menu
                 return false;
@@ -163,6 +164,12 @@ public class RosterActivity extends AppCompatActivity {
         builder.show();
 
 
+
+    }
+
+    public void removePlayer(SwipeMenuListView listView, int position){
+    list.remove(position);
+    listView.invalidateViews();
 
     }
 }

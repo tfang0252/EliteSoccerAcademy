@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/soccerfield">
+
+    <EditText
+        android:id="@+id/firsthalfnotes"
+        android:layout_width="300dp"
+        android:layout_height="200dp"
+        android:layout_below="@+id/EliteScore"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="46dp"
+        android:ems="10"
+        android:hint="1st Half Notes"
+        android:textColor="#000000"
+        android:inputType="textMultiLine" />
+
+    <TextView
+        android:id="@+id/HalfTimeScoreText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/firsthalfnotes"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="25dp"
+        android:text="Half Time Score"
+        android:textColor="#000000"
+        android:textSize="40dp" />
+
+    <TextView
+        android:id="@+id/EliteText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/EliteScore"
+        android:textSize="20dp"
+        android:layout_below="@+id/HalfTimeScoreText"
+        android:layout_marginEnd="11dp"
+        android:layout_marginTop="18dp"
+        android:textColor="#000000"
+        android:text="Elite" />
+
+    <TextView
+        android:id="@+id/OpponentText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_above="@+id/EliteScore"
+        android:layout_alignEnd="@+id/firsthalfnotes"
+        android:layout_marginEnd="29dp"
+        android:text="Opponent"
+        android:textColor="#000000"
+        android:textSize="20dp" />
+
+    <EditText
+        android:id="@+id/EliteScore"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/firsthalfnotes"
+        android:layout_below="@+id/EliteText"
+        android:layout_marginStart="61dp"
+        android:layout_marginTop="18dp"
+        android:ems="10"
+        android:textColor="#000000"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/OpponentScore"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:textColor="#000000"
+        android:layout_alignBaseline="@+id/EliteScore"
+        android:layout_alignBottom="@+id/EliteScore"
+        android:layout_alignStart="@+id/OpponentText"
+        android:layout_marginStart="13dp"
+        android:ems="10"
+        android:inputType="textPersonName" />
+
+    <Button
+        android:id="@+id/EndGameButton"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="11dp"
+        android:background="#FFFF00"
+        android:text="Start Next Half"
+        android:textColor="#000000" />
+</RelativeLayout>

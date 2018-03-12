@@ -17,6 +17,7 @@ public class MainMenu extends AppCompatActivity {
 
         rosterButton();
         gameButton();
+        statButton();
     }
 
     private void rosterButton() {
@@ -37,6 +38,17 @@ public class MainMenu extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(MainMenu.this, GameMainMenu.class));
+            }
+        });
+    }
+
+    private void statButton() {
+        ImageButton btn = (ImageButton) findViewById(R.id.statBtn);
+
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainMenu.this, MainActivity.class));
             }
         });
     }

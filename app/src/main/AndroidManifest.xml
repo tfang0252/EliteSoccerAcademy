@@ -24,7 +24,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".MainMenu" />
-        <activity android:name=".RosterActivity"></activity>
+        <activity android:name=".RosterActivity" />
         <activity android:name=".GameMainMenu">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -74,7 +74,15 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".Main2Activity" />
+        <activity android:name=".AnnouncementActivity"></activity>
     </application>
 
 </manifest>

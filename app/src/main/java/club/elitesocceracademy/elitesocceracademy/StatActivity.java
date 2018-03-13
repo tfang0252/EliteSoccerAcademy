@@ -16,7 +16,7 @@ public class StatActivity extends RosterActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_stat);
         ArrayAdapter adapter = new ArrayAdapter<String>(this,
                 R.layout.activity_listview, RosterActivity.list);
         ListView listView = (ListView) findViewById(R.id.listView);

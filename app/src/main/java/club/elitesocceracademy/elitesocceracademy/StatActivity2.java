@@ -14,7 +14,7 @@ public class StatActivity2 extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main2);
+        setContentView(R.layout.activity_stat2);
         returnButton();
         TextView assist = (TextView)findViewById(R.id.assist_display);
         TextView cleanSheets = (TextView)findViewById(R.id.clean_sheet_display);

@@ -17,6 +17,8 @@ public class MainMenu extends AppCompatActivity {
         gameButton();
         statButton();
         announcementButton();
+        homeworkButton();
+        practiceButton();
     }
 
     private void rosterButton() {
@@ -62,4 +64,26 @@ public class MainMenu extends AppCompatActivity {
             }
         });
     }
+
+    private void homeworkButton() {
+        ImageButton btn = (ImageButton) findViewById(R.id.homeworkBtn);
+
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainMenu.this, HomeworkActivity.class));
+            }
+        });
+    }
+    private void practiceButton() {
+        ImageButton btn = (ImageButton) findViewById(R.id.practiceBtn);
+
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainMenu.this, PracticeMainMenu.class));
+            }
+        });
+    }
+
 }

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Remind it</string>
+    <string name="help">Help</string>
+    <string name="about">About</string>
+    <string name="delete">Delete All Data</string>
+
+    <string name="monday_name">MON</string>
+    <string name="tuesday_name">TUE</string>
+    <string name="wednesday_name">WED</string>
+    <string name="thursday_name">THU</string>
+    <string name="friday_name">FRI</string>
+    <string name="saturday_name">SAT</string>
+    <string name="sunday_name">SUN</string>
+
+    <string name="am12">12 AM</string>
+    <string name="am1">01 AM</string>
+    <string name="am2">02 AM</string>
+    <string name="am3">03 AM</string>
+    <string name="am4">04 AM</string>
+    <string name="am5">05 AM</string>
+    <string name="am6">06 AM</string>
+    <string name="am7">07 AM</string>
+    <string name="am8">08 AM</string>
+    <string name="am9">09 AM</string>
+    <string name="am10">10 AM</string>
+    <string name="am11">11 AM</string>
+    <string name="pm12">12 PM</string>
+    <string name="pm1">01 PM</string>
+    <string name="pm2">02 PM</string>
+    <string name="pm3">03 PM</string>
+    <string name="pm4">04 PM</string>
+    <string name="pm5">05 PM</string>
+    <string name="pm6">06 PM</string>
+    <string name="pm8">08 PM</string>
+    <string name="pm9">09 PM</string>
+    <string name="pm10">10 PM</string>
+    <string name="pm11">11 PM</string>
+
+    <string name="add_event">Add Event</string>
+    <string name="choose_type">Type of Event</string>
+    <string name="meeting_type">Meeting</string>
+    <string name="task_type">Task</string>
+    <string name="ok_button">OK</string>
+    <string name="cancel_button">Cancel</string>
+
+    <string name="undone_tasks">Undone Tasks</string>
+    <string name="empty_info">There is currently no undone task...</string>
+
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+
+</resources>

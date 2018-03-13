@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <item name="meeting_blue" type="color">#536dfe</item>
+    <item name="green" type="color">#FF99CC00</item>
+    <item name="task_green" type="color">#8bc34a</item>
+    <item name="orange" type="color">#ffca60</item>
+    <item name="task_red" type="color">#ef5350</item>
+    <item name="darkblue" type="color">#FF0099CC</item>
+    <item name="gray" type="color">#595959</item>
+    <item name="softblack" type="color">#212121</item>
+    <item name="background" type="color">#fff9c4</item>
+    <item name="headers" type="color">#ffee58</item>
+    <item name="headers_horizontal" type="color">#4d4d4d</item>
+    <item name="line" type="color">#b3b3b3</item>
+    <item name="line_zebra" type="color">#f0f4c3</item>
+    <item name="white" type="color">#FFFFFF</item>
+    <item name="black" type="color">#000000</item>
+
+
+</resources>

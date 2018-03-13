@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_degradable">
+
+    <ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:id="@+id/calendar"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="0dp">
+
+            <!--> Title <!-->
+            <LinearLayout
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="23dp"
+                android:layout_marginBottom="13dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/help"
+                    android:textColor="@color/headers_horizontal"
+                    android:textSize="30sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <!--> How can I add a meeting <!-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:textSize="20sp"
+                    android:text="How can I add a meeting?"
+                    android:textColor="@color/black"
+                    android:layout_marginBottom="5dp"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+                    android:text="User can add a meeting on calendar simply need to click on the symbol 'plus' at the top menu. Once this action is displayed on a screen you select the option Meeting which will make visible a series of four fields to fill.\n\nIn the first, Date, you must double-click the text field and a popup will appear with the option to specify the date when the meeting is held.\n\nIn the second and third field Start time and End time respectively, should be performed double-clicking on the respective text fields and pop-ups that will offer the possibility to indicate the start and end respectively Meeting concerned.\n\nFinally, in the fourth field Description simply have to select the text field corresponding to keyboard and write a description to which you want to give the meeting.\n\nOnce completed all fields, the user must press the button on the bottom that says OK and automatically added the meeting with the characteristics given."
+                    android:textColor="@color/black"/>
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@color/line"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"/>
+
+            <!--> How can I add a task <!-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:textSize="20sp"
+                    android:text="How can I add a task?"
+                    android:textColor="@color/black"
+                    android:layout_marginBottom="5dp"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+                    android:text="User can add a task in their event organizer can simply click on the symbol plus at the top menu. Once done, it will display a screen where you must choose to allow Task that make visible a series of four fields to fill.\n\nIn the first, Title, via keyboard should simply fill the title that he wants to work in question.\n\nIn the second and third field Start date and End date respectively, should be performed double-clicking on the respective text fields and pop-ups that will offer the possibility to choose the days start and end of the task to be created.\n\nFinally, in the fourth field Associated Meeting, should click twice to get out a pop-up will see a list of all the meetings that if desired the user can interact with the task determined.\n\nOnce completed all fields, the user must press the button on the bottom that says OK and automatically added to the task with given characteristics."
+                    android:textColor="@color/black"/>
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@color/line"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"/>
+
+            <!--> How can I mark a task as done <!-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:textSize="20sp"
+                    android:text="How can I mark a task as done?"
+                    android:textColor="@color/black"
+                    android:layout_marginBottom="5dp"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+                    android:text="The tasks have the feature is being able undertaken or not. In its creation, as is logical, are marked as done (and thus relates graphically with the color red).\n\nThe user can change their status and mark it as done, must press the button with the symbol of a cross and a list of the top menu and be redirected to a window where a list will all these Unrealized tasks and features.\n\nOnce there you can simply click on a task list and this will emerge a popup window where you ask if you really want to mark it as done. Once accepted the job action will disappear from the list and will be represented by the color green."
+                    android:textColor="@color/black"/>
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@color/line"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"/>
+
+            <!--> How can I change week <!-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:textSize="20sp"
+                    android:text="How can I change week?"
+                    android:textColor="@color/black"
+                    android:layout_marginBottom="5dp"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+                    android:text="To view other days users have two options.\n\nThe first and simplest is only made to slide the screen to the left and to the right in order to access the next and previous week.\n\nIf you wanted to access a particular calendar week, should press the button with the symbol of a magnifying glass and a list of the top menu and bring about the emergence of a popup that allow the user to mark a specific date and be able to go to the week containing that day marked."
+                    android:textColor="@color/black"/>
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@color/line"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"/>
+
+            <!--> How can I view events on a particular day <!-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:textSize="20sp"
+                    android:text="How can I view events on a particular day?"
+                    android:textColor="@color/black"
+                    android:layout_marginBottom="5dp"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+                    android:text="Aside from the Week view, the user also has the ability to view events on a particular day.\n\nIn order to do so, it is as simple as clicking on the number of leaves on the head of the calendar. Once done, the user is redirected to a screen where you will be solely and exclusively meetings and tasks today."
+                    android:textColor="@color/black"/>
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@color/line"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"/>
+
+            <!--> How can I delete a specific event <!-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:textSize="20sp"
+                    android:text="How can I delete a specific event?"
+                    android:textColor="@color/black"
+                    android:layout_marginBottom="5dp"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+                    android:text="To perform this action, the user must simply press on the event and represented a dialog will appear where you will be asked whether you really want to delete the meeting or work checked. Just accept this dialogue and will automatically deleted."
+                    android:textColor="@color/black"/>
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@color/line"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"/>
+
+            <!--> How can I delete all events <!-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="10dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:textSize="20sp"
+                    android:text="How can I delete all events?"
+                    android:textColor="@color/black"
+                    android:layout_marginBottom="5dp"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+                    android:text="You only need to select the symbol with three small squares in the top menu and you'll see a drop; there you will find the option to Delete All Data.\n\nOnce depressed this option, a window appears where you really want to make sure to delete all events from the database.\n\nOnce you have clicked on OK, all events must be eliminated."
+                    android:textColor="@color/black"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

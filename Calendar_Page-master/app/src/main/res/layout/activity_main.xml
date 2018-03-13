@@ -1,0 +1,835 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".activity.MainActivity"
+    android:id="@+id/mainLayout"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="0dp" >
+
+    <!--> Days Header <!-->
+    <LinearLayout
+        android:id="@+id/daysLinearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:baselineAligned="false"
+        android:layout_marginTop="0dp"
+        android:background="@color/headers_horizontal">
+
+        <!--> Current Month Text View <!-->
+        <LinearLayout
+            android:id="@+id/currentMonth"
+            android:orientation="vertical"
+            android:layout_width="0dp"
+            android:layout_height="36dp"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/currentMonthTextView"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:text="" />
+
+            <TextView
+                android:id="@+id/currentYearTextView"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textSize="10sp"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:text="" />
+
+        </LinearLayout>
+
+        <!--> Sunday Text View <!-->
+        <LinearLayout
+            android:id="@+id/sunday"
+            android:layout_width="0dp"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:layout_height="36dp"
+            android:layout_weight="2">
+
+            <TextView
+                android:id="@+id/sundayText1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:text="" />
+
+            <TextView
+                android:id="@+id/sundayText2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="10sp"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:text="@string/sunday_name" />
+
+        </LinearLayout>
+
+        <!--> Monday Text View <!-->
+        <LinearLayout
+            android:id="@+id/monday"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_width="0dp"
+            android:layout_height="36dp"
+            android:layout_weight="2">
+
+            <TextView
+                android:id="@+id/mondayText1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:text="" />
+
+            <TextView
+                android:id="@+id/mondayText2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="10sp"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:text="@string/monday_name" />
+
+        </LinearLayout>
+
+        <!--> Tuesday Text View <!-->
+        <LinearLayout
+            android:id="@+id/tuesday"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_width="0dp"
+            android:layout_height="36dp"
+            android:layout_weight="2">
+
+            <TextView
+                android:id="@+id/tuesdayText1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:text="" />
+
+            <TextView
+                android:id="@+id/tuesdayText2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="10sp"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:text="@string/tuesday_name" />
+
+        </LinearLayout>
+
+        <!--> Wednesday Text View <!-->
+        <LinearLayout
+            android:id="@+id/wednesday"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:layout_width="0dp"
+            android:layout_height="36dp"
+            android:layout_weight="2">
+
+            <TextView
+                android:id="@+id/wednesdayText1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:text="" />
+
+            <TextView
+                android:id="@+id/wednesdayText2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="10sp"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:text="@string/wednesday_name" />
+
+        </LinearLayout>
+
+        <!--> Thursday Text View <!-->
+        <LinearLayout
+            android:id="@+id/thursday"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:layout_width="0dp"
+            android:layout_height="36dp"
+            android:layout_weight="2">
+
+            <TextView
+                android:id="@+id/thursdayText1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:text="" />
+
+            <TextView
+                android:id="@+id/thursdayText2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="10sp"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:text="@string/thursday_name" />
+
+        </LinearLayout>
+
+        <!--> Friday Text View <!-->
+        <LinearLayout
+            android:id="@+id/friday"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:layout_width="0dp"
+            android:layout_height="36dp"
+            android:layout_weight="2">
+
+            <TextView
+                android:id="@+id/fridayText1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:text="" />
+
+            <TextView
+                android:id="@+id/fridayText2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="10sp"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:text="@string/friday_name" />
+
+        </LinearLayout>
+
+        <!--> Saturday Text View <!-->
+        <LinearLayout
+            android:id="@+id/saturday"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:layout_width="0dp"
+            android:layout_height="36dp"
+            android:layout_weight="2">
+
+            <TextView
+                android:id="@+id/saturdayText1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:text="" />
+
+            <TextView
+                android:id="@+id/saturdayText2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="10sp"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:text="@string/saturday_name" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!--> Divider between Header and Tasks <!-->
+    <View
+        android:id="@+id/dividerView"
+        android:layout_width="fill_parent"
+        android:layout_height="2dp"
+        android:layout_below="@+id/daysLinearLayout"
+        android:background="@color/line" />
+
+    <!--> Tasks Header <!-->
+    <LinearLayout
+        android:id="@+id/tasksLinearLayout"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:baselineAligned="false">
+
+        <!--> Empty Layout <!-->
+        <LinearLayout
+            android:id="@+id/emptyLayout"
+            android:orientation="vertical"
+            android:layout_width="0dp"
+            android:layout_height="15dp"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/emptyText"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="@color/softblack"
+                android:text="" />
+
+        </LinearLayout>
+
+        <!--> Sunday Tasks <!-->
+        <LinearLayout
+            android:id="@+id/sundayTasks"
+            android:layout_width="0dp"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:layout_height="wrap_content"
+            android:layout_weight="2">
+
+        </LinearLayout>
+
+        <!--> Monday Task <!-->
+        <LinearLayout
+            android:id="@+id/mondayTasks"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2">
+
+        </LinearLayout>
+
+        <!--> Tuesday Tasks <!-->
+        <LinearLayout
+            android:id="@+id/tuesdayTasks"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2">
+
+
+        </LinearLayout>
+
+        <!--> Wednesday Tasks <!-->
+        <LinearLayout
+            android:id="@+id/wednesdayTasks"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2">
+
+        </LinearLayout>
+
+        <!--> Thursday Tasks <!-->
+        <LinearLayout
+            android:id="@+id/thursdayTasks"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2">
+
+        </LinearLayout>
+
+        <!--> Friday Tasks <!-->
+        <LinearLayout
+            android:id="@+id/fridayTasks"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2">
+
+        </LinearLayout>
+
+        <!--> Saturday Tasks <!-->
+        <LinearLayout
+            android:id="@+id/saturdayTasks"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2">
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!--> Divider between Tasks and ScrollView <!-->
+    <View
+        android:id="@+id/dividerView2"
+        android:layout_width="fill_parent"
+        android:layout_height="2dp"
+        android:layout_below="@+id/tasksLinearLayout"
+        android:background="@color/line" />
+
+    <!--> ScrollView <!-->
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@+id/dividerView2"
+        android:layout_alignParentBottom="true"
+        android:overScrollMode="never"
+        android:padding="0dp"
+        android:scrollbars="none"
+        android:fadingEdge="none">
+
+        <!--> Events <!-->
+        <RelativeLayout
+            android:id="@+id/calendar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="0dp">
+
+            <!--> Linear Layout Events <!-->
+            <LinearLayout
+                android:id="@+id/calendarLinearLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:baselineAligned="false"
+                android:padding="0dp"
+                android:background="@drawable/background_degradable">
+
+                <!--> Hours <!-->
+                <RelativeLayout
+                    android:id="@+id/hours"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:padding="0dp"
+                    android:background="@color/headers">
+
+                    <include layout="@layout/calendar_events" />
+
+                    <!--> 12AM <!-->
+                    <TextView
+                        android:id="@+id/time12am"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginTop="0dp"
+                        android:gravity="center"
+                        android:textSize="14sp"
+                        android:textColor="@color/gray"
+                        android:text="@string/am12"/>
+
+                    <!--> 01AM <!-->
+                    <TextView
+                        android:id="@+id/time01am"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginTop="60dp"
+                        android:gravity="center"
+                        android:textColor="@color/gray"
+                        android:textSize="14sp"
+                        android:text="@string/am1"/>
+
+                    <!--> 02AM <!-->
+                    <TextView
+                        android:id="@+id/time02am"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginTop="120dp"
+                        android:gravity="center"
+                        android:textColor="@color/gray"
+                        android:textSize="14sp"
+                        android:text="@string/am2"/>
+
+                    <!--> 03AM <!-->
+                    <TextView
+                        android:id="@+id/time03am"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginTop="180dp"
+                        android:gravity="center"
+                        android:textColor="@color/gray"
+                        android:textSize="14sp"
+                        android:text="@string/am3"/>
+
+                    <!--> 04AM <!-->
+                    <TextView
+                        android:id="@+id/time04am"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginTop="240dp"
+                        android:gravity="center"
+                        android:textColor="@color/gray"
+                        android:textSize="14sp"
+                        android:text="@string/am4"/>
+
+                    <!--> 05AM <!-->
+                    <TextView
+                        android:id="@+id/time5am"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginTop="300dp"
+                        android:gravity="center"
+                        android:textColor="@color/gray"
+                        android:textSize="14sp"
+                        android:text="@string/am5"/>
+
+                    <!--> 06AM <!-->
+                    <TextView
+                        android:id="@+id/time6am"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginTop="360dp"
+                        android:textColor="@color/gray"
+                        android:gravity="center"
+                        android:textSize="14sp"
+                        android:text="@string/am6"/>
+
+                    <!--> 07AM <!-->
+                    <TextView
+                        android:id="@+id/time7am"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginTop="420dp"
+                        android:textColor="@color/gray"
+                        android:gravity="center"
+                        android:textSize="14sp"
+                        android:text="@string/am7"/>
+
+                    <!--> 08AM <!-->
+                    <TextView
+                        android:id="@+id/time8am"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginTop="480dp"
+                        android:textColor="@color/gray"
+                        android:gravity="center"
+                        android:textSize="14sp"
+                        android:text="@string/am8"/>
+
+                    <!--> 09AM <!-->
+                    <TextView
+                        android:id="@+id/time9am"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginTop="540dp"
+                        android:textColor="@color/gray"
+                        android:gravity="center"
+                        android:textSize="14sp"
+                        android:text="@string/am9"/>
+
+                    <!--> 10AM <!-->
+                    <TextView
+                        android:id="@+id/time10am"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginTop="600dp"
+                        android:textColor="@color/gray"
+                        android:gravity="center"
+                        android:textSize="14sp"
+                        android:text="@string/am10"/>
+
+                    <!--> 11AM <!-->
+                    <TextView
+                        android:id="@+id/time11am"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginTop="660dp"
+                        android:textColor="@color/gray"
+                        android:gravity="center"
+                        android:textSize="14sp"
+                        android:text="@string/am11"/>
+
+                    <!--> 12PM <!-->
+                    <TextView
+                        android:id="@+id/time12pm"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginTop="720dp"
+                        android:textColor="@color/gray"
+                        android:gravity="center"
+                        android:textSize="14sp"
+                        android:text="@string/pm12"/>
+
+                    <!--> 01PM <!-->
+                    <TextView
+                        android:id="@+id/time01pm"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginTop="780dp"
+                        android:textColor="@color/gray"
+                        android:gravity="center"
+                        android:textSize="14sp"
+                        android:text="@string/pm1"/>
+
+                    <!--> 02PM <!-->
+                    <TextView
+                        android:id="@+id/time02pm"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginTop="840dp"
+                        android:textColor="@color/gray"
+                        android:gravity="center"
+                        android:textSize="14sp"
+                        android:text="@string/pm2"/>
+
+                    <!--> 03PM <!-->
+                    <TextView
+                        android:id="@+id/time03pm"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginTop="900dp"
+                        android:textColor="@color/gray"
+                        android:gravity="center"
+                        android:textSize="14sp"
+                        android:text="@string/pm3"/>
+
+                    <!--> 04PM <!-->
+                    <TextView
+                        android:id="@+id/time04pm"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginTop="960dp"
+                        android:textColor="@color/gray"
+                        android:gravity="center"
+                        android:textSize="14sp"
+                        android:text="@string/pm4"/>
+
+                    <!--> 05PM <!-->
+                    <TextView
+                        android:id="@+id/time05pm"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginTop="1020dp"
+                        android:textColor="@color/gray"
+                        android:gravity="center"
+                        android:textSize="14sp"
+                        android:text="@string/pm5"/>
+
+                    <!--> 06PM <!-->
+                    <TextView
+                        android:id="@+id/time06pm"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginTop="1080dp"
+                        android:textColor="@color/gray"
+                        android:gravity="center"
+                        android:textSize="14sp"
+                        android:text="@string/pm6"/>
+
+                    <!--> 07PM <!-->
+                    <TextView
+                        android:id="@+id/time07pm"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginTop="1140dp"
+                        android:textColor="@color/gray"
+                        android:gravity="center"
+                        android:textSize="14sp"
+                        android:text="@string/am7"/>
+
+                    <!--> 08PM <!-->
+                    <TextView
+                        android:id="@+id/time08pm"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginTop="1200dp"
+                        android:textColor="@color/gray"
+                        android:gravity="center"
+                        android:textSize="14sp"
+                        android:text="@string/pm8"/>
+
+                    <!--> 09PM <!-->
+                    <TextView
+                        android:id="@+id/time09pm"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginTop="1260dp"
+                        android:textColor="@color/gray"
+                        android:gravity="center"
+                        android:textSize="14sp"
+                        android:text="@string/pm9"/>
+
+                    <!--> 10PM <!-->
+                    <TextView
+                        android:id="@+id/time10pm"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginTop="1320dp"
+                        android:textColor="@color/gray"
+                        android:gravity="center"
+                        android:textSize="14sp"
+                        android:text="@string/pm10"/>
+
+                    <!--> 11PM <!-->
+                    <TextView
+                        android:id="@+id/time11pm"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginTop="1380dp"
+                        android:textColor="@color/gray"
+                        android:gravity="center"
+                        android:textSize="14sp"
+                        android:text="@string/pm11"/>
+
+                </RelativeLayout>
+
+                <!--> Separator between Hours and Events <!-->
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/white" />
+
+                <!--> Sunday Events <!-->
+                <RelativeLayout
+                    android:id="@+id/sundayEvents"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2">
+
+                    <include layout="@layout/calendar_events" />
+
+                </RelativeLayout>
+
+                <!--> Separator between Sunday and Monday <!-->
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/white" />
+
+                <!--> Monday Events <!-->
+                <RelativeLayout
+                    android:id="@+id/mondayEvents"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2">
+
+                    <include layout="@layout/calendar_events" />
+
+                </RelativeLayout>
+
+                <!--> Separator between Monday and Tuesday <!-->
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/white" />
+
+                <!--> Tuesday Events <!-->
+                <RelativeLayout
+                    android:id="@+id/tuesdayEvents"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2">
+
+                    <include layout="@layout/calendar_events" />
+
+                </RelativeLayout>
+
+                <!--> Separator between Tuesday and Wednesday <!-->
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/white" />
+
+                <!--> Wednesday Events <!-->
+                <RelativeLayout
+                    android:id="@+id/wednesdayEvents"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2">
+
+                    <include layout="@layout/calendar_events" />
+
+                </RelativeLayout>
+
+                <!--> Separator between Wednesday and Thursday <!-->
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/white" />
+
+                <!--> Thursday Events <!-->
+                <RelativeLayout
+                    android:id="@+id/thursdayEvents"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2">
+
+                    <include layout="@layout/calendar_events" />
+
+                </RelativeLayout>
+
+                <!--> Separator between Thursday and Friday <!-->
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/white" />
+
+                <!--> Friday Events <!-->
+                <RelativeLayout
+                    android:id="@+id/fridayEvents"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2">
+
+                    <include layout="@layout/calendar_events" />
+
+                </RelativeLayout>
+
+                <!--> Separator between Friday and Saturday <!-->
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/white" />
+
+                <!--> Saturday Events <!-->
+                <RelativeLayout
+                    android:id="@+id/saturdayEvents"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2">
+
+                    <include layout="@layout/calendar_events" />
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+</LinearLayout>

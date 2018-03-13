@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="true"
+        jar="D:\programs\Android_SDK\extras\android\m2repository\com\android\support\support-annotations\21.0.3\support-annotations-21.0.3.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="27.0.3"
+        sha1="4b74cefe1f0c1b819e7260c8627a14674e37fd35">
+        <dex dex="D:\OneDrive\OneDrive - University of Central Florida - UCF\spring 2018\Git\Remindit-master\app\build\intermediates\transforms\dex\debug\folders\1000\10\support-annotations-21.0.3_aebd8e41783bb3ff481b304a83e1123ce58a60ea\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Henry Silva\.android\build-cache\b30fc42ba469d5ed598f44b8ef1b33c68d5c84f5\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="27.0.3"
+        sha1="81d42bf983a8741f4888a6e333e454e4a5e0eeb7">
+        <dex dex="D:\OneDrive\OneDrive - University of Central Florida - UCF\spring 2018\Git\Remindit-master\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_7a9aa102a4c6a873e8c92e1249ff2da1c82d185d\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Henry Silva\.android\build-cache\e56820587b810bcc7f1154034c0f4521f0b98105\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="27.0.3"
+        sha1="2c91c949a45a21cdecf26e03951e46c7beec9ad8">
+        <dex dex="D:\OneDrive\OneDrive - University of Central Florida - UCF\spring 2018\Git\Remindit-master\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_35b1b4d4d619dd54b774c21a33eac8d28b5479e6\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\OneDrive\OneDrive - University of Central Florida - UCF\spring 2018\Git\Remindit-master\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="27.0.3"
+        sha1="6e71c11755e8225e5c75b4392c2413ee2c40649a">
+        <dex dex="D:\OneDrive\OneDrive - University of Central Florida - UCF\spring 2018\Git\Remindit-master\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_901c69cc8b1020244ba6fac9ed979a74898a2bcb\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Henry Silva\.android\build-cache\e56820587b810bcc7f1154034c0f4521f0b98105\output\jars\libs\internal_impl-21.0.3.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="27.0.3"
+        sha1="01ec05bfbafcc07646ba813000bf2ef11742dd03">
+        <dex dex="D:\OneDrive\OneDrive - University of Central Florida - UCF\spring 2018\Git\Remindit-master\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-21.0.3_577e0d6f30ef2752f9969f1009dbce71f2890a2f\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\OneDrive\OneDrive - University of Central Florida - UCF\spring 2018\Git\Remindit-master\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="27.0.3"
+        sha1="12920f9016b8b05acbc2af7cdc13cef6946fe7d3">
+        <dex dex="D:\OneDrive\OneDrive - University of Central Florida - UCF\spring 2018\Git\Remindit-master\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run_c872c6371ac7d8973e259d5ab8e11c169bcadeb3\classes.dex" />
+    </item>
+
+</items>

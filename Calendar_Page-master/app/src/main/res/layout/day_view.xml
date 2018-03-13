@@ -1,0 +1,384 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".activity.DayViewActivity"
+    android:id="@+id/mainLayout"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="0dp" >
+
+    <!--> Day Header <!-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/headers_horizontal"
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/dateTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:textSize="30sp"
+            android:textColor="@color/white"
+            android:text="31th December 2026"/>
+
+    </LinearLayout>
+
+
+    <!--> Separator between day and tasks <!-->
+    <View
+        android:id="@+id/firstView"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@color/line" />
+
+    <!--> Tasks header <!-->
+    <LinearLayout
+        android:id="@+id/tasksLinearLayout"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:baselineAligned="false">
+
+
+    </LinearLayout>
+
+    <!--> Separator between tasks and meetings <!-->
+    <View
+        android:id="@+id/secondView"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@color/line" />
+
+    <!--> ScrollView <!-->
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:overScrollMode="never"
+        android:padding="0dp"
+        android:scrollbars="none"
+        android:fadingEdge="none">
+
+        <!--> Events <!-->
+        <RelativeLayout
+            android:id="@+id/calendar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="0dp">
+
+            <!--> Linear Layout Events <!-->
+            <LinearLayout
+                android:id="@+id/calendarLinearLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:baselineAligned="false"
+                android:padding="0dp" >
+
+                <!--> Hours <!-->
+                <RelativeLayout
+                    android:id="@+id/hours"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:padding="0dp"
+                    android:background="@color/headers">
+
+                    <include layout="@layout/calendar_events" />
+
+                    <!--> 12AM <!-->
+                    <TextView
+                        android:id="@+id/time12am"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="0dp"
+                        android:gravity="center"
+                        android:textSize="14sp"
+                        android:textColor="@color/gray"
+                        android:text="@string/am12"/>
+
+                    <!--> 01AM <!-->
+                    <TextView
+                        android:id="@+id/time01am"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="60dp"
+                        android:gravity="center"
+                        android:textColor="@color/gray"
+                        android:textSize="14sp"
+                        android:text="@string/am1"/>
+
+                    <!--> 02AM <!-->
+                    <TextView
+                        android:id="@+id/time02am"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="120dp"
+                        android:gravity="center"
+                        android:textColor="@color/gray"
+                        android:textSize="14sp"
+                        android:text="@string/am2"/>
+
+                    <!--> 03AM <!-->
+                    <TextView
+                        android:id="@+id/time03am"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="180dp"
+                        android:gravity="center"
+                        android:textColor="@color/gray"
+                        android:textSize="14sp"
+                        android:text="@string/am3"/>
+
+                    <!--> 04AM <!-->
+                    <TextView
+                        android:id="@+id/time04am"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="240dp"
+                        android:gravity="center"
+                        android:textColor="@color/gray"
+                        android:textSize="14sp"
+                        android:text="@string/am4"/>
+
+                    <!--> 05AM <!-->
+                    <TextView
+                        android:id="@+id/time5am"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="300dp"
+                        android:gravity="center"
+                        android:textColor="@color/gray"
+                        android:textSize="14sp"
+                        android:text="@string/am5"/>
+
+                    <!--> 06AM <!-->
+                    <TextView
+                        android:id="@+id/time6am"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="360dp"
+                        android:gravity="center"
+                        android:textColor="@color/gray"
+                        android:textSize="14sp"
+                        android:text="@string/am6"/>
+
+                    <!--> 07AM <!-->
+                    <TextView
+                        android:id="@+id/time7am"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="420dp"
+                        android:gravity="center"
+                        android:textColor="@color/gray"
+                        android:textSize="14sp"
+                        android:text="@string/am7"/>
+
+                    <!--> 08AM <!-->
+                    <TextView
+                        android:id="@+id/time8am"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="480dp"
+                        android:gravity="center"
+                        android:textColor="@color/gray"
+                        android:textSize="14sp"
+                        android:text="@string/am8"/>
+
+                    <!--> 09AM <!-->
+                    <TextView
+                        android:id="@+id/time9am"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="540dp"
+                        android:gravity="center"
+                        android:textColor="@color/gray"
+                        android:textSize="14sp"
+                        android:text="@string/am9"/>
+
+                    <!--> 10AM <!-->
+                    <TextView
+                        android:id="@+id/time10am"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="600dp"
+                        android:gravity="center"
+                        android:textColor="@color/gray"
+                        android:textSize="14sp"
+                        android:text="@string/am10"/>
+
+                    <!--> 11AM <!-->
+                    <TextView
+                        android:id="@+id/time11am"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="660dp"
+                        android:gravity="center"
+                        android:textColor="@color/gray"
+                        android:textSize="14sp"
+                        android:text="@string/am11"/>
+
+                    <!--> 12PM <!-->
+                    <TextView
+                        android:id="@+id/time12pm"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="720dp"
+                        android:gravity="center"
+                        android:textColor="@color/gray"
+                        android:textSize="14sp"
+                        android:text="@string/pm12"/>
+
+                    <!--> 01PM <!-->
+                    <TextView
+                        android:id="@+id/time01pm"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="780dp"
+                        android:gravity="center"
+                        android:textColor="@color/gray"
+                        android:textSize="14sp"
+                        android:text="@string/pm1"/>
+
+                    <!--> 02PM <!-->
+                    <TextView
+                        android:id="@+id/time02pm"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="840dp"
+                        android:gravity="center"
+                        android:textColor="@color/gray"
+                        android:textSize="14sp"
+                        android:text="@string/pm2"/>
+
+                    <!--> 03PM <!-->
+                    <TextView
+                        android:id="@+id/time03pm"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="900dp"
+                        android:gravity="center"
+                        android:textColor="@color/gray"
+                        android:textSize="14sp"
+                        android:text="@string/pm3"/>
+
+                    <!--> 04PM <!-->
+                    <TextView
+                        android:id="@+id/time04pm"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="960dp"
+                        android:gravity="center"
+                        android:textSize="14sp"
+                        android:textColor="@color/gray"
+                        android:text="@string/pm4"/>
+
+                    <!--> 05PM <!-->
+                    <TextView
+                        android:id="@+id/time05pm"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="1020dp"
+                        android:gravity="center"
+                        android:textColor="@color/gray"
+                        android:textSize="14sp"
+                        android:text="@string/pm5"/>
+
+                    <!--> 06PM <!-->
+                    <TextView
+                        android:id="@+id/time06pm"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="1080dp"
+                        android:gravity="center"
+                        android:textColor="@color/gray"
+                        android:textSize="14sp"
+                        android:text="@string/pm6"/>
+
+                    <!--> 07PM <!-->
+                    <TextView
+                        android:id="@+id/time07pm"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="1140dp"
+                        android:gravity="center"
+                        android:textColor="@color/gray"
+                        android:textSize="14sp"
+                        android:text="@string/am7"/>
+
+                    <!--> 08PM <!-->
+                    <TextView
+                        android:id="@+id/time08pm"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="1200dp"
+                        android:gravity="center"
+                        android:textColor="@color/gray"
+                        android:textSize="14sp"
+                        android:text="@string/pm8"/>
+
+                    <!--> 09PM <!-->
+                    <TextView
+                        android:id="@+id/time09pm"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="1260dp"
+                        android:gravity="center"
+                        android:textColor="@color/gray"
+                        android:textSize="14sp"
+                        android:text="@string/pm9"/>
+
+                    <!--> 10PM <!-->
+                    <TextView
+                        android:id="@+id/time10pm"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="1320dp"
+                        android:gravity="center"
+                        android:textColor="@color/gray"
+                        android:textSize="14sp"
+                        android:text="@string/pm10"/>
+
+                    <!--> 11PM <!-->
+                    <TextView
+                        android:id="@+id/time11pm"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="1380dp"
+                        android:gravity="center"
+                        android:textColor="@color/gray"
+                        android:textSize="14sp"
+                        android:text="@string/pm11"/>
+
+                </RelativeLayout>
+
+                <!--> Separator between Hours and Events <!-->
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/line" />
+
+                <!--> Events <!-->
+                <RelativeLayout
+                    android:id="@+id/meetings"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:background="@drawable/background_degradable">
+
+                    <include layout="@layout/calendar_events" />
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+</LinearLayout>

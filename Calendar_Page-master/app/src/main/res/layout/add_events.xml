@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_degradable">
+
+    <!--> Add Event Title <!-->
+    <LinearLayout
+        android:id="@+id/addEventLayout"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="23dp"
+        android:layout_marginBottom="13dp">
+
+        <TextView
+            android:id="@+id/addEventText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/add_event"
+            android:textColor="@color/headers_horizontal"
+            android:textSize="30sp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <!--> RadioGroup Choose <!-->
+    <LinearLayout
+        android:id="@+id/chooseEventLayout"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/gray"
+            android:textSize="20sp"
+            android:text="@string/choose_type"
+            android:id="@+id/textView" />
+
+        <RadioGroup
+            android:id="@+id/radiogroup_button"
+            android:orientation="horizontal"
+            android:layout_marginTop="6dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <RadioButton
+                android:id="@+id/meeting_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/gray"
+                android:textSize="15sp"
+                android:layout_marginEnd="6dp"
+                android:text="@string/meeting_type"/>
+            <RadioButton
+                android:id="@+id/task_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/gray"
+                android:textSize="15sp"
+                android:layout_marginStart="6dp"
+                android:text="@string/task_type"/>
+
+        </RadioGroup>
+
+    </LinearLayout>
+
+    <!--> Space between RadioGroup and fields <!-->
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="50dp" />
+
+    <!--> Meeting Date <!-->
+    <LinearLayout
+        android:id="@+id/meetingDateLayout"
+        android:orientation="horizontal"
+        android:layout_marginBottom="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/meetingDateTitle"
+            android:layout_width="135dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="5dp"
+            android:text="" />
+
+        <EditText
+            android:id="@+id/meetingDateField"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="10dp"
+            android:visibility="invisible"
+            android:ems="10" />
+    </LinearLayout>
+
+    <!--> Meeting Start Hour / Task Start Date <!-->
+    <LinearLayout
+        android:id="@+id/meetingHourStartLayout"
+        android:orientation="horizontal"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/meetingHourStartTitle"
+            android:layout_width="135dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="5dp"
+            android:text="" />
+
+        <EditText
+            android:id="@+id/meetingHourStartField"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="10dp"
+            android:visibility="invisible"
+            android:ems="10" />
+    </LinearLayout>
+
+    <!--> Meeting End Hour / Task End Date <!-->
+    <LinearLayout
+        android:id="@+id/meetingHourEndLayout"
+        android:orientation="horizontal"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/meetingHourEndTitle"
+            android:layout_width="135dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="5dp"
+            android:text="" />
+
+        <EditText
+            android:id="@+id/meetingHourEndField"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="10dp"
+            android:visibility="invisible"
+            android:ems="10" />
+    </LinearLayout>
+
+    <!--> Meeting Description / Task Meeting Associated <!-->
+    <LinearLayout
+        android:id="@+id/meetingDescriptionLayout"
+        android:orientation="horizontal"
+        android:layout_marginTop="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/meetingDescriptionTitle"
+            android:layout_width="135dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="5dp"
+            android:text="" />
+
+        <EditText
+            android:id="@+id/meetingDescriptionField"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="10dp"
+            android:visibility="invisible"
+            android:ems="10" />
+    </LinearLayout>
+
+    <!--> Help <!-->
+    <TextView
+        android:id="@+id/helpAdd"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginTop="80dp"
+        android:textStyle="italic"
+        android:text="\n" />
+
+    <!--> Space between fields and buttons <!-->
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="50dp" />
+
+    <!--> OK and CANCEL Buttons <!-->
+    <LinearLayout
+        android:id="@+id/buttonsLayout"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/cancelButton"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:textSize="15sp"
+            android:layout_marginStart="6dp"
+            android:background="@color/line"
+            android:text="@string/cancel_button" />
+
+        <Button
+            android:id="@+id/okButton"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:textSize="15sp"
+            android:background="@color/line"
+            android:layout_marginStart="6dp"
+            android:text="@string/ok_button" />
+
+    </LinearLayout>
+
+</LinearLayout>

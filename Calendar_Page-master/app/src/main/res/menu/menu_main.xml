@@ -1,0 +1,46 @@
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".activity.MainActivity">
+
+    <item
+        android:id="@+id/add_event"
+        android:icon="@drawable/ic_menu_add"
+        android:title=""
+        android:orderInCategory="1"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/search_day"
+        android:icon="@drawable/ic_menu_find_holo_dark"
+        android:title=""
+        android:orderInCategory="1"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/list_undone_tasks"
+        android:icon="@drawable/ic_menu_clear_playlist"
+        android:title=""
+        android:orderInCategory="2"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/menu_overflow"
+        android:icon="@drawable/ic_menu_moreoverflow_normal_holo_dark"
+        android:title=""
+        android:orderInCategory="3"
+        app:showAsAction="always" >
+
+        <menu>
+
+            <item
+                android:id="@+id/delete"
+                android:title="@string/delete"
+                app:showAsAction="never" />
+
+        </menu>
+
+    </item>
+
+</menu>

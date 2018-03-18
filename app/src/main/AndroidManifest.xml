@@ -83,7 +83,7 @@
         </activity>
         <activity android:name=".StatActivity2" />
         <activity android:name=".AnnouncementActivity" />
-        <activity android:name=".HomeworkActivity"></activity>
+        <activity android:name=".HomeworkActivity" />
         <activity android:name=".PracticeMainMenu">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -91,7 +91,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity android:name=".PlayerAttendance">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

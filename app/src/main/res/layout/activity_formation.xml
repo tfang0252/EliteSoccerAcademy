@@ -11,78 +11,89 @@
         android:id="@+id/Goalie"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
+        android:layout_above="@+id/textView4"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="33dp"
-        android:background="@null"
+        android:layout_marginBottom="8dp"
+        android:background="@android:color/transparent"
         app:srcCompat="@drawable/player_formation" />
 
     <ImageButton
-        android:id="@+id/CenterDefense"
+        android:id="@+id/CenterDefender"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_above="@+id/Goalie"
-        android:layout_alignStart="@+id/Goalie"
-        android:layout_marginBottom="31dp"
-        android:background="@null"
+        android:layout_alignEnd="@+id/Goalie"
+        android:layout_alignRight="@+id/Goalie"
+        android:layout_marginBottom="38dp"
+        android:background="@android:color/transparent"
         app:srcCompat="@drawable/player_formation" />
 
     <ImageButton
-        android:id="@+id/LeftDefense"
+        android:id="@+id/CenterMiddle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/CenterDefense"
-        android:layout_marginEnd="54dp"
-        android:layout_toStartOf="@+id/CenterDefense"
-        android:background="@null"
+        android:layout_above="@+id/CenterDefender"
+        android:layout_alignEnd="@+id/CenterDefender"
+        android:layout_alignRight="@+id/CenterDefender"
+        android:layout_marginBottom="29dp"
+        android:background="@android:color/transparent"
         app:srcCompat="@drawable/player_formation" />
 
     <ImageButton
-        android:id="@+id/RightDefense"
+        android:id="@+id/LeftDefender"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/CenterDefense"
-        android:layout_marginStart="48dp"
-        android:background="@null"
-        android:layout_toEndOf="@+id/CenterDefense"
+        android:layout_below="@+id/CenterMiddle"
+        android:layout_marginEnd="36dp"
+        android:layout_marginRight="36dp"
+        android:layout_toLeftOf="@+id/CenterDefender"
+        android:layout_toStartOf="@+id/CenterDefender"
+        android:background="@android:color/transparent"
         app:srcCompat="@drawable/player_formation" />
 
     <ImageButton
-        android:id="@+id/CenterMid"
+        android:id="@+id/RightDefender"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/CenterDefense"
-        android:layout_marginBottom="35dp"
-        android:layout_toEndOf="@+id/LeftDefense"
-        android:background="@null"
+        android:layout_below="@+id/CenterMiddle"
+        android:layout_marginLeft="36dp"
+        android:layout_marginStart="36dp"
+        android:layout_toEndOf="@+id/CenterDefender"
+        android:layout_toRightOf="@+id/CenterDefender"
+        android:background="@android:color/transparent"
         app:srcCompat="@drawable/player_formation" />
 
     <ImageButton
-        android:id="@+id/RightMid"
+        android:id="@+id/LeftMiddle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/CenterMid"
-        android:layout_alignEnd="@+id/RightDefense"
-        android:background="@null"
+        android:layout_alignBottom="@+id/CenterMiddle"
+        android:layout_alignEnd="@+id/LeftDefender"
+        android:layout_alignRight="@+id/LeftDefender"
+        android:background="@android:color/transparent"
         app:srcCompat="@drawable/player_formation" />
 
     <ImageButton
-        android:id="@+id/LeftMid"
+        android:id="@+id/RightMiddle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/CenterMid"
-        android:layout_alignStart="@+id/LeftDefense"
-        android:background="@null"
+        android:layout_alignLeft="@+id/RightDefender"
+        android:layout_alignStart="@+id/RightDefender"
+        android:layout_alignTop="@+id/CenterMiddle"
+        android:background="@android:color/transparent"
         app:srcCompat="@drawable/player_formation" />
 
     <ImageButton
         android:id="@+id/LeftStriker"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/LeftMid"
-        android:layout_marginBottom="40dp"
-        android:layout_toStartOf="@+id/CenterMid"
-        android:background="@null"
+        android:layout_above="@+id/CenterMiddle"
+        android:layout_alignLeft="@+id/LeftMiddle"
+        android:layout_alignStart="@+id/LeftMiddle"
+        android:layout_marginBottom="19dp"
+        android:layout_marginLeft="47dp"
+        android:layout_marginStart="47dp"
+        android:background="@android:color/transparent"
         app:srcCompat="@drawable/player_formation" />
 
     <ImageButton
@@ -90,116 +101,168 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignTop="@+id/LeftStriker"
-        android:background="@null"
-        android:layout_toEndOf="@+id/CenterMid"
+        android:layout_marginLeft="39dp"
+        android:layout_marginStart="39dp"
+        android:layout_toEndOf="@+id/LeftStriker"
+        android:layout_toRightOf="@+id/LeftStriker"
+        android:background="@android:color/transparent"
         app:srcCompat="@drawable/player_formation" />
 
-    <TextView
-        android:id="@+id/GoalieText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
+    <Button
+        android:id="@+id/BackButton"
+        android:layout_width="150dp"
+        android:layout_height="35dp"
+        android:layout_above="@+id/LeftStriker"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="20dp"
-        android:textColor="#000000"
-        android:text="Goalie" />
-
-    <TextView
-        android:id="@+id/CenterDefenseText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/LeftDefense"
-        android:layout_centerHorizontal="true"
-        android:textColor="#000000"
-        android:text="C. Defense" />
-
-    <TextView
-        android:id="@+id/LeftDefenseText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/LeftDefense"
-        android:layout_toStartOf="@+id/LeftStriker"
-        android:textColor="#000000"
-        android:text="L. Defense" />
-
-    <TextView
-        android:id="@+id/RightDefenseText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-
-        android:layout_below="@+id/LeftDefense"
-        android:layout_toEndOf="@+id/RightStriker"
-        android:text="R. Defense"
-        android:textColor="#000000" />
-
-    <TextView
-        android:id="@+id/CenterMidText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/RightMid"
-        android:layout_centerHorizontal="true"
-        android:textColor="#000000"
-        android:text="C. Mid" />
-
-    <TextView
-        android:id="@+id/LeftMidText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/LeftMid"
-        android:layout_below="@+id/LeftMid"
-        android:text="L. Mid"
-        android:textColor="#000000" />
-
-    <TextView
-        android:id="@+id/RightMidText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-
-        android:layout_alignStart="@+id/RightMid"
-        android:layout_below="@+id/RightMid"
-        android:text="R. Mid"
-        android:textColor="#000000" />
-
-    <TextView
-        android:id="@+id/LeftStrikerText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/RightStriker"
-        android:layout_toEndOf="@+id/LeftMid"
-        android:textColor="#000000"
-        android:text="L. Striker" />
-
-    <TextView
-        android:id="@+id/RightStrikerText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/RightStriker"
-        android:layout_toEndOf="@+id/CenterMidText"
-        android:text="R. Striker"
-        android:textColor="#000000" />
+        android:layout_marginBottom="40dp"
+        android:background="@drawable/rounded_rec"
+        android:text="Return" />
 
     <Button
         android:id="@+id/StartGameButton"
+        android:layout_width="150dp"
+        android:layout_height="35dp"
+        android:layout_above="@+id/BackButton"
+        android:layout_alignLeft="@+id/BackButton"
+        android:layout_alignStart="@+id/BackButton"
+        android:layout_marginBottom="22dp"
+        android:background="@drawable/rounded_rec"
+        android:text="Start Match" />
+
+    <TextView
+        android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/Goalie"
+        android:layout_alignLeft="@+id/Goalie"
+        android:layout_alignParentBottom="true"
+        android:layout_alignRight="@+id/Goalie"
+        android:layout_alignStart="@+id/Goalie"
+        android:layout_marginBottom="44dp"
+        android:gravity="center"
+        android:text="Goalie"
+        android:textSize="12dp"
+        android:textColor="@color/colorPrimary"
+        android:textStyle="bold" />
 
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="9dp"
-        android:layout_toEndOf="@+id/RightMid"
-        android:layout_toRightOf="@+id/RightMid"
-        android:background="@drawable/rounded_rec"
-        android:text="  Start Game  "
-        android:textSize="15sp" />
-
-    z<Button
-        android:id="@+id/BackButton"
+    <TextView
+        android:id="@+id/textView5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/StartGameButton"
-        android:layout_alignBottom="@+id/StartGameButton"
-        android:layout_toLeftOf="@+id/LeftDefenseText"
-        android:layout_toStartOf="@+id/LeftDefenseText"
-        android:background="@drawable/rounded_rec"
-        android:text="Back"
-        android:textSize="15sp" />
+        android:layout_alignEnd="@+id/LeftDefender"
+        android:layout_alignLeft="@+id/LeftDefender"
+        android:layout_alignRight="@+id/LeftDefender"
+        android:layout_alignStart="@+id/LeftDefender"
+        android:layout_below="@+id/LeftDefender"
+        android:gravity="center"
+        android:text="L. Defender"
+        android:textSize="12dp"
+        android:textColor="@color/colorPrimary"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/CenterDefender"
+        android:layout_alignRight="@+id/CenterDefender"
+        android:layout_below="@+id/RightDefender"
+        android:layout_toEndOf="@+id/LeftDefender"
+        android:layout_toRightOf="@+id/LeftDefender"
+        android:gravity="center"
+        android:text="C. Defender"
+        android:textSize="12dp"
+        android:textColor="@color/colorPrimary"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/RightDefender"
+        android:layout_alignLeft="@+id/RightDefender"
+        android:layout_alignRight="@+id/RightDefender"
+        android:layout_alignStart="@+id/RightDefender"
+        android:layout_alignTop="@+id/textView6"
+        android:gravity="center"
+        android:text="R. Defender"
+        android:textSize="12dp"
+        android:textColor="@color/colorPrimary"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/LeftMiddle"
+        android:layout_alignLeft="@+id/LeftMiddle"
+        android:layout_alignRight="@+id/LeftMiddle"
+        android:layout_alignStart="@+id/LeftMiddle"
+        android:layout_below="@+id/LeftMiddle"
+        android:gravity="center"
+        android:text="L. Middle"
+        android:textSize="12dp"
+        android:textColor="@color/colorPrimary"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/textView8"
+        android:layout_alignBottom="@+id/textView8"
+        android:layout_alignLeft="@+id/CenterMiddle"
+        android:layout_alignStart="@+id/CenterMiddle"
+        android:layout_toLeftOf="@+id/RightDefender"
+        android:layout_toStartOf="@+id/RightDefender"
+        android:gravity="center"
+        android:text="C. Middle"
+        android:textSize="12dp"
+        android:textColor="@color/colorPrimary"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/RightMiddle"
+        android:layout_alignLeft="@+id/RightMiddle"
+        android:layout_alignRight="@+id/RightMiddle"
+        android:layout_alignStart="@+id/RightMiddle"
+        android:layout_alignTop="@+id/textView9"
+        android:gravity="center"
+        android:text="R. Middle"
+        android:textSize="12dp"
+        android:textColor="@color/colorPrimary"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/textView11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/LeftStriker"
+        android:layout_alignLeft="@+id/LeftStriker"
+        android:layout_alignRight="@+id/LeftStriker"
+        android:layout_alignStart="@+id/LeftStriker"
+        android:layout_below="@+id/RightStriker"
+        android:gravity="center"
+        android:text="L. Striker"
+        android:textSize="12dp"
+        android:textColor="@color/colorPrimary"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/textView12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/RightStriker"
+        android:layout_alignLeft="@+id/RightStriker"
+        android:layout_alignRight="@+id/RightStriker"
+        android:layout_alignStart="@+id/RightStriker"
+        android:layout_below="@+id/RightStriker"
+        android:gravity="center"
+        android:textSize="12dp"
+        android:text="R. Striker"
+        android:textColor="@color/colorPrimary"
+        android:textStyle="bold" />
 </RelativeLayout>

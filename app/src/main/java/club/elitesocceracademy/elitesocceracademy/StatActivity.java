@@ -9,10 +9,7 @@ import android.widget.AdapterView;
 
 public class StatActivity extends RosterActivity {
 
-    String[] mobileArray = {"Vanessa Flores","Kassandra Gonzalez","Ava Hick","Skylar Hubbard",
-            "Maryah Maldonado","Ellana Mena","Mackenzie Molina","Ashlyn Morales",
-            "Rebekah Strickland",
-            "Paige Troyer", "Sophia Uliani", "Alyssa Vargas", "Rachel Wiltgen"};
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

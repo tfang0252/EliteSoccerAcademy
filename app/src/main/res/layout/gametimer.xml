@@ -1,334 +1,72 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android" android:orientation="vertical" android:padding="4dip"
+    android:gravity="center_horizontal"
     android:layout_width="match_parent"
-    android:background="#D3D3D3"
     android:layout_height="match_parent">
 
     <Chronometer
-        android:id="@+id/gametimer"
-        android:layout_width="100dp"
-        android:layout_height="wrap_content"
+        android:id="@+id/chronometer"
+        android:layout_width="345dp"
+        android:layout_height="80dp"
+        android:layout_alignLeft="@+id/stop"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="21dp"
-        android:gravity="center_horizontal"
-        android:textSize="25sp" />
+        android:layout_alignStart="@+id/stop"
+        android:layout_marginTop="22dp"
+        android:background="@drawable/timer_box"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:textSize="50dp" />
 
-    <ImageButton
-        android:id="@+id/StartButton"
-        android:layout_width="130dp"
-        android:layout_height="130dp"
+    <Button
+        android:id="@+id/stop"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/start"
+        android:layout_alignStart="@+id/start"
+        android:layout_below="@+id/chronometer"
+        android:layout_marginTop="12dp"
+        android:text="@string/chronometer_stop"
+        android:background="@drawable/stop_button"
+        android:visibility="invisible" />
+
+    <Button
+        android:id="@+id/start"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/stop"
+        android:layout_alignBottom="@+id/stop"
+        android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_below="@+id/gametimer"
-        android:background="#D3D3D3"
-        app:srcCompat="@drawable/playbutton"
-        android:layout_alignParentLeft="true" />
+        android:layout_marginLeft="34dp"
+        android:layout_marginStart="34dp"
+        android:background="@drawable/start_button"
+        android:text="@string/chronometer_start"
+        android:visibility="visible">
 
-    <ImageButton
-        android:id="@+id/PauseButton"
-        android:layout_width="130dp"
-        android:layout_height="130dp"
-        android:layout_below="@+id/gametimer"
-        android:layout_toEndOf="@+id/StartButton"
-        android:background="#D3D3D3"
-        app:srcCompat="@drawable/pausebutton"
-        android:layout_toRightOf="@+id/LeftButton"
-        tools:ignore="UnknownId" />
+        <requestFocus />
+    </Button>
 
-    <ImageButton
-        android:id="@+id/StopButton"
-        android:layout_width="130dp"
-        android:layout_height="130dp"
-        android:layout_alignTop="@+id/PauseButton"
-        android:layout_toEndOf="@+id/PauseButton"
-        android:background="#D3D3D3"
-        app:srcCompat="@drawable/stopbutton"
-        android:layout_toRightOf="@+id/PauseButton" />
-
-    <TextView
-        android:id="@+id/PlayerText"
-        android:layout_width="wrap_content"
+    <Button
+        android:id="@+id/reset"
+        android:layout_width="150dp"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/StartButton"
-        android:layout_marginEnd="30dp"
-        android:layout_marginTop="28dp"
-        android:layout_toStartOf="@+id/PauseButton"
-        android:text="Player"
-        android:textColor="#000000"
-        android:textSize="25sp"
-        android:layout_marginRight="30dp"
-        android:layout_toLeftOf="@+id/PauseButton" />
+        android:layout_alignBaseline="@+id/stop"
+        android:layout_alignBottom="@+id/stop"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginEnd="26dp"
+        android:layout_marginRight="26dp"
+        android:background="@drawable/reset_button"
+        android:textColor="@color/colorPrimary"
+        android:text="@string/chronometer_reset" />
 
-    <TextView
-        android:id="@+id/StatusText"
-        android:layout_width="wrap_content"
+    <ListView
+        android:id="@+id/listView"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/PlayerText"
-        android:layout_alignBottom="@+id/PlayerText"
-        android:layout_marginStart="21dp"
-        android:layout_toEndOf="@+id/PauseButton"
-        android:text="Status"
-        android:textColor="#000000"
-        android:textSize="25sp"
-        android:layout_marginLeft="21dp"
-        android:layout_toRightOf="@+id/PauseButton" />
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/stop"
+        android:layout_marginTop="11dp"></ListView>
 
-    <ScrollView
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:layout_below="@+id/PlayerText">
-        <TableLayout
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            android:layout_alignParentStart="true"
-            android:isScrollContainer="true"
-            android:layout_alignParentLeft="true">
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:padding="5dip">
-
-                <TextView
-                    android:id="@+id/Player1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Skylar"
-                    android:textColor="#000000"
-                    android:textSize="14sp" />
-
-                <Switch
-                    android:id="@+id/switch1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:paddingRight="44dp"/>
-
-            </TableRow>
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:padding="5dip">
-
-                <TextView
-                    android:id="@+id/Player2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textColor="#000000"
-                    android:layout_weight="1"
-                    android:textSize="14dp"
-                    android:text="Kassandra" />
-
-                <Switch
-                    android:id="@+id/switch2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:paddingRight="44dp"/>
-            </TableRow>
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:padding="5dip">
-
-                <TextView
-                    android:id="@+id/Player3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textColor="#000000"
-                    android:layout_weight="1"
-                    android:textSize="14dp"
-                    android:text="Maryah" />
-
-                <Switch
-                    android:id="@+id/switch3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:paddingRight="44dp"/>
-            </TableRow>
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:padding="5dip">
-
-                <TextView
-                    android:id="@+id/Player4"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textColor="#000000"
-                    android:layout_weight="1"
-                    android:textSize="14dp"
-                    android:text="Rachel" />
-
-                <Switch
-                    android:id="@+id/switch4"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:paddingRight="44dp"/>
-            </TableRow>
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:padding="5dip">
-
-                <TextView
-                    android:id="@+id/Player5"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textColor="#000000"
-                    android:layout_weight="1"
-                    android:textSize="14dp"
-                    android:text="Ava" />
-
-                <Switch
-                    android:id="@+id/switch5"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:paddingRight="44dp"/>
-            </TableRow>
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:padding="5dip">
-
-                <TextView
-                    android:id="@+id/Player6"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textColor="#000000"
-                    android:layout_weight="1"
-                    android:textSize="14dp"
-                    android:text="Vanessa" />
-
-                <Switch
-                    android:id="@+id/switch7"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:paddingRight="44dp"/>
-            </TableRow>
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:padding="5dip">
-
-                <TextView
-                    android:id="@+id/Player8"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textColor="#000000"
-                    android:layout_weight="1"
-                    android:textSize="14dp"
-                    android:text="Ellana" />
-
-                <Switch
-                    android:id="@+id/switch8"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:paddingRight="44dp"/>
-            </TableRow>
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:padding="5dip">
-
-                <TextView
-                    android:id="@+id/Player9"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textColor="#000000"
-                    android:layout_weight="1"
-                    android:textSize="14dp"
-                    android:text="MacKenzie" />
-
-                <Switch
-                    android:id="@+id/switch9"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:paddingRight="44dp"/>
-            </TableRow>
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:padding="5dip">
-
-                <TextView
-                    android:id="@+id/Player10"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textColor="#000000"
-                    android:layout_weight="1"
-                    android:textSize="14dp"
-                    android:text="Ashlyn" />
-
-                <Switch
-                    android:id="@+id/switch10"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:paddingRight="44dp"/>
-            </TableRow>
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:padding="5dip">
-
-                <TextView
-                    android:id="@+id/Player11"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textColor="#000000"
-                    android:layout_weight="1"
-                    android:textSize="14dp"
-                    android:text="Rebekah" />
-
-                <Switch
-                    android:id="@+id/switch11"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:paddingRight="44dp"/>
-            </TableRow>
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:padding="5dip">
-
-                <TextView
-                    android:id="@+id/Player12"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textColor="#000000"
-                    android:layout_weight="1"
-                    android:textSize="14dp"
-                    android:text="Sophia" />
-
-                <Switch
-                    android:id="@+id/switch12"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:paddingRight="44dp"/>
-            </TableRow>
-        </TableLayout>
-
-    </ScrollView>
 </RelativeLayout>

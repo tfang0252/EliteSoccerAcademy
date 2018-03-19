@@ -11,7 +11,7 @@ public class Formation extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.formation3);
+        setContentView(R.layout.activity_formation);
 
         Button BackButton = (Button)findViewById(R.id.BackButton);
         BackButton.setOnClickListener(new View.OnClickListener() {

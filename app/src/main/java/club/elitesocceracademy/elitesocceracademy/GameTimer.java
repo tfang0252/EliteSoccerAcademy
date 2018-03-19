@@ -12,11 +12,16 @@ import android.widget.Button;
 import android.widget.Chronometer;
 import android.widget.ListView;
 
+import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.TimeUnit;
+
 public class GameTimer extends RosterActivity {
-    Chronometer mChronometer;
-    Button startButton;
-    Button stopButton;
-    Button resetButton;
+    private Chronometer mChronometer;
+    private Button startButton;
+    private Button stopButton;
+    private Button resetButton;
+    private int minutesPassed;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,7 +39,7 @@ public class GameTimer extends RosterActivity {
 
 
         mChronometer = (Chronometer) findViewById(R.id.chronometer);
-
+        minutesPassed = 0;
         // Watch for button clicks.
 
         startButton.setOnClickListener(mStartListener);
@@ -46,12 +51,24 @@ public class GameTimer extends RosterActivity {
         resetButton.setOnClickListener(mResetListener);
 
 
+
+
+
     }
+
+    Runnable helloRunnable = new Runnable() {
+        public void run() {
+            minutesPassed++;
+            System.out.println(minutesPassed);
+        }
+    };
 
     View.OnClickListener mStartListener = new OnClickListener() {
         public void onClick(View v) {
             startButton.setVisibility(View.INVISIBLE);
             stopButton.setVisibility(View.VISIBLE);
+            ScheduledExecutorService executor = Executors.newScheduledThreadPool(1);
+            executor.scheduleAtFixedRate(helloRunnable, 0, 1, TimeUnit.MINUTES);
             mChronometer.start();
         }
     };
@@ -68,6 +85,7 @@ public class GameTimer extends RosterActivity {
         public void onClick(View v) {
             stopButton.setVisibility(View.INVISIBLE);
             startButton.setVisibility(View.VISIBLE);
+            mChronometer.stop();
             mChronometer.setBase(SystemClock.elapsedRealtime());
         }
     };

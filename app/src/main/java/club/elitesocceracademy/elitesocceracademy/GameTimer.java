@@ -58,8 +58,16 @@ public class GameTimer extends RosterActivity {
 
     Runnable helloRunnable = new Runnable() {
         public void run() {
-            minutesPassed++;
+            while(minutesPassed==1){
+                try {
+                    startActivity(new Intent(GameTimer.this, FirstHalfNotes.class));
+                    wait();
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+        }
             System.out.println(minutesPassed);
+            minutesPassed++;
         }
     };
 
@@ -68,7 +76,7 @@ public class GameTimer extends RosterActivity {
             startButton.setVisibility(View.INVISIBLE);
             stopButton.setVisibility(View.VISIBLE);
             ScheduledExecutorService executor = Executors.newScheduledThreadPool(1);
-            executor.scheduleAtFixedRate(helloRunnable, 0, 1, TimeUnit.MINUTES);
+            executor.scheduleAtFixedRate(helloRunnable, 0, 60, TimeUnit.SECONDS);
             mChronometer.start();
         }
     };

@@ -15,7 +15,7 @@ public class FirstHalfNotes extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.gamenotes);
 
-        Button StartNextHalfButton = (Button)findViewById(R.id.EndGameButton);
+        Button StartNextHalfButton= (Button)findViewById(R.id.StartNextHalf);
         StartNextHalfButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

@@ -6,7 +6,7 @@
 
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/StartNextHalf"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
@@ -31,10 +31,11 @@
         android:id="@+id/editText"
         android:layout_width="350dp"
         android:layout_height="280dp"
-        android:layout_above="@+id/button"
+        android:layout_above="@+id/StartNextHalf"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="23dp"
         android:ems="10"
+        android:gravity="top"
         android:background="@drawable/textarea"
         android:inputType="textMultiLine" />
 
@@ -69,12 +70,13 @@
         android:layout_width="60dp"
         android:layout_height="60dp"
         android:layout_above="@+id/textView14"
-        android:layout_alignLeft="@+id/button"
-        android:layout_alignStart="@+id/button"
+        android:layout_alignLeft="@+id/StartNextHalf"
+        android:layout_alignStart="@+id/StartNextHalf"
         android:background="@drawable/textarea"
         android:ems="10"
         android:inputType="number"
-        android:textSize="20dp" />
+        android:gravity="center"
+        android:textSize="25dp" />
 
     <EditText
         android:id="@+id/editText3"
@@ -86,7 +88,8 @@
         android:background="@drawable/textarea"
         android:ems="10"
         android:inputType="number"
-        android:textSize="20dp" />
+        android:gravity="center"
+        android:textSize="25dp" />
 
     <TextView
         android:id="@+id/textView17"

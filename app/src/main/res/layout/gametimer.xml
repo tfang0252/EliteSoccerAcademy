@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <Chronometer
+    <TextView
         android:id="@+id/chronometer"
         android:layout_width="345dp"
         android:layout_height="80dp"
@@ -14,6 +14,7 @@
         android:layout_marginTop="22dp"
         android:background="@drawable/timer_box"
         android:gravity="center"
+        android:text=""
         android:textColor="@color/white"
         android:textSize="50dp" />
 

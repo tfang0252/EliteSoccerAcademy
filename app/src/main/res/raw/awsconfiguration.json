@@ -1,0 +1,33 @@
+{
+  "UserAgent": "MobileHub/1.0",
+  "Version": "1.0",
+  "CredentialsProvider": {
+    "CognitoIdentity": {
+      "Default": {
+        "PoolId": "us-east-1:c86b1a67-5b39-48df-9f64-6a2e35845c3f",
+        "Region": "us-east-1"
+      }
+    }
+  },
+  "IdentityManager": {
+    "Default": {}
+  },
+  "PinpointAnalytics": {
+    "Default": {
+      "AppId": "2fb9c80b6c8541a5ba7d226aadeca4bb",
+      "Region": "us-east-1"
+    }
+  },
+  "PinpointTargeting": {
+    "Default": {
+      "Region": "us-east-1"
+    }
+  },
+
+  "S3TransferUtility": {
+    "Default": {
+      "Bucket": "elite-soccer-academy",
+      "Region": "us-east-1"
+    }
+  }
+}

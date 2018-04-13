@@ -19,6 +19,7 @@ public class MainMenu extends AppCompatActivity {
         announcementButton();
         homeworkButton();
         practiceButton();
+        settingsButton();
     }
 
     private void rosterButton() {
@@ -82,6 +83,17 @@ public class MainMenu extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(MainMenu.this, PracticeMainMenu.class));
+            }
+        });
+    }
+
+    private void settingsButton() {
+        ImageButton btn = (ImageButton) findViewById(R.id.settingsBtn);
+
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainMenu.this, AWS.class));
             }
         });
     }

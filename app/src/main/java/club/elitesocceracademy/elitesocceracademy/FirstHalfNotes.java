@@ -10,7 +10,7 @@ import android.widget.Button;
  * Created by zfred on 3/12/2018.
  */
 
-public class FirstHalfNotes extends AppCompatActivity {
+public class FirstHalfNotes extends GameTimer {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.gamenotes);
@@ -19,6 +19,7 @@ public class FirstHalfNotes extends AppCompatActivity {
         StartNextHalfButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                //timeLeftInSeconds = 30;
                 startActivity(new Intent(FirstHalfNotes.this, GameTimer.class));
             }
         });

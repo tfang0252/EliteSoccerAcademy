@@ -21,7 +21,7 @@ import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 
 public class GameTimer extends RosterActivity {
-    private Chronometer mChronometer;
+
     private Button startButton;
     private Button stopButton;
     private Button resetButton;
@@ -32,7 +32,7 @@ public class GameTimer extends RosterActivity {
     private TextView chronometer;
     static int tempTime;
     private static int startingTime = 1500;
-    //
+    private MyCustomAdapter adapter = new MyCustomAdapter(RosterActivity.list, this);
     public static int timeLeftInSeconds = startingTime;
     //When the timer is stopped the time remaining originalTime is used to reset the GUI label.
     public static int originalTime = timeLeftInSeconds;
@@ -41,6 +41,10 @@ public class GameTimer extends RosterActivity {
     //Creates and instance of the timer
     public static Timer timer = new Timer();
     private static String updateTimerLabel;
+
+    PlayerTimers playerTimers;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,13 +55,24 @@ public class GameTimer extends RosterActivity {
         resetButton = (Button) findViewById(R.id.reset);
         stopButton = (Button) findViewById(R.id.stop);
         chronometer  = (TextView)findViewById(R.id.chronometer);
+        playerTimers = new PlayerTimers(chronometer,timeLeftInSeconds);
 
-        MyCustomAdapter adapter = new MyCustomAdapter(RosterActivity.list, this);
         ToggleButton toggle = (ToggleButton) findViewById(R.id.toggle_btn);
         final ListView listView = (ListView) findViewById(R.id.listView);
         listView.setAdapter(adapter);
 
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                // Get the selected item text from ListView
+                String selectedItem = (String) parent.getItemAtPosition(position);
+                adapter.getTimers(selectedItem,position,playerTimers.timeLeftInSeconds);
 
+
+
+
+            }
+        });
 
 
 
@@ -85,63 +100,7 @@ public class GameTimer extends RosterActivity {
         public void onClick(View v) {
             startButton.setVisibility(View.INVISIBLE);
             stopButton.setVisibility(View.VISIBLE);
-            //mChronometer.start();
-            //ScheduledExecutorService executor = Executors.newScheduledThreadPool(1);
-            //executor.scheduleAtFixedRate(halfTimeClock, 0, 1, TimeUnit.SECONDS);
-            timer.scheduleAtFixedRate(new TimerTask() { // Below is the timerTask }, 0, 1000);
-                // (i = minutes -1) so that the timer will not start with an extra minute
-                int i = timeLeftInSeconds / 60; // minutes
-                int j = timeLeftInSeconds % 60; // seconds
-
-
-                public void run() {
-
-                    updateTimerLabel = timeLeftInSeconds + "";
-                    //GUI.updateLabel(updateTimerLabel);
-                    j--;
-                    timeLeftInSeconds--;
-
-                    if (j < 0) {
-                        i--;
-                        j = 59;
-
-                    }
-                    // Updates the GUI's label with the time every second for second values of 10 or greater.
-                    if (j >= 10) {
-                        // Creates a string and saves it to the updateTimerLabel variable
-                        updateTimerLabel = i + ":" + j;
-                        // System.out.println(updateTimerLabel);
-                        tempTime = timeLeftInSeconds;
-                        chronometer.setText(updateTimerLabel);
-
-                    }
-                    // Updates the GUI's label with the time every second for second values less than 10.
-                    //This basically formats the GUI label to have a double zero for seconds ex. :00.
-                    else
-                        // Creates a string and saves it to the updateTimerLabel variable
-                        updateTimerLabel = i + ":0" + j;
-                    tempTime = timeLeftInSeconds;
-                    chronometer.setText(updateTimerLabel);
-
-                    // System.out.println(i + ":0" + j);
-
-                    // Updates the GUI's label when the timer's minutes and seconds are zero.
-                    if (i == 0 && j == 0) {
-                        // Stops the timer and purges it when the timer's minutes and seconds are both zero.
-                        timer.cancel();
-                        timer.purge();
-                        updateTimerLabel = "00:00";
-                        chronometer.setText(updateTimerLabel);
-
-
-
-                        // System.out.println("End of the game.");
-                    }
-
-                }// End of run method
-
-
-            }, 0, 1000);
+            playerTimers.startTimer();
         }
     };
 
@@ -151,10 +110,7 @@ public class GameTimer extends RosterActivity {
         public void onClick(View v) {
             stopButton.setVisibility(View.INVISIBLE);
             startButton.setVisibility(View.VISIBLE);
-            timer.cancel();
-            timer.purge();
-            timer = new Timer();
-            tempTime = timeLeftInSeconds;
+            PlayerTimers.stopTimer();
 
 
         }
@@ -166,31 +122,26 @@ public class GameTimer extends RosterActivity {
         public void onClick(View v) {
             stopButton.setVisibility(View.INVISIBLE);
             startButton.setVisibility(View.VISIBLE);
-            timer.cancel();
-            timer.purge();
-            timer = new Timer();
-            timeLeftInSeconds = originalTime;
-            updateTimerLabel = originalTime / 60 + ":00";
-            chronometer.setText(updateTimerLabel);
+            PlayerTimers.restartTimer();
 
 
-           // mChronometer.setBase(SystemClock.elapsedRealtime());
+            // mChronometer.setBase(SystemClock.elapsedRealtime());
         }
     };
 
 
 
-    View.OnClickListener mSetFormatListener = new OnClickListener() {
-        public void onClick(View v) {
-            //mChronometer.setFormat("Formatted time (%s)");
-        }
-    };
 
-    View.OnClickListener mClearFormatListener = new OnClickListener() {
-        public void onClick(View v) {
-            //mChronometer.setFormat(null);
-        }
-    };
+
+
+
+
+
+
+
+   
+
+
 
 
 }

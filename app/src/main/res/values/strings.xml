@@ -13,6 +13,7 @@
     <string name="permission_rationale">"Contacts permissions are needed for providing email
         completions."
     </string>
+
     <string name="chronometer_start">Start</string>
     <string name="chronometer_stop">Stop</string>
     <string name="chronometer_reset">Reset</string>

@@ -11,7 +11,7 @@
         android:id="@+id/Goalie"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/textView4"
+        android:layout_above="@+id/goalieText"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="8dp"
         android:background="@android:color/transparent"
@@ -130,7 +130,7 @@
         android:text="Start Match" />
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/goalieText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignEnd="@+id/Goalie"
@@ -146,7 +146,7 @@
         android:textStyle="bold" />
 
     <TextView
-        android:id="@+id/textView5"
+        android:id="@+id/leftDefText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignEnd="@+id/LeftDefender"
@@ -156,12 +156,12 @@
         android:layout_below="@+id/LeftDefender"
         android:gravity="center"
         android:text="L. Defender"
-        android:textSize="12dp"
         android:textColor="@color/colorPrimary"
+        android:textSize="12dp"
         android:textStyle="bold" />
 
     <TextView
-        android:id="@+id/textView6"
+        android:id="@+id/CenterDefText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignEnd="@+id/CenterDefender"
@@ -176,22 +176,22 @@
         android:textStyle="bold" />
 
     <TextView
-        android:id="@+id/textView7"
+        android:id="@+id/rightDefText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignEnd="@+id/RightDefender"
         android:layout_alignLeft="@+id/RightDefender"
         android:layout_alignRight="@+id/RightDefender"
         android:layout_alignStart="@+id/RightDefender"
-        android:layout_alignTop="@+id/textView6"
+        android:layout_alignTop="@+id/CenterDefText"
         android:gravity="center"
         android:text="R. Defender"
-        android:textSize="12dp"
         android:textColor="@color/colorPrimary"
+        android:textSize="12dp"
         android:textStyle="bold" />
 
     <TextView
-        android:id="@+id/textView8"
+        android:id="@+id/leftMidText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignEnd="@+id/LeftMiddle"
@@ -206,11 +206,11 @@
         android:textStyle="bold" />
 
     <TextView
-        android:id="@+id/textView9"
+        android:id="@+id/centerMidText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/textView8"
-        android:layout_alignBottom="@+id/textView8"
+        android:layout_alignBaseline="@+id/leftMidText"
+        android:layout_alignBottom="@+id/leftMidText"
         android:layout_alignLeft="@+id/CenterMiddle"
         android:layout_alignStart="@+id/CenterMiddle"
         android:layout_toLeftOf="@+id/RightDefender"
@@ -222,22 +222,22 @@
         android:textStyle="bold" />
 
     <TextView
-        android:id="@+id/textView10"
+        android:id="@+id/rightMidText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignEnd="@+id/RightMiddle"
         android:layout_alignLeft="@+id/RightMiddle"
         android:layout_alignRight="@+id/RightMiddle"
         android:layout_alignStart="@+id/RightMiddle"
-        android:layout_alignTop="@+id/textView9"
+        android:layout_alignTop="@+id/centerMidText"
         android:gravity="center"
         android:text="R. Middle"
-        android:textSize="12dp"
         android:textColor="@color/colorPrimary"
+        android:textSize="12dp"
         android:textStyle="bold" />
 
     <TextView
-        android:id="@+id/textView11"
+        android:id="@+id/leftStrikerText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignEnd="@+id/LeftStriker"
@@ -247,12 +247,12 @@
         android:layout_below="@+id/RightStriker"
         android:gravity="center"
         android:text="L. Striker"
-        android:textSize="12dp"
         android:textColor="@color/colorPrimary"
+        android:textSize="12dp"
         android:textStyle="bold" />
 
     <TextView
-        android:id="@+id/textView12"
+        android:id="@+id/rightStrikerText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignEnd="@+id/RightStriker"
@@ -261,8 +261,8 @@
         android:layout_alignStart="@+id/RightStriker"
         android:layout_below="@+id/RightStriker"
         android:gravity="center"
-        android:textSize="12dp"
         android:text="R. Striker"
         android:textColor="@color/colorPrimary"
+        android:textSize="12dp"
         android:textStyle="bold" />
 </RelativeLayout>

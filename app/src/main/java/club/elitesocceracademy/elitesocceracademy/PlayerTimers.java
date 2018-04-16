@@ -28,13 +28,16 @@ public class PlayerTimers {
     public static Timer timer = new Timer();
     private static String updateTimerLabel;
 
-    PlayerTimers(TextView x,int timeLeftInSeconds){
+    PlayerTimers(TextView x){
        chronometer=x;
-       this.timeLeftInSeconds=timeLeftInSeconds;
     }
 
 
+
+
     public static void startTimer(){
+
+
 
         timer.scheduleAtFixedRate(new TimerTask() { // Below is the timerTask }, 0, 1000);
             // (i = minutes -1) so that the timer will not start with an extra minute
@@ -67,7 +70,7 @@ public class PlayerTimers {
                 //This basically formats the GUI label to have a double zero for seconds ex. :00.
                 else
                     // Creates a string and saves it to the updateTimerLabel variable
-                    // updateTimerLabel = i + ":0" + j;
+                    updateTimerLabel = i + ":0" + j;
                 tempTime = timeLeftInSeconds;
                 chronometer.setText(updateTimerLabel);
 

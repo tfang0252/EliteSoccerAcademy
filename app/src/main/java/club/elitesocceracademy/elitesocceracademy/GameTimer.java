@@ -14,6 +14,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.ToggleButton;
 
+import java.util.HashMap;
 import java.util.Timer;
 import java.util.TimerTask;
 import java.util.concurrent.Executors;
@@ -27,6 +28,7 @@ public class GameTimer extends RosterActivity {
     private Button resetButton;
     private int secondsPassed;
     int ageGroup;
+    protected static HashMap<String,Boolean> autoSwitch = new HashMap();
     int minutes;
     int seconds;
     private TextView chronometer;
@@ -55,7 +57,7 @@ public class GameTimer extends RosterActivity {
         resetButton = (Button) findViewById(R.id.reset);
         stopButton = (Button) findViewById(R.id.stop);
         chronometer  = (TextView)findViewById(R.id.chronometer);
-        playerTimers = new PlayerTimers(chronometer,timeLeftInSeconds);
+        playerTimers = new PlayerTimers(chronometer);
 
         ToggleButton toggle = (ToggleButton) findViewById(R.id.toggle_btn);
         final ListView listView = (ListView) findViewById(R.id.listView);
@@ -67,7 +69,7 @@ public class GameTimer extends RosterActivity {
                 // Get the selected item text from ListView
                 String selectedItem = (String) parent.getItemAtPosition(position);
                 adapter.getTimers(selectedItem,position,playerTimers.timeLeftInSeconds);
-
+                adapter.getTotalTime(selectedItem);
 
 
 
@@ -100,7 +102,10 @@ public class GameTimer extends RosterActivity {
         public void onClick(View v) {
             startButton.setVisibility(View.INVISIBLE);
             stopButton.setVisibility(View.VISIBLE);
+            toggleButtons();
             playerTimers.startTimer();
+
+
         }
     };
 
@@ -128,6 +133,16 @@ public class GameTimer extends RosterActivity {
             // mChronometer.setBase(SystemClock.elapsedRealtime());
         }
     };
+
+    public void toggleButtons(){
+        System.err.println("FML");
+        for (HashMap.Entry<String, Boolean> entry : autoSwitch.entrySet()) {
+            String key = entry.getKey();
+            Object value = entry.getValue();
+            System.out.println(key + " : " + value);
+
+        }
+    }
 
 
 

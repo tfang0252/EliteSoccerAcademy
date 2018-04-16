@@ -28,7 +28,7 @@ public class GameTimer extends RosterActivity {
     private Button resetButton;
     private int secondsPassed;
     int ageGroup;
-    protected static HashMap<String,Boolean> autoSwitch = new HashMap();
+
     int minutes;
     int seconds;
     private TextView chronometer;
@@ -102,7 +102,7 @@ public class GameTimer extends RosterActivity {
         public void onClick(View v) {
             startButton.setVisibility(View.INVISIBLE);
             stopButton.setVisibility(View.VISIBLE);
-            toggleButtons();
+            //adapter.toggleButtons();
             playerTimers.startTimer();
 
 
@@ -134,15 +134,7 @@ public class GameTimer extends RosterActivity {
         }
     };
 
-    public void toggleButtons(){
-        System.err.println("FML");
-        for (HashMap.Entry<String, Boolean> entry : autoSwitch.entrySet()) {
-            String key = entry.getKey();
-            Object value = entry.getValue();
-            System.out.println(key + " : " + value);
 
-        }
-    }
 
 
 

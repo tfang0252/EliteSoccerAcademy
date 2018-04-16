@@ -13,10 +13,12 @@ import android.widget.ToggleButton;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.LinkedList;
 
 public class MyCustomAdapter extends BaseAdapter implements ListAdapter {
     private ArrayList<String> list = new ArrayList<String>();
+    protected static ArrayList<String> onNames = new ArrayList<>();
     private Context context;
     private boolean onSwitch = false;
     private int time = 0;
@@ -28,7 +30,9 @@ public class MyCustomAdapter extends BaseAdapter implements ListAdapter {
     private HashMap<String, Integer> buttonTimeMap = new HashMap<>();
     private HashMap<String, LinkedList<Integer>> onTimeMap = new HashMap();
     private HashMap<String, LinkedList<Integer>> offTimeMap = new HashMap();
+    protected static HashMap<String, Boolean> autoSwitch = new HashMap();
     private HashMap<String, Integer> totalPlayerTime = new HashMap<>();
+    private ArrayList<Boolean> trueFalseList = new ArrayList<>();
     private ToggleButton deleteBtn;
     PlayerTimers playerTimers;
     //Formation formation;
@@ -50,6 +54,9 @@ public class MyCustomAdapter extends BaseAdapter implements ListAdapter {
             totalPlayerTime.put(players, time);
 
         }
+
+
+        toggleButtons();
 
     }
 
@@ -77,13 +84,16 @@ public class MyCustomAdapter extends BaseAdapter implements ListAdapter {
             view = inflater.inflate(R.layout.game_toggle_button, null);
         }
 
+       // ToggleButton button = view.findViewById(R.id.toggle_btn);
+        //button.setChecked(!trueFalseList.get(position));
+
         //Handle TextView and display string from your list
         TextView listItemText = (TextView) view.findViewById(R.id.list_item);
         listItemText.setText(list.get(position));
 
         //Handle buttons and add onClickListeners
-        deleteBtn = (ToggleButton) view.findViewById(R.id.toggle_btn);
-        deleteBtn.toggle();
+         deleteBtn = (ToggleButton) view.findViewById(R.id.toggle_btn);
+        deleteBtn.setChecked(trueFalseList.get(position));
 
         final int time = 0;
 
@@ -91,6 +101,8 @@ public class MyCustomAdapter extends BaseAdapter implements ListAdapter {
         deleteBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                System.out.println("kill me ");
                 buttonStatus(position);
                 notifyDataSetChanged();
             }
@@ -125,7 +137,7 @@ public class MyCustomAdapter extends BaseAdapter implements ListAdapter {
 
     public void calPlayerTime(String selectedItem, int timeLeft) {
         //if (timeSwitchMap.get(selectedItem))
-            //playerTimeMap.put(selectedItem, (buttonTimeMap.get(selectedItem) - timeLeft));
+        //playerTimeMap.put(selectedItem, (buttonTimeMap.get(selectedItem) - timeLeft));
     }
 
     public void getTotalTime(String selectedItem) {
@@ -142,13 +154,27 @@ public class MyCustomAdapter extends BaseAdapter implements ListAdapter {
             if (offTimeMap.get(selectedItem).isEmpty()) {
                 offTimeMap.get(selectedItem).add(onTimeMap.get(selectedItem).getLast());
             }
-                total = total + (onTimeMap.get(selectedItem).get(i) - offTimeMap.get(selectedItem).get(i));
+            total = total + (onTimeMap.get(selectedItem).get(i) - offTimeMap.get(selectedItem).get(i));
 
         }
-        totalPlayerTime.put(selectedItem,total);
+        totalPlayerTime.put(selectedItem, total);
         System.out.println(totalPlayerTime.get(selectedItem));
 
     }
+
+    public void toggleButtons() {
+        //System.err.println("FML");
+
+
+        for (String names : onNames) {
+            System.out.println("%%%%"+ names + " : " + autoSwitch.get(names));
+            trueFalseList.add(autoSwitch.get(names));
+            timeSwitchMap.put(names,autoSwitch.get(names));
+            //System.out.println("%%%%"+ names + " : " + autoSwitch.get(names));
+        }
+    }
+
+
 
 
 

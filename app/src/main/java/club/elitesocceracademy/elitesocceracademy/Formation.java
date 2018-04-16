@@ -34,7 +34,8 @@ public class Formation extends GameTimer {
         setContentView(R.layout.activity_formation);
 
         for (String players : list) {
-            autoSwitch.put(players, false);
+            adapter.onNames.add(players);
+            adapter.autoSwitch.put(players, false);
         }
 
 
@@ -178,9 +179,10 @@ public class Formation extends GameTimer {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 text.setText(player);
-                autoSwitch.put(player,true);
+                adapter.autoSwitch.put(playerName,true);
+                //adapter.onNames.add(playerNa);
 
-                System.out.println(autoSwitch.get(player));
+                //System.out.println(adapter.autoSwitch.get(playerName));
             }
         });
         builder.setNegativeButton("Cancel", null);

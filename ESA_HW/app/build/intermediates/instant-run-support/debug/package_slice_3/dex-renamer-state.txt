@@ -1,0 +1,4 @@
+#Mon Mar 12 15:51:05 EDT 2018
+base.0=C\:\\Users\\Danny\\Documents\\GitHub\\EliteSoccerAcademy\\ESA_HW\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\41
+path.0=classes.dex
+renamed.0=classes.dex

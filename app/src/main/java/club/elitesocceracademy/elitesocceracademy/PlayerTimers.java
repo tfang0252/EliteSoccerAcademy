@@ -18,7 +18,7 @@ public class PlayerTimers {
     private static MyCustomAdapter adapter;
     private static TextView chronometer;
     static int tempTime;
-    private static int startingTime = 1500;
+    protected static int startingTime = 1500;
     public static int timeLeftInSeconds = startingTime;
     //When the timer is stopped the time remaining originalTime is used to reset the GUI label.
     public static int originalTime = timeLeftInSeconds;

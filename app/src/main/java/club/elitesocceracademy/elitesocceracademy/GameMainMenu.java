@@ -39,13 +39,7 @@ public class GameMainMenu extends AppCompatActivity {
             }
         });
 
-        ImageButton AnnouncementButton = (ImageButton)findViewById(R.id.announcementBtn);
-        EditFormationButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(GameMainMenu.this, AnnouncementActivity.class));
-            }
-        });
+
 
     }
 

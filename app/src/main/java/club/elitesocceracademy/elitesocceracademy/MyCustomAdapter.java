@@ -32,7 +32,7 @@ public class MyCustomAdapter extends BaseAdapter implements ListAdapter {
     private HashMap<String, LinkedList<Integer>> offTimeMap = new HashMap();
     protected static HashMap<String, Boolean> autoSwitch = new HashMap();
     private HashMap<String, Integer> totalPlayerTime = new HashMap<>();
-    private ArrayList<Boolean> trueFalseList = new ArrayList<>();
+    private static LinkedList<Boolean> trueFalseList = new LinkedList<>();
     private ToggleButton deleteBtn;
     PlayerTimers playerTimers;
     //Formation formation;
@@ -46,18 +46,20 @@ public class MyCustomAdapter extends BaseAdapter implements ListAdapter {
             LinkedList<Integer> offList = new LinkedList<>();
             LinkedList<Integer> onList = new LinkedList<>();
             LinkedList<Integer> timeList = new LinkedList<>();
+
             //playerTimeMap.put(players, time);
             timeSwitchMap.put(players, onSwitch);
             buttonTimeMap.put(players, time);
             onTimeMap.put(players, onList);
             offTimeMap.put(players, offList);
             totalPlayerTime.put(players, time);
+            onTimeMap.get(players).add(0,playerTimers.startingTime);
 
         }
 
 
-        toggleButtons();
 
+        toggleButtons();
     }
 
     @Override
@@ -84,17 +86,16 @@ public class MyCustomAdapter extends BaseAdapter implements ListAdapter {
             view = inflater.inflate(R.layout.game_toggle_button, null);
         }
 
-       // ToggleButton button = view.findViewById(R.id.toggle_btn);
-        //button.setChecked(!trueFalseList.get(position));
 
-        //Handle TextView and display string from your list
         TextView listItemText = (TextView) view.findViewById(R.id.list_item);
         listItemText.setText(list.get(position));
 
         //Handle buttons and add onClickListeners
          deleteBtn = (ToggleButton) view.findViewById(R.id.toggle_btn);
         deleteBtn.setChecked(trueFalseList.get(position));
-
+        if(trueFalseList.get(position)){
+            onTimeMap.get(list.get(position)).set(0,playerTimers.startingTime);
+        }
         final int time = 0;
 
 
@@ -102,9 +103,25 @@ public class MyCustomAdapter extends BaseAdapter implements ListAdapter {
             @Override
             public void onClick(View v) {
 
-                System.out.println("kill me ");
-                buttonStatus(position);
-                notifyDataSetChanged();
+                if (trueFalseList.get(position)) {
+                    timeOfFinish = playerTimers.timeLeftInSeconds;
+                    timeSwitchMap.put(list.get(position), false);
+                    trueFalseList.set(position,false);
+                    offTimeMap.get(list.get(position)).add(timeOfFinish);
+                    System.out.println("pos: " + list.get(position) + " status: " + timeSwitchMap.get(list.get(position)));
+                } else if (!trueFalseList.get(position) ) {
+                    timeOfStart = playerTimers.timeLeftInSeconds;
+                    buttonTimeMap.put(list.get(position), timeOfStart);
+                    timeSwitchMap.put(list.get(position), true);
+                    trueFalseList.set(position,true);
+                    onTimeMap.get(list.get(position)).add(timeOfStart);
+                    System.out.println("pos: " + list.get(position) + " status: " + timeSwitchMap.get(list.get(position)));
+                }
+                //buttonStatus(position);
+                //deleteBtn.setChecked(trueFalseList.get(position));
+                System.out.println("position: "+position);
+
+                //notifyDataSetChanged();
             }
         });
 
@@ -112,20 +129,22 @@ public class MyCustomAdapter extends BaseAdapter implements ListAdapter {
         return view;
     }
 
-    public void buttonStatus(int position) {
-        if (timeSwitchMap.get(list.get(position)) == true) {
-            timeOfFinish = playerTimers.timeLeftInSeconds;
-            timeSwitchMap.put(list.get(position), false);
-            offTimeMap.get(list.get(position)).add(timeOfFinish);
-            System.out.println("pos: " + list.get(position) + " status: " + timeSwitchMap.get(list.get(position)));
-        } else if (timeSwitchMap.get(list.get(position)) == false) {
-            timeOfStart = playerTimers.timeLeftInSeconds;
-            buttonTimeMap.put(list.get(position), timeOfStart);
-            timeSwitchMap.put(list.get(position), true);
-            onTimeMap.get(list.get(position)).add(timeOfStart);
-            System.out.println("pos: " + list.get(position) + " status: " + timeSwitchMap.get(list.get(position)));
-        }
-    }
+  //  public void buttonStatus(int position) {
+//        if (trueFalseList.get(position)) {
+//            timeOfFinish = playerTimers.timeLeftInSeconds;
+//            timeSwitchMap.put(list.get(position), false);
+//            trueFalseList.add(position,false);
+//            offTimeMap.get(list.get(position)).add(timeOfFinish);
+//            System.out.println("pos: " + list.get(position) + " status: " + timeSwitchMap.get(list.get(position)));
+//        } else if (!trueFalseList.get(position)) {
+//            timeOfStart = playerTimers.timeLeftInSeconds;
+//            buttonTimeMap.put(list.get(position), timeOfStart);
+//            timeSwitchMap.put(list.get(position), true);
+//            trueFalseList.add(position,true);
+//            onTimeMap.get(list.get(position)).add(timeOfStart);
+//            System.out.println("pos: " + list.get(position) + " status: " + timeSwitchMap.get(list.get(position)));
+//        }
+ //   }
 
     public void getTimers(String selectedItem, int pos, int secLeft) {
         calPlayerTime(selectedItem, secLeft);
@@ -171,6 +190,10 @@ public class MyCustomAdapter extends BaseAdapter implements ListAdapter {
             trueFalseList.add(autoSwitch.get(names));
             timeSwitchMap.put(names,autoSwitch.get(names));
             //System.out.println("%%%%"+ names + " : " + autoSwitch.get(names));
+        }
+
+        for(Boolean lol : trueFalseList){
+            System.out.println(lol);
         }
     }
 

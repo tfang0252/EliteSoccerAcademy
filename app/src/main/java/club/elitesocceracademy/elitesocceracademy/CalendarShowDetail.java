@@ -56,7 +56,7 @@ public class CalendarShowDetail extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_callendar);
+        setContentView(R.layout.activity_calendar);
         theDate = (TextView) findViewById(R.id.date);
         btnGoCalendar = (Button) findViewById(R.id.btnGoCalendar);
 

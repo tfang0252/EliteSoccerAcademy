@@ -14,16 +14,16 @@ public class StatActivity2 extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_stat2);
+        setContentView(R.layout.activity_graph_main);
         returnButton();
         TextView assist = (TextView)findViewById(R.id.assist_display);
         TextView cleanSheets = (TextView)findViewById(R.id.clean_sheet_display);
         TextView goals = (TextView)findViewById(R.id.goals_display);
-        TextView timePlayed = (TextView)findViewById(R.id.min_display);
+        //TextView timePlayed = (TextView)findViewById(R.id.min_display);
         assist.setText(Integer.toString(rand.nextInt(4)));
         cleanSheets.setText(Integer.toString(rand.nextInt(3)));
         goals.setText(Integer.toString(rand.nextInt(12)));
-        timePlayed.setText(Integer.toString(rand.nextInt(24)+10));
+        //timePlayed.setText(Integer.toString(rand.nextInt(24)+10));
 
     }
 

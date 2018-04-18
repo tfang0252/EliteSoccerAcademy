@@ -16,7 +16,7 @@ public class GameMainMenu extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.game_main_menu);
 
-        ImageButton NewGameButton = (ImageButton) findViewById(R.id.NewGameButton);
+        ImageButton NewGameButton = (ImageButton) findViewById(R.id.searchDrillsBtn);
         NewGameButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -24,14 +24,14 @@ public class GameMainMenu extends AppCompatActivity {
             }
         });
 
-        ImageButton GameHistoryButton = (ImageButton)findViewById(R.id.GameHistoryButton);
+        ImageButton GameHistoryButton = (ImageButton)findViewById(R.id.playerAttendanceBtn);
         GameHistoryButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(GameMainMenu.this, GameHistory.class));
+                startActivity(new Intent(GameMainMenu.this, GameHistoryActivity.class));
             }
         });
-        ImageButton EditFormationButton = (ImageButton)findViewById(R.id.EditFormationButton);
+        ImageButton EditFormationButton = (ImageButton)findViewById(R.id.addDrillsBtn);
         EditFormationButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

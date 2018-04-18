@@ -106,7 +106,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".PracticeDrills">
+        <activity android:name=".SearchDrills">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -114,6 +114,9 @@
             </intent-filter>
         </activity>
         <activity android:name=".AWS" />
+        <activity android:name=".CSVWrite" />
+        <activity android:name=".GraphMainActivity"></activity>
+        <activity android:name=".GameHistoryActivity"></activity>
     </application>
 
 </manifest>

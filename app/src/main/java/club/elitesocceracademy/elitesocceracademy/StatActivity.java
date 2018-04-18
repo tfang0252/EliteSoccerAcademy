@@ -24,7 +24,7 @@ public class StatActivity extends RosterActivity {
                 // Get the selected item text from ListView
                 String selectedItem = (String) parent.getItemAtPosition(position);
                 System.out.println(selectedItem);
-                startActivity(new Intent(StatActivity.this, StatActivity2.class));
+                startActivity(new Intent(StatActivity.this, GraphMainActivity.class));
 
             }
         });

@@ -5,7 +5,6 @@ package club.elitesocceracademy.elitesocceracademy;
  */
 
 import android.content.Intent;
-import android.media.Image;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -18,27 +17,27 @@ public class PracticeMainMenu extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.practicemainmenu);
 
-        ImageButton PracticeDrillsButton = (ImageButton)findViewById(R.id.PracticeDrillsButton);
+        ImageButton PracticeDrillsButton = (ImageButton)findViewById(R.id.searchDrillsBtn);
         PracticeDrillsButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(PracticeMainMenu.this, PracticeDrills.class));
+                startActivity(new Intent(PracticeMainMenu.this, SearchDrills.class));
             }
         });
 
-        ImageButton PracticeAttendanceButton = (ImageButton)findViewById(R.id.PracticeAttendanceButton);
+        ImageButton PracticeAttendanceButton = (ImageButton)findViewById(R.id.addDrillsBtn);
         PracticeAttendanceButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(PracticeMainMenu.this, PlayerAttendance.class));
+                startActivity(new Intent(PracticeMainMenu.this, SearchDrills.class));
             }
         });
 
-        ImageButton HomeButton = (ImageButton)findViewById(R.id.HomeButton);
+        ImageButton HomeButton = (ImageButton)findViewById(R.id.playerAttendanceBtn);
         HomeButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(PracticeMainMenu.this, PracticeDrills.class));
+                startActivity(new Intent(PracticeMainMenu.this, PlayerAttendance.class));
             }
         });
     }

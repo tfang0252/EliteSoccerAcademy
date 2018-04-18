@@ -4,58 +4,75 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.zfred.practicescreens.PracticeMainMenu"
-    android:background="#000000">
+    tools:context="club.elitesocceracademy.elitesocceracademy.GameMainMenu">
 
-    <TableLayout
+    <ImageButton
+        android:id="@+id/searchDrillsBtn"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        app:srcCompat="@drawable/search_drills" />
 
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:padding="5dp">
+    <ImageButton
+        android:id="@+id/addDrillsBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/textView"
+        android:layout_marginTop="8dp"
+        app:srcCompat="@drawable/add_drills" />
 
-            <ImageButton
-                android:id="@+id/PracticeDrillsButton"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:background="#D3D3D3"
-                app:srcCompat="@drawable/practicedrill" />
+    <ImageButton
+        android:id="@+id/playerAttendanceBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/textView2"
+        android:layout_marginTop="16dp"
+        app:srcCompat="@drawable/attendanceicon" />
 
-        </TableRow>
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/searchDrillsBtn"
+        android:textStyle="bold"
+        android:textSize="16dp"
+        android:gravity="center"
+        android:textColor="@color/colorPrimary"
+        android:text="S E A R C H  D R I L L S" />
 
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:padding="5dp">
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/addDrillsBtn"
+        android:textStyle="bold"
+        android:textSize="16dp"
+        android:gravity="center"
+        android:textColor="@color/colorPrimary"
+        android:text="A D D  D R I L L S" />
 
-            <ImageButton
-                android:id="@+id/PracticeAttendanceButton"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:background="#D3D3D3"
-                app:srcCompat="@drawable/attendanceicon" />
-        </TableRow>
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/playerAttendanceBtn"
+        android:gravity="center"
 
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:padding="5dp">
+        android:text="P L A Y E R  A T T E N D A N C E"
+        android:textColor="@color/colorPrimary"
+        android:textSize="16dp"
+        android:textStyle="bold" />
 
-            <ImageButton
-                android:id="@+id/HomeButton"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:background="#D3D3D3"
-                app:srcCompat="@drawable/home" />
-        </TableRow>
-
-    </TableLayout>
 </RelativeLayout>

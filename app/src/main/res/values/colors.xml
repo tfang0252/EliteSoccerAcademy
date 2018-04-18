@@ -12,4 +12,5 @@
     <color name="Transparent">#00000000</color>
     <color name="Red">#cc0000</color>
     <color name="Green">#00b200</color>
+    <color name="darkYellow">#fdc531</color>
 </resources>

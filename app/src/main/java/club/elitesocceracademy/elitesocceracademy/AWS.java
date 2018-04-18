@@ -38,7 +38,7 @@ public class AWS extends AppCompatActivity {
     };
     AmazonS3 s3Client;
     String bucket = "elite-soccer-academy";
-    File uploadToS3 = new File("/storage/emulated/0/Pictures/image/IMG_20180411_131302.jpg");
+    File uploadToS3 = new File("/storage/emulated/0/TeamRoster.csv");
     File downloadFromS3 = new File("/storage/emulated/0/Pictures/IMG_20180411_131302.jpg");
     TransferUtility transferUtility;
     List<String> listing;
@@ -131,7 +131,7 @@ public class AWS extends AppCompatActivity {
 
                 TransferObserver transferObserver = transferUtility.upload(
                 bucket,     /* The bucket to upload to */
-                "IMG_20180411_131302.jpg",    /* The key for the uploaded object */
+                "TeamRoster.csv",    /* The key for the uploaded object */
                 uploadToS3       /* The file where the data to upload exists */
         );
 

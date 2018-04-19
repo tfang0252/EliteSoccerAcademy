@@ -1,5 +1,4 @@
 package club.elitesocceracademy.elitesocceracademy;
-
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -23,7 +22,7 @@ public class CalendarShowDetail extends AppCompatActivity {
 
         Intent incomingIntent = getIntent();
         String date = incomingIntent.getStringExtra("date");
-        theDate.setText(date);
+        theDate.setText(date + " seds meeting " );
 
         btnGoCalendar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -34,3 +33,4 @@ public class CalendarShowDetail extends AppCompatActivity {
         });
     }
 }
+

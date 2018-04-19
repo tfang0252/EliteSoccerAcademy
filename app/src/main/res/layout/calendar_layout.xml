@@ -8,17 +8,13 @@
 <!--&lt;!&ndash;tools:context=".CallendarActivity"&ndash;&gt;-->
 <!--&lt;!&ndash;tools:showIn="@layout/activity_callendar">&ndash;&gt;-->
 <!--</android.support.constraint.ConstraintLayout>-->
-
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-
     <CalendarView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/calendarView"/>
-
-
 </LinearLayout>

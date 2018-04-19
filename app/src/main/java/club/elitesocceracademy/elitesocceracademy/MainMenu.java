@@ -20,6 +20,8 @@ public class MainMenu extends AppCompatActivity {
         homeworkButton();
         practiceButton();
         settingsButton();
+        calendarButton();
+
     }
 
     private void rosterButton() {
@@ -94,6 +96,17 @@ public class MainMenu extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(MainMenu.this, AWS.class));
+            }
+        });
+    }
+
+    private void calendarButton() {
+        ImageButton btn = (ImageButton) findViewById(R.id.calendarBtn);
+
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainMenu.this, GoogleCalendar.class));
             }
         });
     }

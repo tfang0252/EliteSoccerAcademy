@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/soccerfield"
+    android:id="@+id/soccerfield">
+
+    <ImageButton
+        android:id="@+id/ImageView00"
+        android:src="@drawable/player_formation"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:visibility="invisible"
+        android:background="@null"
+        />
+    <ImageButton
+        android:id="@+id/ImageView01"
+        android:src="@drawable/player_formation"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:visibility="invisible"
+        android:background="@null"
+        />
+
+    <ImageButton
+        android:id="@+id/ImageView02"
+        android:src="@drawable/player_formation"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:visibility="invisible"
+        android:background="@null"
+        />
+    <ImageButton
+        android:id="@+id/ImageView03"
+        android:src="@drawable/player_formation"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:visibility="invisible"
+        android:background="@null"
+        />
+
+    <ImageButton
+        android:id="@+id/ImageView04"
+        android:src="@drawable/player_formation"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:visibility="invisible"
+        android:background="@null"
+        />
+
+    <ImageButton
+        android:id="@+id/ImageView05"
+        android:src="@drawable/player_formation"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:visibility="invisible"
+        android:background="@null"
+        />
+    <ImageButton
+        android:id="@+id/ImageView06"
+        android:src="@drawable/player_formation"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:visibility="invisible"
+        android:background="@null"
+        />
+    <ImageButton
+        android:id="@+id/ImageView07"
+        android:src="@drawable/player_formation"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:visibility="invisible"
+        android:background="@null"
+        />
+    <ImageButton
+        android:id="@+id/ImageView08"
+        android:src="@drawable/player_formation"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:visibility="invisible"
+        android:background="@null"
+        />
+    <ImageButton
+        android:id="@+id/ImageView09"
+        android:src="@drawable/player_formation"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:visibility="invisible"
+        android:background="@null"
+        />
+    <ImageButton
+        android:id="@+id/ImageView10"
+        android:src="@drawable/player_formation"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:visibility="invisible"
+        android:background="@null"
+        />
+
+    <ImageView
+        android:id="@+id/screen"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true" />
+
+
+    <Button
+        android:id="@+id/addPosButton"
+        android:layout_width="120dp"
+        android:layout_height="35dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_gravity="left"
+        android:layout_marginStart="23dp"
+        android:layout_marginTop="17dp"
+        android:background="@drawable/rounded_rec"
+        android:text="+ Add position"
+        android:layout_marginLeft="23dp"
+        android:layout_alignParentLeft="true" />
+
+    <Button
+        android:id="@+id/removePosButton"
+        android:layout_width="120dp"
+        android:layout_height="35dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignTop="@+id/addPosButton"
+        android:layout_gravity="left"
+        android:layout_marginEnd="129dp"
+        android:background="@drawable/rounded_rec"
+        android:text="- remove last"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="129dp" />
+
+    <Button
+        android:id="@+id/saveButton"
+        android:layout_width="75dp"
+        android:layout_height="35dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignTop="@+id/addPosButton"
+        android:layout_gravity="left"
+        android:layout_marginEnd="25dp"
+        android:background="@drawable/rounded_rec"
+        android:text="Save"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="25dp" />
+
+    <Button
+        android:id="@+id/BackButton"
+        android:layout_width="150dp"
+        android:layout_height="35dp"
+        android:layout_alignEnd="@+id/saveButton"
+        android:layout_alignTop="@+id/addPosButton"
+        android:background="@drawable/rounded_rec"
+        android:text="Return"
+        android:visibility="invisible"/>
+
+    <Button
+        android:id="@+id/StartGameButton"
+        android:layout_width="150dp"
+        android:layout_height="35dp"
+        android:layout_alignStart="@+id/addPosButton"
+        android:layout_alignTop="@+id/addPosButton"
+        android:background="@drawable/rounded_rec"
+        android:text="Start Match"
+        android:visibility="invisible"
+        android:layout_alignLeft="@+id/addPosButton" />
+
+    <TextView
+        android:id="@+id/textView_0"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/ImageView00"
+        android:layout_alignLeft="@id/ImageView00"
+        android:layout_alignRight="@id/ImageView00"
+        android:textColor="@color/colorPrimary"
+        android:textStyle="bold"
+        android:gravity="center"
+
+        android:text="" />
+
+    <TextView
+    android:id="@+id/textView_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/ImageView01"
+        android:layout_alignLeft="@id/ImageView01"
+        android:layout_alignRight="@id/ImageView01"
+        android:textColor="@color/colorPrimary"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:text="" />
+
+    <TextView
+        android:id="@+id/textView_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/ImageView02"
+        android:layout_alignLeft="@id/ImageView02"
+        android:layout_alignRight="@id/ImageView02"
+        android:textColor="@color/colorPrimary"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:text="" />
+
+    <TextView
+        android:id="@+id/textView_3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/ImageView03"
+        android:layout_alignLeft="@id/ImageView03"
+        android:layout_alignRight="@id/ImageView03"
+        android:textColor="@color/colorPrimary"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:text="" />
+
+    <TextView
+        android:id="@+id/textView_4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/ImageView04"
+        android:layout_alignLeft="@id/ImageView04"
+        android:layout_alignRight="@id/ImageView04"
+        android:textColor="@color/colorPrimary"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:text="" />
+    <TextView
+        android:id="@+id/textView_5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/ImageView05"
+        android:layout_alignLeft="@id/ImageView05"
+        android:layout_alignRight="@id/ImageView05"
+        android:textColor="@color/colorPrimary"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:text="" />
+    <TextView
+        android:id="@+id/textView_6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/ImageView06"
+        android:layout_alignLeft="@id/ImageView06"
+        android:layout_alignRight="@id/ImageView06"
+        android:textColor="@color/colorPrimary"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:text="" />
+    <TextView
+        android:id="@+id/textView_7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/ImageView07"
+        android:layout_alignLeft="@id/ImageView07"
+        android:layout_alignRight="@id/ImageView07"
+        android:textColor="@color/colorPrimary"
+        android:textStyle="bold"
+        android:text="" />
+    <TextView
+        android:id="@+id/textView_8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/ImageView08"
+        android:layout_alignLeft="@id/ImageView08"
+        android:layout_alignRight="@id/ImageView08"
+        android:textColor="@color/colorPrimary"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:text="" />
+    <TextView
+        android:id="@+id/textView_9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/ImageView09"
+        android:layout_alignLeft="@id/ImageView09"
+        android:layout_alignRight="@id/ImageView09"
+        android:textColor="@color/colorPrimary"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:text="" />
+    <TextView
+        android:id="@+id/textView_10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/ImageView10"
+        android:layout_alignLeft="@id/ImageView10"
+        android:layout_alignRight="@id/ImageView10"
+        android:textColor="@color/colorPrimary"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:text="" />
+
+
+</RelativeLayout>

@@ -1,7 +1,6 @@
 package club.elitesocceracademy.elitesocceracademy;
 
 import android.content.Intent;
-import android.graphics.Color;
 import android.widget.BaseExpandableListAdapter;
 
 /**
@@ -66,7 +65,7 @@ public class ExpandableListAdapter extends BaseExpandableListAdapter {
         notesButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent myactivity = new Intent(_context.getApplicationContext(), FirstHalfNotes.class);
+                Intent myactivity = new Intent(_context.getApplicationContext(), GameNotes.class);
                 _context.getApplicationContext().startActivity(myactivity);
             }
         });

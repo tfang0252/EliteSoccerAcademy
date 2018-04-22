@@ -390,6 +390,7 @@ public class GoogleCalendar extends Activity
             } else {
                 output.add(0, "Data retrieved using the Google Calendar API:");
                 mOutputText.setText(TextUtils.join("\n", output));
+
             }
         }
 

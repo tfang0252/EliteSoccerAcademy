@@ -35,7 +35,7 @@ public class GameMainMenu extends AppCompatActivity {
         EditFormationButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(GameMainMenu.this, EditFormations.class));
+                startActivity(new Intent(GameMainMenu.this, CustomFormation.class));
             }
         });
 

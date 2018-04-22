@@ -1,6 +1,7 @@
 package club.elitesocceracademy.elitesocceracademy;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -25,6 +26,7 @@ public class MyCustomAdapter extends BaseAdapter implements ListAdapter {
     private int timeOfStart = 0;
     private int timeOfFinish = 0;
     private int x = 1500;
+
     //private HashMap<String, Integer> playerTimeMap = new HashMap<>();
     protected HashMap<String, Boolean> timeSwitchMap = new HashMap<>();
     private HashMap<String, Integer> buttonTimeMap = new HashMap<>();
@@ -196,6 +198,7 @@ public class MyCustomAdapter extends BaseAdapter implements ListAdapter {
             System.out.println(lol);
         }
     }
+
 
 
 

@@ -57,7 +57,7 @@ public class GameTimer extends RosterActivity {
         resetButton = (Button) findViewById(R.id.reset);
         stopButton = (Button) findViewById(R.id.stop);
         chronometer  = (TextView)findViewById(R.id.chronometer);
-        playerTimers = new PlayerTimers(chronometer);
+        playerTimers = new PlayerTimers(chronometer,this);
 
         ToggleButton toggle = (ToggleButton) findViewById(R.id.toggle_btn);
         final ListView listView = (ListView) findViewById(R.id.listView);
@@ -86,9 +86,7 @@ public class GameTimer extends RosterActivity {
 
         startButton.setOnClickListener(mStartListener);
 
-
         stopButton.setOnClickListener(mStopListener);
-
 
         resetButton.setOnClickListener(mResetListener);
 
@@ -133,20 +131,6 @@ public class GameTimer extends RosterActivity {
             // mChronometer.setBase(SystemClock.elapsedRealtime());
         }
     };
-
-
-
-
-
-
-
-
-
-
-
-
-
-   
 
 
 

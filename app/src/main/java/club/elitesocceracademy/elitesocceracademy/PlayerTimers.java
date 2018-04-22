@@ -1,6 +1,8 @@
 package club.elitesocceracademy.elitesocceracademy;
 
-import android.view.View;
+import android.app.Activity;
+import android.content.Context;
+import android.content.Intent;
 import android.widget.Button;
 import android.widget.Chronometer;
 import android.widget.TextView;
@@ -9,6 +11,7 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 public class PlayerTimers {
+    private static Context _context;
 
     private Chronometer mChronometer;
     private static Button startButton;
@@ -18,7 +21,7 @@ public class PlayerTimers {
     private static MyCustomAdapter adapter;
     private static TextView chronometer;
     static int tempTime;
-    protected static int startingTime = 1500;
+    protected static int startingTime = 10;
     public static int timeLeftInSeconds = startingTime;
     //When the timer is stopped the time remaining originalTime is used to reset the GUI label.
     public static int originalTime = timeLeftInSeconds;
@@ -27,9 +30,10 @@ public class PlayerTimers {
     //Creates and instance of the timer
     public static Timer timer = new Timer();
     private static String updateTimerLabel;
-
-    PlayerTimers(TextView x){
+private Activity activity;
+    PlayerTimers(TextView x, Context context){
        chronometer=x;
+       _context = context;
     }
 
 
@@ -58,7 +62,7 @@ public class PlayerTimers {
 
                 }
                 // Updates the GUI's label with the time every second for second values of 10 or greater.
-                if (j >= 10) {
+                if (j >= 10 & i >=10) {
                     // Creates a string and saves it to the updateTimerLabel variable
                     updateTimerLabel = i + ":" + j;
                     // System.out.println(updateTimerLabel);
@@ -68,12 +72,20 @@ public class PlayerTimers {
                 }
                 // Updates the GUI's label with the time every second for second values less than 10.
                 //This basically formats the GUI label to have a double zero for seconds ex. :00.
-                else
+                else if(i<10 & j <10) {
                     // Creates a string and saves it to the updateTimerLabel variable
-                    updateTimerLabel = i + ":0" + j;
-                tempTime = timeLeftInSeconds;
-                chronometer.setText(updateTimerLabel);
-
+                    updateTimerLabel = "0" + i + ":0" + j;
+                    tempTime = timeLeftInSeconds;
+                    chronometer.setText(updateTimerLabel);
+                }else if(i<10){
+                    updateTimerLabel = "0" + i + ":" + j;
+                    tempTime = timeLeftInSeconds;
+                    chronometer.setText(updateTimerLabel);
+                }else {
+                    updateTimerLabel =  + i + ":0" + j;
+                    tempTime = timeLeftInSeconds;
+                    chronometer.setText(updateTimerLabel);
+                }
                 // System.out.println(i + ":0" + j);
 
                 // Updates the GUI's label when the timer's minutes and seconds are zero.
@@ -83,10 +95,8 @@ public class PlayerTimers {
                     timer.purge();
                     updateTimerLabel = "00:00";
                     chronometer.setText(updateTimerLabel);
-
-
-
-                    // System.out.println("End of the game.");
+                    Intent gameNotes = new Intent(_context,GameNotes.class);
+                    _context.startActivity(gameNotes);
                 }
 
             }// End of run method

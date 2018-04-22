@@ -106,7 +106,7 @@ public class MainMenu extends AppCompatActivity {
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MainMenu.this, CalendarActivity.class));
+                startActivity(new Intent(MainMenu.this, GoogleCalendar.class));
             }
         });
     }

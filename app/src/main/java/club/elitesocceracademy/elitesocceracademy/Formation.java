@@ -22,12 +22,11 @@ import java.util.HashMap;
 import java.util.LinkedList;
 
 
-public class Formation extends CustomFormation {
-    private MyCustomAdapter adapter = new MyCustomAdapter(RosterActivity.list, this);
+public class Formation extends GameTimer {
+
     private static String player;
     private static String playerName;
     private ArrayList<String> onPlayers;
-    private ArrayList<String> list = RosterActivity.list;
     private HashMap<String, Boolean> visibilityMap = CustomFormation.visibilityMap;
     private HashMap<String, ArrayList<Float>> posMap = CustomFormation.posMap;
     private Button addButton;
@@ -405,7 +404,7 @@ public class Formation extends CustomFormation {
                 public void onClick(DialogInterface dialog, int which) {
                     text.setText(player);
                     adapter.autoSwitch.put(playerName, true);
-                    //adapter.onNames.add(playerNa);
+                    //adapter.onNames.add(playerName);
 
                     //System.out.println(adapter.autoSwitch.get(playerName));
                 }

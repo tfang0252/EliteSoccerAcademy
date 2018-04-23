@@ -3,6 +3,7 @@ package club.elitesocceracademy.elitesocceracademy;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.widget.Adapter;
 import android.widget.Button;
 import android.widget.Chronometer;
 import android.widget.TextView;
@@ -21,19 +22,20 @@ public class PlayerTimers {
     private static MyCustomAdapter adapter;
     private static TextView chronometer;
     static int tempTime;
-    protected static int startingTime = 10;
-    public static int timeLeftInSeconds = startingTime;
+    protected static int startingTime = 30;
+    protected static int timeLeftInSeconds = startingTime;
     //When the timer is stopped the time remaining originalTime is used to reset the GUI label.
-    public static int originalTime = timeLeftInSeconds;
+    protected static int originalTime = timeLeftInSeconds;
 
     static String intialTimerLabel = timeLeftInSeconds / 60 + ":00";
     //Creates and instance of the timer
     public static Timer timer = new Timer();
     private static String updateTimerLabel;
-private Activity activity;
-    PlayerTimers(TextView x, Context context){
+    private Activity activity;
+    PlayerTimers(TextView x, Context context, MyCustomAdapter adapter){
        chronometer=x;
        _context = context;
+       this.adapter = adapter;
     }
 
 
@@ -95,8 +97,10 @@ private Activity activity;
                     timer.purge();
                     updateTimerLabel = "00:00";
                     chronometer.setText(updateTimerLabel);
+
                     Intent gameNotes = new Intent(_context,GameNotes.class);
                     _context.startActivity(gameNotes);
+                    //adapter.getTotalTime();
                 }
 
             }// End of run method

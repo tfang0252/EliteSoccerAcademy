@@ -26,7 +26,7 @@ import java.util.Date;
  * Created by zfred on 3/12/2018.
  */
 
-public class GameNotes extends GameTimer {
+public class GameNotes extends Formation {
 
     private static final int REQUEST_EXTERNAL_STORAGE = 1;
     private static String[] PERMISSIONS_STORAGE = {
@@ -73,7 +73,7 @@ public class GameNotes extends GameTimer {
                 try {
 
                     EliteScore = eliteScore.getText().toString();
-                    OppScore = eliteScore.getText().toString();
+                    OppScore = oppScore.getText().toString();
                     OpponentTeam =  oppName.getText().toString();
                     GameNotes = notes.getText().toString();
                     playerGameTimes();
@@ -83,7 +83,7 @@ public class GameNotes extends GameTimer {
                 }
 
                 S3Upload s3Upload = new S3Upload(context,fileName,view);
-                //S3Upload s3Upload2 = new S3Upload(context,timeCSV,view);
+                S3Upload s3Upload2 = new S3Upload(context,timeCSV,view);
             }
         });
 
@@ -124,26 +124,31 @@ public class GameNotes extends GameTimer {
         writer.writeNext(data);
         writer.close();
 
-//        String filePath2 = baseDir + File.separator + timeCSV;
-//        File f2 = new File(filePath);
-//        CSVWriter writer2;
-//        FileWriter mFileWriter2;
-//        if (f2.exists() && !f2.isDirectory()) {
-//            mFileWriter2 = new FileWriter(filePath2, true);
-//            writer2 = new CSVWriter(mFileWriter2);
-//        } else {
-//            writer2 = new CSVWriter(new FileWriter(filePath2));
-//            String[] time = {"PlayerName","GameID","TimePlayed"};
-//            writer2.writeNext(time);
-//        }
-//        for(String players:list) {
-//            String[] time = {players,GameID,Integer.toString(adapter.totalPlayerTime.get(players).get(GameID))};
-//            System.out.println(filePath2);
-//            writer2.writeNext(time);
-//        }
-//
-//
-//        writer2.close();
+        String filePath2 = baseDir + File.separator + timeCSV;
+        File f2 = new File(filePath2);
+        CSVWriter writer2;
+        FileWriter mFileWriter2;
+        if (f2.exists() && !f2.isDirectory()) {
+            mFileWriter2 = new FileWriter(filePath2, true);
+            writer2 = new CSVWriter(mFileWriter2);
+        } else {
+            writer2 = new CSVWriter(new FileWriter(filePath2));
+            String[] time = {"PlayerName","GameID","TimePlayed"};
+            writer2.writeNext(time);
+        }
+        adapter.getTotalTime();
+        System.out.println("***************" + GetTime.totalPlayerTime + "***************");
+        for(String players:list) {
+            if(GetTime.totalPlayerTime.get(players).get("3") != null) {
+                System.out.println("######" + players);
+                String[] time = {players, GameID, Integer.toString(GetTime.totalPlayerTime.get(players).get("3"))};
+                System.out.println(filePath2);
+                writer2.writeNext(time);
+            }
+        }
+
+
+        writer2.close();
     }
 
 

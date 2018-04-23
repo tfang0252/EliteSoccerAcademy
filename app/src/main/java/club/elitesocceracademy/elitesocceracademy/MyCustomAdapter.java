@@ -33,7 +33,7 @@ public class MyCustomAdapter extends BaseAdapter implements ListAdapter {
     private HashMap<String, LinkedList<Integer>> onTimeMap = new HashMap();
     private HashMap<String, LinkedList<Integer>> offTimeMap = new HashMap();
     protected static HashMap<String, Boolean> autoSwitch = new HashMap();
-    private HashMap<String, Integer> totalPlayerTime = new HashMap<>();
+    protected HashMap<String, HashMap<String,Integer>> totalPlayerTime = new HashMap<>();
     private static LinkedList<Boolean> trueFalseList = new LinkedList<>();
     private ToggleButton deleteBtn;
     PlayerTimers playerTimers;
@@ -48,13 +48,13 @@ public class MyCustomAdapter extends BaseAdapter implements ListAdapter {
             LinkedList<Integer> offList = new LinkedList<>();
             LinkedList<Integer> onList = new LinkedList<>();
             LinkedList<Integer> timeList = new LinkedList<>();
-
+            HashMap<String,Integer> gameIDTimeMap = new HashMap<>();
             //playerTimeMap.put(players, time);
             timeSwitchMap.put(players, onSwitch);
             buttonTimeMap.put(players, time);
             onTimeMap.put(players, onList);
             offTimeMap.put(players, offList);
-            totalPlayerTime.put(players, time);
+            totalPlayerTime.put(players, gameIDTimeMap);
             onTimeMap.get(players).add(0,playerTimers.startingTime);
 
         }
@@ -161,25 +161,29 @@ public class MyCustomAdapter extends BaseAdapter implements ListAdapter {
         //playerTimeMap.put(selectedItem, (buttonTimeMap.get(selectedItem) - timeLeft));
     }
 
-    public void getTotalTime(String selectedItem) {
+    public void getTotalTime(String gameId) {
         int total = 0;
-//        for(int onTimes : onTimeMap.get(selectedItem)){
-//            for(int offTimes: offTimeMap.get(selectedItem)){
-//                System.out.println(onTimes + "-"+ offTimes + "=" + (onTimes-offTimes));
-//                addTimes.get(selectedItem).add(onTimes-offTimes);
-//        }
+        int i = 0;
+        for (String players : list) {
+            if (offTimeMap.get(players).isEmpty()) {
+                offTimeMap.get(players).add(onTimeMap.get(players).getLast());
+            }
 
+            total = total + (onTimeMap.get(players).get(i) - offTimeMap.get(players).get(i));
+            totalPlayerTime.get(players).put(gameId,total);
+            i++;
+        }
 
         //       }
-        for (int i = 0; i < onTimeMap.get(selectedItem).size(); i++) {
-            if (offTimeMap.get(selectedItem).isEmpty()) {
-                offTimeMap.get(selectedItem).add(onTimeMap.get(selectedItem).getLast());
-            }
-            total = total + (onTimeMap.get(selectedItem).get(i) - offTimeMap.get(selectedItem).get(i));
-
-        }
-        totalPlayerTime.put(selectedItem, total);
-        System.out.println(totalPlayerTime.get(selectedItem));
+//        for (int i = 0; i < onTimeMap.get(selectedItem).size(); i++) {
+//            if (offTimeMap.get(selectedItem).isEmpty()) {
+//                offTimeMap.get(selectedItem).add(onTimeMap.get(selectedItem).getLast());
+//            }
+//            total = total + (onTimeMap.get(selectedItem).get(i) - offTimeMap.get(selectedItem).get(i));
+//
+//        }
+//        totalPlayerTime.put(selectedItem, total);
+        //System.out.println(totalPlayerTime.get(selectedItem));
 
     }
 

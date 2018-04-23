@@ -34,7 +34,7 @@ public class GameTimer extends RosterActivity {
     private TextView chronometer;
     static int tempTime;
     private static int startingTime = 1500;
-    private MyCustomAdapter adapter = new MyCustomAdapter(RosterActivity.list, this);
+    protected MyCustomAdapter adapter = new MyCustomAdapter(RosterActivity.list, this);
     public static int timeLeftInSeconds = startingTime;
     //When the timer is stopped the time remaining originalTime is used to reset the GUI label.
     public static int originalTime = timeLeftInSeconds;
@@ -69,7 +69,7 @@ public class GameTimer extends RosterActivity {
                 // Get the selected item text from ListView
                 String selectedItem = (String) parent.getItemAtPosition(position);
                 adapter.getTimers(selectedItem,position,playerTimers.timeLeftInSeconds);
-                adapter.getTotalTime(selectedItem);
+                //adapter.getTotalTime(selectedItem);
 
 
 

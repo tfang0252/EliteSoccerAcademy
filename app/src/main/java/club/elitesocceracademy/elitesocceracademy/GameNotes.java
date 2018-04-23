@@ -45,7 +45,9 @@ public class GameNotes extends GameTimer {
     private static String OpponentTeam;
     private static String GameNotes;
 
+
     private String fileName = "GameHistory.csv";
+    private String timeCSV = "PlayerTimes.csv";
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -74,12 +76,14 @@ public class GameNotes extends GameTimer {
                     OppScore = eliteScore.getText().toString();
                     OpponentTeam =  oppName.getText().toString();
                     GameNotes = notes.getText().toString();
+                    playerGameTimes();
                     writeToCSV();
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
 
                 S3Upload s3Upload = new S3Upload(context,fileName,view);
+                //S3Upload s3Upload2 = new S3Upload(context,timeCSV,view);
             }
         });
 
@@ -118,7 +122,32 @@ public class GameNotes extends GameTimer {
         String[] data = {GameID,GameDate,OpponentTeam,EliteScore,OppScore,GameNotes,TeamID};
         System.out.println(filePath);
         writer.writeNext(data);
-
         writer.close();
+
+//        String filePath2 = baseDir + File.separator + timeCSV;
+//        File f2 = new File(filePath);
+//        CSVWriter writer2;
+//        FileWriter mFileWriter2;
+//        if (f2.exists() && !f2.isDirectory()) {
+//            mFileWriter2 = new FileWriter(filePath2, true);
+//            writer2 = new CSVWriter(mFileWriter2);
+//        } else {
+//            writer2 = new CSVWriter(new FileWriter(filePath2));
+//            String[] time = {"PlayerName","GameID","TimePlayed"};
+//            writer2.writeNext(time);
+//        }
+//        for(String players:list) {
+//            String[] time = {players,GameID,Integer.toString(adapter.totalPlayerTime.get(players).get(GameID))};
+//            System.out.println(filePath2);
+//            writer2.writeNext(time);
+//        }
+//
+//
+//        writer2.close();
+    }
+
+
+    public void playerGameTimes(){
+        //adapter.getTotalTime(GameID);
     }
 }

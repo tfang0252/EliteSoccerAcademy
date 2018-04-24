@@ -84,6 +84,8 @@ public class GameNotes extends Formation {
 
                 S3Upload s3Upload = new S3Upload(context,fileName,view);
                 S3Upload s3Upload2 = new S3Upload(context,timeCSV,view);
+
+                startActivity(new Intent(GameNotes.this,MainMenu.class));
             }
         });
 
@@ -124,31 +126,6 @@ public class GameNotes extends Formation {
         writer.writeNext(data);
         writer.close();
 
-        String filePath2 = baseDir + File.separator + timeCSV;
-        File f2 = new File(filePath2);
-        CSVWriter writer2;
-        FileWriter mFileWriter2;
-        if (f2.exists() && !f2.isDirectory()) {
-            mFileWriter2 = new FileWriter(filePath2, true);
-            writer2 = new CSVWriter(mFileWriter2);
-        } else {
-            writer2 = new CSVWriter(new FileWriter(filePath2));
-            String[] time = {"PlayerName","GameID","TimePlayed"};
-            writer2.writeNext(time);
-        }
-        adapter.getTotalTime();
-        System.out.println("***************" + GetTime.totalPlayerTime + "***************");
-        for(String players:list) {
-            if(GetTime.totalPlayerTime.get(players).get("3") != null) {
-                System.out.println("######" + players);
-                String[] time = {players, GameID, Integer.toString(GetTime.totalPlayerTime.get(players).get("3"))};
-                System.out.println(filePath2);
-                writer2.writeNext(time);
-            }
-        }
-
-
-        writer2.close();
     }
 
 

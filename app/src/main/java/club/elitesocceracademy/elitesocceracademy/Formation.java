@@ -24,9 +24,11 @@ import java.util.LinkedList;
 
 public class Formation extends GameTimer {
 
+    protected MyCustomAdapter adapter = new MyCustomAdapter(RosterActivity.list, this);
     private static String player;
     private static String playerName;
     private ArrayList<String> onPlayers;
+
     private HashMap<String, Boolean> visibilityMap = CustomFormation.visibilityMap;
     private HashMap<String, ArrayList<Float>> posMap = CustomFormation.posMap;
     private Button addButton;
@@ -36,10 +38,10 @@ public class Formation extends GameTimer {
     private Button returnBtn;
     private TextView textView_0,textView_1,textView_2,textView_3,textView_4,textView_5,textView_6,textView_7
             ,textView_8,textView_9,textView_10;
-    int counter =0;
+
     ImageButton touchView0,touchView1,touchView2, touchView3, touchView4, touchView5,
             touchView6, touchView7, touchView8, touchView9, touchView10;
-
+    int counter =0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -248,42 +250,48 @@ public class Formation extends GameTimer {
                 showAlertDialogButtonClicked(view, textView_4);
             }
 
-        });  touchView5.setOnClickListener(new View.OnClickListener() {
+        });
+        touchView5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
                 showAlertDialogButtonClicked(view, textView_5);
             }
 
-        });  touchView6.setOnClickListener(new View.OnClickListener() {
+        });
+        touchView6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
                 showAlertDialogButtonClicked(view, textView_6);
             }
 
-        });  touchView7.setOnClickListener(new View.OnClickListener() {
+        });
+        touchView7.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
                 showAlertDialogButtonClicked(view, textView_7);
             }
 
-        });  touchView8.setOnClickListener(new View.OnClickListener() {
+        });
+        touchView8.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
                 showAlertDialogButtonClicked(view, textView_8);
             }
 
-        });  touchView9.setOnClickListener(new View.OnClickListener() {
+        });
+        touchView9.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
                 showAlertDialogButtonClicked(view, textView_9);
             }
 
-        });  touchView10.setOnClickListener(new View.OnClickListener() {
+        });
+        touchView10.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
@@ -292,81 +300,7 @@ public class Formation extends GameTimer {
 
         });
 
-//        ImageButton rightStrikerButton = (ImageButton)findViewById(R.id.RightStriker);
-//        final TextView rightStrikerText = (TextView) findViewById(R.id.rightStrikerText);
-//        rightStrikerButton.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                String position = "Right Striker";
-//                showAlertDialogButtonClicked(position,view,rightStrikerText);
-//            }
-//        });
-//        ImageButton centerMiddleButton = (ImageButton)findViewById(R.id.CenterMiddle);
-//        final TextView centerMidText = (TextView) findViewById(R.id.centerMidText);
-//        centerMiddleButton.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                String position = "Center Middle";
-//                showAlertDialogButtonClicked(position,view,centerMidText);
-//            }
-//        });
-//        ImageButton leftMiddleButton = (ImageButton)findViewById(R.id.LeftMiddle);
-//        final TextView leftMiddleText = (TextView) findViewById(R.id.leftMidText);
-//        leftMiddleButton.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                String position = "Left Middle";
-//                showAlertDialogButtonClicked(position,view,leftMiddleText);
-//            }
-//        });
-//        ImageButton rightMiddleButton = (ImageButton)findViewById(R.id.RightMiddle);
-//        final TextView rightMiddleText = (TextView) findViewById(R.id.rightMidText);
-//        rightMiddleButton.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                String position = "Right Middle";
-//                showAlertDialogButtonClicked(position,view,rightMiddleText);
-//            }
-//        });
-//        ImageButton leftDefenderButton = (ImageButton)findViewById(R.id.LeftDefender);
-//        final TextView leftDefText = (TextView) findViewById(R.id.leftDefText);
-//        leftDefenderButton.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                String position = "Left Defender";
-//                showAlertDialogButtonClicked(position,view,leftDefText);
-//            }
-//        });
-//        ImageButton rightDefenderButton = (ImageButton)findViewById(R.id.RightDefender);
-//        final TextView rightDefText = (TextView) findViewById(R.id.rightDefText);
-//        rightDefenderButton.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                String position = "Right Defender";
-//                showAlertDialogButtonClicked(position,view,rightDefText);
-//            }
-//        });
-//        ImageButton centerDefenderButton = (ImageButton)findViewById(R.id.CenterDefender);
-//        final TextView centerDefText = (TextView) findViewById(R.id.CenterDefText);
-//        centerDefenderButton.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                String position = "Center Defender";
-//                showAlertDialogButtonClicked(position,view,centerDefText);
-//            }
-//        });
-//        final ImageButton GoalieButton = (ImageButton)findViewById(R.id.Goalie);
-//        final TextView goalieText = (TextView) findViewById(R.id.goalieText);
-//        GoalieButton.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                String position = "Goalie";
-//                showAlertDialogButtonClicked(position,view,goalieText);
-//            }
-//        });
-//
-   }
-//
+    }
         public void showAlertDialogButtonClicked (View view,final TextView text){
 
 

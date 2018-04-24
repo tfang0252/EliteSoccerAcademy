@@ -30,13 +30,14 @@ public class MyCustomAdapter extends BaseAdapter implements ListAdapter {
     //private HashMap<String, Integer> playerTimeMap = new HashMap<>();
     protected HashMap<String, Boolean> timeSwitchMap = new HashMap<>();
     private HashMap<String, Integer> buttonTimeMap = new HashMap<>();
-    private static HashMap<String, LinkedList<Integer>> onTimeMap = new HashMap();
-    private static HashMap<String, LinkedList<Integer>> offTimeMap = new HashMap();
+    protected static HashMap<String, LinkedList<Integer>> onTimeMap = new HashMap();
+    protected static HashMap<String, LinkedList<Integer>> offTimeMap = new HashMap();
     protected static HashMap<String, Boolean> autoSwitch = new HashMap();
-    private static HashMap<String, HashMap<String,Integer>> totalPlayerTime = new HashMap<>();
+    //private HashMap<String, HashMap<String,Integer>> totalPlayerTime = new HashMap<>();
+    protected static HashMap<String, Integer> totalPlayerTime = new HashMap<>();
     private static LinkedList<Boolean> trueFalseList = new LinkedList<>();
     private ToggleButton deleteBtn;
-    PlayerTimers playerTimers;
+    protected PlayerTimers playerTimers;
     //Formation formation;
 
 
@@ -57,7 +58,7 @@ public class MyCustomAdapter extends BaseAdapter implements ListAdapter {
             buttonTimeMap.put(players, time);
             onTimeMap.put(players, onList);
             offTimeMap.put(players, offList);
-            totalPlayerTime.put(players, gameIDTimeMap);
+            totalPlayerTime.put(players,time);
             onTimeMap.get(players).add(0,playerTimers.startingTime);
 
         }
@@ -123,11 +124,10 @@ public class MyCustomAdapter extends BaseAdapter implements ListAdapter {
                     onTimeMap.get(list.get(position)).add(timeOfStart);
                     System.out.println("pos: " + list.get(position) + " status: " + timeSwitchMap.get(list.get(position)));
                 }
-                //buttonStatus(position);
-                //deleteBtn.setChecked(trueFalseList.get(position));
+
                 System.out.println("position: "+position);
 
-                //notifyDataSetChanged();
+
             }
         });
 
@@ -135,59 +135,29 @@ public class MyCustomAdapter extends BaseAdapter implements ListAdapter {
         return view;
     }
 
-    //  public void buttonStatus(int position) {
-//        if (trueFalseList.get(position)) {
-//            timeOfFinish = playerTimers.timeLeftInSeconds;
-//            timeSwitchMap.put(list.get(position), false);
-//            trueFalseList.add(position,false);
-//            offTimeMap.get(list.get(position)).add(timeOfFinish);
-//            System.out.println("pos: " + list.get(position) + " status: " + timeSwitchMap.get(list.get(position)));
-//        } else if (!trueFalseList.get(position)) {
-//            timeOfStart = playerTimers.timeLeftInSeconds;
-//            buttonTimeMap.put(list.get(position), timeOfStart);
-//            timeSwitchMap.put(list.get(position), true);
-//            trueFalseList.add(position,true);
-//            onTimeMap.get(list.get(position)).add(timeOfStart);
-//            System.out.println("pos: " + list.get(position) + " status: " + timeSwitchMap.get(list.get(position)));
-//        }
-    //   }
+
 
     public void getTimers(String selectedItem, int pos, int secLeft) {
-        calPlayerTime(selectedItem, secLeft);
         //System.out.println(selectedItem + " " + timeSwitchMap.get(selectedItem));
         //System.out.println(selectedItem + " " + playerTimeMap.get(selectedItem));
         System.out.println(selectedItem + " on times:" + onTimeMap.get(selectedItem));
         System.out.println(selectedItem + " off times:" + offTimeMap.get(selectedItem));
     }
 
-    public void calPlayerTime(String selectedItem, int timeLeft) {
-        //if (timeSwitchMap.get(selectedItem))
-        //playerTimeMap.put(selectedItem, (buttonTimeMap.get(selectedItem) - timeLeft));
-    }
 
-    public void getTotalTime() {
+    public void getTotalTime(String selectedItem) {
         int total = 0;
-//        for(int onTimes : onTimeMap.get(selectedItem)){
-//            for(int offTimes: offTimeMap.get(selectedItem)){
-//                System.out.println(onTimes + "-"+ offTimes + "=" + (onTimes-offTimes));
-//                addTimes.get(selectedItem).add(onTimes-offTimes);
-//        }
+            for (int i = 0; i < onTimeMap.get(selectedItem).size(); i++) {
+            if (offTimeMap.get(selectedItem).isEmpty()) {
+                offTimeMap.get(selectedItem).add(onTimeMap.get(selectedItem).getLast());
+            }
+            total = total + (onTimeMap.get(selectedItem).get(i) - offTimeMap.get(selectedItem).get(i));
 
+        }
+        totalPlayerTime.put(selectedItem, total);
+        System.out.println(totalPlayerTime.get(selectedItem));
 
-//        for (String players : list) {
-//            for (int i = 0; i < onTimeMap.get(players).size(); i++) {
-//                if (offTimeMap.get(players).isEmpty()) {
-//                    offTimeMap.get(players).add(onTimeMap.get(players).getLast());
-//                }
-//                total = total + (onTimeMap.get(players).get(i) - offTimeMap.get(players).get(i));
-//                totalPlayerTime.get(players).put("3",total);
-//                System.out.println(totalPlayerTime.get(players).get("3")+ " @@@@@@@@@@@");
-//            }
-//
-//            System.out.println(totalPlayerTime.get(players));
-//
-//        }
-        GetTime getTime = new GetTime(totalPlayerTime,onTimeMap,offTimeMap,list);
+        //GetTime getTime = new GetTime(totalPlayerTime,onTimeMap,offTimeMap,list);
     }
 
     public void toggleButtons() {

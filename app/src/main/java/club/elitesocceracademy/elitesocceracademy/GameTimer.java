@@ -1,9 +1,13 @@
 package club.elitesocceracademy.elitesocceracademy;
 
+import android.Manifest;
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.os.SystemClock;
+import android.support.v4.app.ActivityCompat;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.AdapterView;
@@ -14,6 +18,11 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.ToggleButton;
 
+import com.opencsv.CSVWriter;
+
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.Timer;
 import java.util.TimerTask;
@@ -23,6 +32,15 @@ import java.util.concurrent.TimeUnit;
 
 public class GameTimer extends RosterActivity {
 
+    private static final int REQUEST_EXTERNAL_STORAGE = 1;
+    private static String[] PERMISSIONS_STORAGE = {
+            Manifest.permission.READ_EXTERNAL_STORAGE,
+            Manifest.permission.WRITE_EXTERNAL_STORAGE
+    };
+
+    private Context context = this;
+    private static String GameID = "1";
+    private String timeCSV = "PlayerTimes.csv";
     private Button startButton;
     private Button stopButton;
     private Button resetButton;
@@ -57,10 +75,13 @@ public class GameTimer extends RosterActivity {
         resetButton = (Button) findViewById(R.id.reset);
         stopButton = (Button) findViewById(R.id.stop);
         chronometer  = (TextView)findViewById(R.id.chronometer);
-        playerTimers = new PlayerTimers(chronometer,this,adapter);
+        playerTimers = new PlayerTimers(chronometer,this,adapter,GameTimer.this);
 
         ToggleButton toggle = (ToggleButton) findViewById(R.id.toggle_btn);
         final ListView listView = (ListView) findViewById(R.id.listView);
+
+
+
         listView.setAdapter(adapter);
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -68,9 +89,8 @@ public class GameTimer extends RosterActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 // Get the selected item text from ListView
                 String selectedItem = (String) parent.getItemAtPosition(position);
-                adapter.getTimers(selectedItem,position,playerTimers.timeLeftInSeconds);
+               // adapter.getTimers(selectedItem,position,playerTimers.timeLeftInSeconds);
                 //adapter.getTotalTime(selectedItem);
-
 
 
             }
@@ -90,9 +110,75 @@ public class GameTimer extends RosterActivity {
 
         resetButton.setOnClickListener(mResetListener);
 
+        //System.out.print("***************" + playerTimers.doneOrNah);
 
 
 
+    }
+
+    public static void verifyStoragePermissions(Activity activity) {
+        // Check if we have write permission
+        int permission = ActivityCompat.checkSelfPermission(activity, Manifest.permission.WRITE_EXTERNAL_STORAGE);
+
+        if (permission != PackageManager.PERMISSION_GRANTED) {
+            // We don't have permission so prompt the user
+            ActivityCompat.requestPermissions(
+                    activity,
+                    PERMISSIONS_STORAGE,
+                    REQUEST_EXTERNAL_STORAGE
+            );
+        }
+    }
+
+    public void writeToCSV() throws IOException {
+        String baseDir = android.os.Environment.getExternalStorageDirectory().getAbsolutePath();
+        String filePath2 = baseDir + File.separator + timeCSV;
+        File f2 = new File(filePath2);
+        CSVWriter writer2;
+        FileWriter mFileWriter2;
+        if (f2.exists() && !f2.isDirectory()) {
+            mFileWriter2 = new FileWriter(filePath2, true);
+            writer2 = new CSVWriter(mFileWriter2);
+        } else {
+            writer2 = new CSVWriter(new FileWriter(filePath2));
+            String[] time = {"PlayerName","GameID","TimePlayed"};
+            writer2.writeNext(time);
+        }
+        //adapter.getTotalTime();
+        System.out.println("***************" + adapter.totalPlayerTime.get("Ava Hick") + "***************");
+        for(String players:list) {
+            if(adapter.totalPlayerTime.get(players)!=null) {
+                String[] time = {players, GameID, Integer.toString(adapter.totalPlayerTime.get(players))};
+                System.out.println(filePath2);
+                writer2.writeNext(time);
+            }
+        }
+
+
+        writer2.close();
+    }
+
+    public void getTotalTime() {
+        int total = 0;
+        for(String selectedItem:list) {
+            for (int i = 0; i < adapter.onTimeMap.get(selectedItem).size(); i++) {
+                if (adapter.offTimeMap.get(selectedItem).isEmpty()) {
+                    adapter.offTimeMap.get(selectedItem).add(adapter.onTimeMap.get(selectedItem).getLast());
+                }
+                total = total + (adapter.onTimeMap.get(selectedItem).get(i) - adapter.offTimeMap.get(selectedItem).get(i));
+                getTimers(selectedItem);
+                System.out.println(selectedItem + "-- total: " + total);
+            }
+            adapter.totalPlayerTime.put(selectedItem, total);
+        }
+
+        verifyStoragePermissions(GameTimer.this);
+        try {
+            writeToCSV();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        //S3Upload s3Upload2 = new S3Upload(context,timeCSV,view);
 
     }
 
@@ -131,6 +217,13 @@ public class GameTimer extends RosterActivity {
             // mChronometer.setBase(SystemClock.elapsedRealtime());
         }
     };
+
+    public void getTimers(String selectedItem) {
+        //System.out.println(selectedItem + " " + timeSwitchMap.get(selectedItem));
+        //System.out.println(selectedItem + " " + playerTimeMap.get(selectedItem));
+        System.out.println(selectedItem + " on times:" + adapter.onTimeMap.get(selectedItem));
+        System.out.println(selectedItem + " off times:" + adapter.offTimeMap.get(selectedItem));
+    }
 
 
 

@@ -22,20 +22,23 @@ public class PlayerTimers {
     private static MyCustomAdapter adapter;
     private static TextView chronometer;
     static int tempTime;
+    protected static boolean doneOrNah = false;
     protected static int startingTime = 30;
-    protected static int timeLeftInSeconds = startingTime;
+    public static int timeLeftInSeconds = startingTime;
     //When the timer is stopped the time remaining originalTime is used to reset the GUI label.
-    protected static int originalTime = timeLeftInSeconds;
+    public static int originalTime = timeLeftInSeconds;
 
     static String intialTimerLabel = timeLeftInSeconds / 60 + ":00";
     //Creates and instance of the timer
     public static Timer timer = new Timer();
     private static String updateTimerLabel;
-    private Activity activity;
-    PlayerTimers(TextView x, Context context, MyCustomAdapter adapter){
+    private static GameTimer gameTimer;
+
+    PlayerTimers(TextView x, Context context, MyCustomAdapter adapter, GameTimer gameTimer){
        chronometer=x;
        _context = context;
        this.adapter = adapter;
+       this.gameTimer = gameTimer;
     }
 
 
@@ -97,7 +100,7 @@ public class PlayerTimers {
                     timer.purge();
                     updateTimerLabel = "00:00";
                     chronometer.setText(updateTimerLabel);
-
+                    gameTimer.getTotalTime();
                     Intent gameNotes = new Intent(_context,GameNotes.class);
                     _context.startActivity(gameNotes);
                     //adapter.getTotalTime();

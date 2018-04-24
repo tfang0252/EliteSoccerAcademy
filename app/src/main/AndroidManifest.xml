@@ -137,7 +137,8 @@
         <!-- android:theme="@style/AppTheme"> -->
 
         <activity android:name=".CalendarActivity" />
-        <activity android:name=".CustomFormation"></activity>
+        <activity android:name=".CustomFormation" />
+        <activity android:name=".AddDrills"></activity>
     </application>
 
 </manifest>

@@ -1,12 +1,16 @@
 package club.elitesocceracademy.elitesocceracademy;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.SearchView;
 
-public class SearchDrills extends AppCompatActivity {
+public class SearchDrills extends AddDrills {
 
     SearchView searchView;
     ListView listView;
@@ -38,10 +42,17 @@ public class SearchDrills extends AppCompatActivity {
         searchView = (SearchView)findViewById(R.id.Search_bar);
 
         adapter = new ArrayAdapter<String>(this,
-                android.R.layout.simple_list_item_1, drill_names);
+                android.R.layout.simple_list_item_1, list);
 
         listView.setAdapter(adapter);
-
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                // Get the selected item text from ListView
+                String selectedItem = (String) parent.getItemAtPosition(position);
+                descPopUp(position);
+            }
+        });
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String text) {
@@ -54,5 +65,28 @@ public class SearchDrills extends AppCompatActivity {
                 return false;
             }
         });
+    }
+
+    public void descPopUp(int position){
+        AlertDialog.Builder builder1 = new AlertDialog.Builder(this);
+        builder1.setMessage(desc.get(position));
+        //builder1.setMessage(time.get(position));
+        builder1.setTitle(list.get(position));
+        builder1.setCancelable(true);
+
+
+
+        builder1.setNegativeButton(
+                "Return",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        dialog.cancel();
+                    }
+                });
+
+        AlertDialog alert11 = builder1.create();
+        alert11.show();
+
+
     }
 }

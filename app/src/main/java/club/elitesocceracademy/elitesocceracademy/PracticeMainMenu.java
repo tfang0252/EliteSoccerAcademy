@@ -29,7 +29,7 @@ public class PracticeMainMenu extends AppCompatActivity {
         PracticeAttendanceButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(PracticeMainMenu.this, SearchDrills.class));
+                startActivity(new Intent(PracticeMainMenu.this, AddDrills.class));
             }
         });
 

@@ -94,6 +94,7 @@
         android:layout_alignStart="@+id/gameBtn"
         android:layout_alignTop="@+id/homeworkBtn"
         android:background="@color/menu_bg"
+        android:visibility="invisible"
         app:srcCompat="@drawable/settings" />
 
     <TextView
@@ -197,7 +198,8 @@
         android:layout_below="@+id/settingsBtn"
         android:gravity="center"
         android:textColor="@color/colorPrimary"
-        android:text="Settings" />
+        android:text="Settings"
+        android:visibility="invisible"/>
 
 
 </RelativeLayout>

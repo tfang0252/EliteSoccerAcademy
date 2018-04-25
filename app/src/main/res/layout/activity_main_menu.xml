@@ -33,7 +33,7 @@
         app:srcCompat="@drawable/annoucement" />
 
     <ImageButton
-        android:id="@+id/gameBtn"
+        android:id="@+id/homeworkBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignTop="@+id/calendarBtn"
@@ -42,7 +42,7 @@
         android:layout_toEndOf="@+id/calendarBtn"
         android:layout_toRightOf="@+id/calendarBtn"
         android:background="@color/menu_bg"
-        app:srcCompat="@drawable/game" />
+        app:srcCompat="@drawable/homework" />
 
     <ImageButton
         android:id="@+id/statBtn"
@@ -69,33 +69,22 @@
         android:id="@+id/practiceBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/gameBtn"
-        android:layout_alignRight="@+id/gameBtn"
+        android:layout_alignEnd="@+id/homeworkBtn"
+        android:layout_alignRight="@+id/homeworkBtn"
         android:layout_alignTop="@+id/rosterBtn"
         android:background="@color/menu_bg"
         app:srcCompat="@drawable/practice" />
 
     <ImageButton
-        android:id="@+id/homeworkBtn"
-        android:layout_width="wrap_content"
+        android:id="@+id/gameBtn"
+        android:layout_width="306dp"
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/rosterBtn"
         android:layout_alignStart="@+id/rosterBtn"
         android:layout_below="@+id/rosterBtn"
         android:layout_marginTop="97dp"
         android:background="@color/menu_bg"
-        app:srcCompat="@drawable/homework" />
-
-    <ImageButton
-        android:id="@+id/settingsBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/gameBtn"
-        android:layout_alignStart="@+id/gameBtn"
-        android:layout_alignTop="@+id/homeworkBtn"
-        android:background="@color/menu_bg"
-        android:visibility="invisible"
-        app:srcCompat="@drawable/settings" />
+        app:srcCompat="@drawable/game" />
 
     <TextView
         android:id="@+id/announcementTxt"
@@ -115,25 +104,27 @@
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/announcementTxt"
         android:layout_toEndOf="@+id/announcementBtn"
-        android:layout_toLeftOf="@+id/gameBtn"
+        android:layout_toLeftOf="@+id/homeworkBtn"
         android:layout_toRightOf="@+id/announcementBtn"
-        android:layout_toStartOf="@+id/gameBtn"
+        android:layout_toStartOf="@+id/homeworkBtn"
         android:gravity="center"
         android:textColor="@color/colorPrimary"
         android:text="Calendar" />
 
     <TextView
-        android:id="@+id/gameTxt"
-        android:layout_width="wrap_content"
+        android:id="@+id/homeworkTxt"
+        android:layout_width="77dp"
         android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/gameBtn"
-        android:layout_alignLeft="@+id/gameBtn"
-        android:layout_alignRight="@+id/gameBtn"
-        android:layout_alignStart="@+id/gameBtn"
-        android:layout_below="@+id/gameBtn"
+        android:layout_alignEnd="@+id/homeworkBtn"
+        android:layout_alignLeft="@+id/homeworkBtn"
+        android:layout_alignRight="@+id/homeworkBtn"
+        android:layout_alignStart="@+id/homeworkBtn"
+        android:layout_below="@+id/homeworkBtn"
+        android:layout_marginEnd="-14dp"
+        android:layout_marginRight="-14dp"
         android:gravity="center"
-        android:textColor="@color/colorPrimary"
-        android:text="Game" />
+        android:text="Homework"
+        android:textColor="@color/colorPrimary" />
 
     <TextView
         android:id="@+id/textView16"
@@ -167,39 +158,23 @@
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/statTxt"
         android:layout_alignEnd="@+id/practiceBtn"
-        android:layout_alignLeft="@+id/settingsBtn"
         android:layout_alignRight="@+id/practiceBtn"
-        android:layout_alignStart="@+id/settingsBtn"
         android:gravity="center"
         android:textColor="@color/colorPrimary"
         android:text="Practice" />
 
     <TextView
-        android:id="@+id/homeworkTxt"
+        android:id="@+id/gameTxt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/homeworkBtn"
-        android:layout_alignLeft="@+id/homeworkBtn"
-        android:layout_alignRight="@+id/homeworkBtn"
-        android:layout_alignStart="@+id/homeworkBtn"
-        android:layout_below="@+id/homeworkBtn"
+        android:layout_alignEnd="@+id/gameBtn"
+        android:layout_alignLeft="@+id/gameBtn"
+        android:layout_alignRight="@+id/gameBtn"
+        android:layout_alignStart="@+id/gameBtn"
+        android:layout_below="@+id/gameBtn"
         android:gravity="center"
         android:textColor="@color/colorPrimary"
-        android:text="HW Drills" />
-
-    <TextView
-        android:id="@+id/settingTxt"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/practiceBtn"
-        android:layout_alignLeft="@+id/settingsBtn"
-        android:layout_alignRight="@+id/practiceBtn"
-        android:layout_alignStart="@+id/settingsBtn"
-        android:layout_below="@+id/settingsBtn"
-        android:gravity="center"
-        android:textColor="@color/colorPrimary"
-        android:text="Settings"
-        android:visibility="invisible"/>
+        android:text="Game" />
 
 
 </RelativeLayout>

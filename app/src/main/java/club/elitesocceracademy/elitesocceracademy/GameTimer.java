@@ -39,7 +39,7 @@ public class GameTimer extends RosterActivity {
     };
 
     private Context context = this;
-    private static String GameID = "1";
+    private static String GameID = "2";
     private String timeCSV = "PlayerTimes.csv";
     private Button startButton;
     private Button stopButton;
@@ -147,11 +147,11 @@ public class GameTimer extends RosterActivity {
         //adapter.getTotalTime();
         System.out.println("***************" + adapter.totalPlayerTime.get("Ava Hick") + "***************");
         for(String players:list) {
-            if(adapter.totalPlayerTime.get(players)!=null) {
+            //if(adapter.totalPlayerTime.get(players)!=null) {
                 String[] time = {players, GameID, Integer.toString(adapter.totalPlayerTime.get(players))};
                 System.out.println(filePath2);
                 writer2.writeNext(time);
-            }
+            //}
         }
 
 
@@ -159,8 +159,9 @@ public class GameTimer extends RosterActivity {
     }
 
     public void getTotalTime() {
-        int total = 0;
+
         for(String selectedItem:list) {
+            int total = 0;
             for (int i = 0; i < adapter.onTimeMap.get(selectedItem).size(); i++) {
                 if (adapter.offTimeMap.get(selectedItem).isEmpty()) {
                     adapter.offTimeMap.get(selectedItem).add(adapter.onTimeMap.get(selectedItem).getLast());

@@ -18,14 +18,16 @@ public class StatActivity extends RosterActivity {
                 R.layout.activity_listview, RosterActivity.list);
         ListView listView = (ListView) findViewById(R.id.listView);
         listView.setAdapter(adapter);
+        ;
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 // Get the selected item text from ListView
                 String selectedItem = (String) parent.getItemAtPosition(position);
-                System.out.println(selectedItem);
-                startActivity(new Intent(StatActivity.this, GraphMainActivity.class));
 
+                Intent intent = new Intent(StatActivity.this, GraphMainActivity.class);
+                intent.putExtra("id",(String) parent.getItemAtPosition(position));
+                startActivity(intent);
             }
         });
     }

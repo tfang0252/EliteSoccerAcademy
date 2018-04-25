@@ -4,7 +4,7 @@
   "CredentialsProvider": {
     "CognitoIdentity": {
       "Default": {
-        "PoolId": "us-east-1:c86b1a67-5b39-48df-9f64-6a2e35845c3f",
+        "PoolId": "us-east-1:1e2edd96-b3d6-4a50-acc6-db2d5f178f3d",
         "Region": "us-east-1"
       }
     }
@@ -12,21 +12,27 @@
   "IdentityManager": {
     "Default": {}
   },
+  "CognitoUserPool": {
+    "Default": {
+      "PoolId": "us-east-1_QbIQhSGXi",
+      "AppClientId": "7qis2vdd58l6er0h67vqau7g37",
+      "AppClientSecret": "1ftdo1hi1p42lsbcnvkp1i9plnvl6o1l2tmhv43idjm9h167grnd",
+      "Region": "us-east-1"
+    }
+  },
+  "DynamoDBObjectMapper": {
+    "Default": {
+      "Region": "us-east-1"
+    }
+  },
   "PinpointAnalytics": {
     "Default": {
-      "AppId": "2fb9c80b6c8541a5ba7d226aadeca4bb",
+      "AppId": "e95564e59865466aa3b70a0e4a714271",
       "Region": "us-east-1"
     }
   },
   "PinpointTargeting": {
     "Default": {
-      "Region": "us-east-1"
-    }
-  },
-
-  "S3TransferUtility": {
-    "Default": {
-      "Bucket": "elite-soccer-academy",
       "Region": "us-east-1"
     }
   }

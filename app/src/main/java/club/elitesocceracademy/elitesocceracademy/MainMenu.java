@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
 
+import com.amazonaws.mobile.client.AWSMobileClient;
+
 public class MainMenu extends AppCompatActivity {
 
     @Override
@@ -19,7 +21,6 @@ public class MainMenu extends AppCompatActivity {
         announcementButton();
         homeworkButton();
         practiceButton();
-        settingsButton();
         calendarButton();
 
     }
@@ -89,17 +90,6 @@ public class MainMenu extends AppCompatActivity {
         });
     }
 
-    private void settingsButton() {
-        ImageButton btn = (ImageButton) findViewById(R.id.settingsBtn);
-
-        btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(MainMenu.this, AWS.class));
-            }
-        });
-    }
-
     private void calendarButton() {
         ImageButton btn = (ImageButton) findViewById(R.id.calendarBtn);
 
@@ -109,6 +99,10 @@ public class MainMenu extends AppCompatActivity {
                 startActivity(new Intent(MainMenu.this, CalendarActivity.class));
             }
         });
+    }
+
+    private void signOut() {
+
     }
 
 }

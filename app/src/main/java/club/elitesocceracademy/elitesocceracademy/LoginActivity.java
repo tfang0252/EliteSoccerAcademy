@@ -5,6 +5,7 @@ import android.animation.AnimatorListenerAdapter;
 import android.annotation.TargetApi;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.graphics.Color;
 import android.support.annotation.NonNull;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
@@ -30,6 +31,12 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.amazonaws.mobile.auth.ui.AuthUIConfiguration;
+import com.amazonaws.mobile.auth.ui.SignInUI;
+import com.amazonaws.mobile.client.AWSMobileClient;
+import com.amazonaws.mobile.client.AWSStartupHandler;
+import com.amazonaws.mobile.client.AWSStartupResult;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -44,20 +51,35 @@ public class LoginActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
-
-        configureNextButton();
-
-    }
-    private void configureNextButton() {
-        Button btn = (Button) findViewById(R.id.email_sign_in_button);
-
-        btn.setOnClickListener(new View.OnClickListener() {
+        AWSMobileClient.getInstance().initialize(this, new AWSStartupHandler() {
             @Override
-            public void onClick(View v) {
-                startActivity(new Intent(LoginActivity.this, MainMenu.class));
+            public void onComplete(final AWSStartupResult awsStartupResult) {
+                AuthUIConfiguration config =
+                        new AuthUIConfiguration.Builder()
+                                .userPools(true)  // true? show the Email and Password UI
+                                .logoResId(R.drawable.main_logo) // Change the logo
+                                .backgroundColor(Color.GRAY) // Change the backgroundColor
+                                .isBackgroundColorFullScreen(false) // Full screen backgroundColor the backgroundColor full screenff
+                                .fontFamily("sans-serif-light") // Apply sans-serif-light as the global font
+                                .canCancel(true)
+                                .build();
+                SignInUI signinUI = (SignInUI) AWSMobileClient.getInstance().getClient(LoginActivity.this, SignInUI.class);
+                signinUI.login(LoginActivity.this, MainMenu.class).authUIConfiguration(config).execute();
             }
-        });
-    }
-}
+        }).execute();
 
+
+
+    }
+//    private void configureNextButton() {
+//        Button btn = (Button) findViewById(R.id.email_sign_in_button);
+//
+//        btn.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                startActivity(new Intent(LoginActivity.this, MainMenu.class));
+//            }
+//        });
+
+
+}

@@ -97,7 +97,7 @@ public class GameTimer extends RosterActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 // Get the selected item text from ListView
                 String selectedItem = (String) parent.getItemAtPosition(position);
-               // adapter.getTimers(selectedItem,position,playerTimers.timeLeftInSeconds);
+                // adapter.getTimers(selectedItem,position,playerTimers.timeLeftInSeconds);
                 //adapter.getTotalTime(selectedItem);
 
 
@@ -156,9 +156,9 @@ public class GameTimer extends RosterActivity {
         System.out.println("***************" + adapter.totalPlayerTime.get("Ava Hick") + "***************");
         for(String players:list) {
             //if(adapter.totalPlayerTime.get(players)!=null) {
-                String[] time = {players, GameID, Integer.toString(adapter.totalPlayerTime.get(players))};
-                System.out.println(filePath2);
-                writer2.writeNext(time);
+            String[] time = {players, GameID, Integer.toString(adapter.totalPlayerTime.get(players))};
+            System.out.println(filePath2);
+            writer2.writeNext(time);
             //}
         }
 
@@ -194,7 +194,7 @@ public class GameTimer extends RosterActivity {
 
 
 
-}
+    }
 
     public void getTotalTime() {
 

@@ -59,7 +59,7 @@ public class MyCustomAdapter extends BaseAdapter implements ListAdapter {
             onTimeMap.put(players, onList);
             offTimeMap.put(players, offList);
             totalPlayerTime.put(players,time);
-            onTimeMap.get(players).add(0,playerTimers.startingTime);
+            //onTimeMap.get(players).add(0,playerTimers.startingTime);
 
         }
 
@@ -100,8 +100,8 @@ public class MyCustomAdapter extends BaseAdapter implements ListAdapter {
         //Handle buttons and add onClickListeners
         deleteBtn = (ToggleButton) view.findViewById(R.id.toggle_btn);
         deleteBtn.setChecked(trueFalseList.get(position));
-        if(trueFalseList.get(position)){
-            onTimeMap.get(list.get(position)).set(0,playerTimers.startingTime);
+        if(trueFalseList.get(position)&&onTimeMap.get(list.get(position)).isEmpty()){
+            onTimeMap.get(list.get(position)).add(0,playerTimers.startingTime);
         }
 
         final int time = 0;
@@ -148,7 +148,7 @@ public class MyCustomAdapter extends BaseAdapter implements ListAdapter {
 
     public void getTotalTime(String selectedItem) {
         int total = 0;
-            for (int i = 0; i < onTimeMap.get(selectedItem).size(); i++) {
+        for (int i = 0; i < onTimeMap.get(selectedItem).size(); i++) {
             if (offTimeMap.get(selectedItem).isEmpty()) {
                 offTimeMap.get(selectedItem).add(onTimeMap.get(selectedItem).getLast());
             }

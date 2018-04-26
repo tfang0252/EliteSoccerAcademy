@@ -103,6 +103,7 @@ public class MyCustomAdapter extends BaseAdapter implements ListAdapter {
         if(trueFalseList.get(position)){
             onTimeMap.get(list.get(position)).set(0,playerTimers.startingTime);
         }
+
         final int time = 0;
 
 
@@ -118,7 +119,7 @@ public class MyCustomAdapter extends BaseAdapter implements ListAdapter {
                     System.out.println("pos: " + list.get(position) + " status: " + timeSwitchMap.get(list.get(position)));
                 } else if (!trueFalseList.get(position) ) {
                     timeOfStart = playerTimers.timeLeftInSeconds;
-                    buttonTimeMap.put(list.get(position), timeOfStart);
+                    //buttonTimeMap.put(list.get(position), timeOfStart);
                     timeSwitchMap.put(list.get(position), true);
                     trueFalseList.set(position,true);
                     onTimeMap.get(list.get(position)).add(timeOfStart);

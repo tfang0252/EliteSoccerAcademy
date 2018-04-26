@@ -59,7 +59,7 @@ public class LoginActivity extends AppCompatActivity {
                                 .userPools(true)  // true? show the Email and Password UI
                                 .logoResId(R.drawable.main_logo) // Change the logo
                                 .backgroundColor(Color.GRAY) // Change the backgroundColor
-                                .isBackgroundColorFullScreen(false) // Full screen backgroundColor the backgroundColor full screenff
+                                .isBackgroundColorFullScreen(true) // Full screen backgroundColor the backgroundColor full screenff
                                 .fontFamily("sans-serif-light") // Apply sans-serif-light as the global font
                                 .canCancel(true)
                                 .build();

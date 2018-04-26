@@ -26,7 +26,7 @@ import java.util.List;
 public class S3Upload {
 
     AmazonS3 s3Client;
-    String bucket = "elite-soccer-academy";
+    String bucket = "esa-json";
     File uploadToS3 = new File("/storage/emulated/0/TeamRoster.csv");
     File downloadFromS3 = new File("/storage/emulated/0/Pictures/IMG_20180411_131302.jpg");
     TransferUtility transferUtility;
@@ -51,7 +51,7 @@ public class S3Upload {
         CognitoCachingCredentialsProvider cognitoCachingCredentialsProvider =
                 new CognitoCachingCredentialsProvider(
                         context,
-                        "us-east-1:7a38c0d8-fc0f-4aab-87eb-afa406728a05", // Identity Pool ID
+                        "us-east-1:bef4e01d-91af-4a43-934b-99ce08db3e97", // Identity Pool ID
                         Regions.US_EAST_1 // Region
                 );
         createAmazonS3Client(cognitoCachingCredentialsProvider);

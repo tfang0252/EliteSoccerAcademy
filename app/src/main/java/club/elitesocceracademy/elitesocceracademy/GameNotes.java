@@ -13,14 +13,19 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.opencsv.CSVReader;
 import com.opencsv.CSVWriter;
 
 import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Collections;
 import java.util.Date;
+import java.util.HashSet;
 
 /**
  * Created by zfred on 3/12/2018.
@@ -33,11 +38,12 @@ public class GameNotes extends Formation {
             Manifest.permission.READ_EXTERNAL_STORAGE,
             Manifest.permission.WRITE_EXTERNAL_STORAGE
     };
+    private HashSet<Integer> gameIDSet = new HashSet<>();
+    private String GameID = "1";
 
     private SimpleDateFormat df = new SimpleDateFormat("dd/MMM/yyyy");
     private Date c = Calendar.getInstance().getTime();
     private Context context = this;
-    private static String GameID = "1";
     private String GameDate =df.format(c);
     private static String EliteScore;
     private static String OppScore;
@@ -64,7 +70,7 @@ public class GameNotes extends Formation {
         //final String formattedDate = df.format(c);
        // GameDate = df.format(c);
 
-
+        readCSV();
 
         StartNextHalfButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -127,6 +133,38 @@ public class GameNotes extends Formation {
         writer.close();
 
     }
+
+    public void readCSV() {
+        try {
+            String baseDir = android.os.Environment.getExternalStorageDirectory().getAbsolutePath();
+            String filePath2 = baseDir + File.separator + fileName;
+            File f2 = new File(filePath2);
+            CSVReader reader = new CSVReader(new FileReader(f2));
+            String[] nextLine;
+            while ((nextLine = reader.readNext()) != null) {
+                String Game_ID = nextLine[0];
+                String GameDate = nextLine[1];
+                String OppTeam = nextLine[2];
+                String EliteScore = nextLine[3];
+                String OppScore = nextLine[4];
+                String GameNotes = nextLine[5];
+                String TeamID = nextLine[6];
+
+                if (!Game_ID.equals("GameID")) {
+                    gameIDSet.add(Integer.parseInt(Game_ID));
+                }
+            }
+            int newTime = Collections.max(gameIDSet) + 1;
+            GameID = Integer.toString(newTime);
+        } catch (FileNotFoundException e) {
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+    }
+
+
 
 
     public void playerGameTimes(){

@@ -18,12 +18,18 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.ToggleButton;
 
+import com.opencsv.CSVReader;
 import com.opencsv.CSVWriter;
 
 import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.Collections;
 import java.util.HashMap;
+import java.util.HashSet;
+import java.util.LinkedList;
 import java.util.Timer;
 import java.util.TimerTask;
 import java.util.concurrent.Executors;
@@ -37,9 +43,9 @@ public class GameTimer extends RosterActivity {
             Manifest.permission.READ_EXTERNAL_STORAGE,
             Manifest.permission.WRITE_EXTERNAL_STORAGE
     };
-
+    private HashSet<Integer> gameIDSet = new HashSet<>();
     private Context context = this;
-    private static String GameID = "2";
+    private String GameID = "1";
     private String timeCSV = "PlayerTimes.csv";
     private Button startButton;
     private Button stopButton;
@@ -79,6 +85,8 @@ public class GameTimer extends RosterActivity {
 
         ToggleButton toggle = (ToggleButton) findViewById(R.id.toggle_btn);
         final ListView listView = (ListView) findViewById(R.id.listView);
+
+        readCSV();
 
 
 
@@ -158,10 +166,46 @@ public class GameTimer extends RosterActivity {
         writer2.close();
     }
 
+    public void readCSV(){
+        try{
+            String baseDir = android.os.Environment.getExternalStorageDirectory().getAbsolutePath();
+            String filePath2 = baseDir + File.separator + "PlayerTimes.csv";
+            File f2 = new File(filePath2);
+            CSVReader reader = new CSVReader(new FileReader(f2));
+            String [] nextLine;
+            while ((nextLine = reader.readNext()) != null) {
+                String player = nextLine[0];
+                String gameID = nextLine[1];
+                String gameTime = nextLine[2];
+                if(!gameID.equals("GameID")) {
+                    gameIDSet.add(Integer.parseInt(gameID));
+                }
+            }
+            int newTime = Collections.max(gameIDSet) + 1;
+            GameID = Integer.toString(newTime);
+        }catch (FileNotFoundException e) {
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        } {
+
+        }
+
+
+
+
+}
+
     public void getTotalTime() {
+
+
 
         for(String selectedItem:list) {
             int total = 0;
+            if(adapter.timeSwitchMap.get(selectedItem)==true){
+                adapter.timeSwitchMap.put(selectedItem,false);
+                adapter.offTimeMap.get(selectedItem).add(0);
+            }
             for (int i = 0; i < adapter.onTimeMap.get(selectedItem).size(); i++) {
                 if (adapter.offTimeMap.get(selectedItem).isEmpty()) {
                     adapter.offTimeMap.get(selectedItem).add(adapter.onTimeMap.get(selectedItem).getLast());

@@ -22,7 +22,11 @@
     <string name="chronometer_reset">Reset</string>
     <string name="chronometer_set_format">Set format string</string>
     <string name="chronometer_clear_format">Clear format string</string>
-
+    <item type="id" name="radio1"/>
+    <item type="id" name="radio2"/>
+    <item type="id" name="radio3"/>
+    <item type="id" name="radio4"/>
+    <item type="id" name="radio5"/>
     <string name="title_activity_roster_page">rosterPage</string>
     <string name="large_text">
         "Material is the metaphor.\n\n"
